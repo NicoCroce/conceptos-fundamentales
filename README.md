@@ -1,6 +1,6 @@
 # Manual de AI/ML y Plataforma
 
-Manual de estudio para un equipo de ingeniería: 108 temas en 14 capítulos (LLMs, agentes, arquitectura, diseño de software y patrones, ML, observabilidad, cloud, frontend, UX y UI, seguridad, metodologías, análisis y decisiones, comunicación y lenguajes). Se publica como sitio estático instalable como PWA y funciona sin conexión.
+Manual de estudio para un equipo de ingeniería: 113 temas en 14 capítulos (LLMs, agentes, arquitectura, diseño de software y patrones, ML, observabilidad, cloud, frontend, UX y UI, seguridad, metodologías, análisis y decisiones, comunicación y lenguajes). Se publica como sitio estático instalable como PWA y funciona sin conexión.
 
 ## Generar
 

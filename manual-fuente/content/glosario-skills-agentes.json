@@ -1,0 +1,11 @@
+[
+  {"termino": "Skill (Agent Skill)", "definicion": "Carpeta con un archivo SKILL.md y archivos de apoyo que empaqueta un procedimiento para un agente. El agente ve solo su nombre y descripción hasta que la tarea la requiere.", "slug": "skills-agentes"},
+  {"termino": "SKILL.md", "definicion": "Archivo principal de una skill: un front matter en YAML con nombre y descripción obligatorios, seguido de las instrucciones en Markdown que el agente sigue al activarla.", "slug": "skills-agentes"},
+  {"termino": "Divulgación progresiva (progressive disclosure)", "definicion": "Carga por etapas del contenido de una skill: primero solo los metadatos, luego el cuerpo cuando se activa y por último los archivos de apoyo que la tarea necesite.", "slug": "skills-agentes"},
+  {"termino": "Descripción disparadora", "definicion": "Campo description de una skill, que el modelo usa para decidir si activarla. Debe decir qué hace y cuándo usarla, con las palabras de quien pide la tarea.", "slug": "skills-agentes"},
+  {"termino": "Activación de una skill", "definicion": "Momento en que el modelo decide usar una skill y lee su cuerpo. Se mide con pedidos que deberían activarla y pedidos parecidos que no.", "slug": "skills-agentes"},
+  {"termino": "Sobreactivación", "definicion": "Falla en la que una skill se activa en tareas que no le corresponden, por una descripción con palabras demasiado comunes o promesas demasiado amplias.", "slug": "skills-agentes"},
+  {"termino": "Script de una skill", "definicion": "Código determinista dentro de la carpeta scripts/ que el agente ejecuta para calcular, validar o transformar. Al contexto entra solo su salida, no su código.", "slug": "skills-agentes"},
+  {"termino": "Archivo de referencia", "definicion": "Documento dentro de la carpeta references/ de una skill que el agente lee solo si las instrucciones lo indican y la tarea lo requiere.", "slug": "skills-agentes"},
+  {"termino": "allowed-tools", "definicion": "Campo experimental del front matter de una skill que lista herramientas preaprobadas mientras está activa. No reemplaza la política de permisos ni el sandbox del arnés.", "slug": "skills-agentes"}
+]

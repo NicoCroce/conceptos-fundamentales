@@ -191,7 +191,7 @@ button { font: inherit; color: inherit; }
 .veil.warm { z-index: 96; background: #FF9A3C; mix-blend-mode: multiply; opacity: var(--warm, 0); }
 .veil.dim { z-index: 97; background: #000; opacity: var(--dim, 0); }
 :root[data-theme="noche"] .veil.grain { display: none; }
-@media print { .veil, .lectura { display: none !important; } }
+@media print { .veil, .lectura, .avance, .voz, .hablar { display: none !important; } }
 @media (max-width: 560px) {
   .lectura { top: auto; bottom: 0; left: 0; right: 0; width: auto; max-width: none; max-height: 82dvh; border-radius: 18px 18px 0 0; border-bottom: 0;
     padding: 12px 18px calc(env(safe-area-inset-bottom, 0px) + 22px); }
@@ -287,6 +287,36 @@ article tr:last-child td { border-bottom: 0; }
 .pager small { display: block; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
 .pager span { display: block; font-weight: 700; font-size: 15px; margin-top: 2px; }
 .pager .next { text-align: right; grid-column: 2; }
+/* Pie de avance: porcentaje leído del tema actual. Queda pegado abajo mientras se lee y se actualiza con el scroll. */
+.avance { grid-column: 1 / -1; position: sticky; bottom: 0; z-index: 15; margin-top: -24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 9px 2px calc(9px + env(safe-area-inset-bottom, 0px)); background: var(--paper);
+  font-family: var(--display); font-size: 13px; line-height: 1.2; color: var(--muted); font-variant-numeric: tabular-nums; }
+.avance::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--rule); }
+.avance::after { content: ""; position: absolute; left: 0; top: 0; height: 2px; width: calc(var(--avance, 0) * 1%); background: var(--accent); }
+.avance .apct { font-weight: 700; color: var(--ink); }
+/* Escuchar: parlante en cada título y reproductor flotante (voces del dispositivo, Web Speech API). */
+.hablar { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; margin-left: 6px; padding: 0; vertical-align: middle; position: relative; top: -2px;
+  border: 1px solid transparent; border-radius: 999px; background: none; color: var(--muted); cursor: pointer; }
+.hablar svg { width: 17px; height: 17px; }
+.hablar:hover, .hablar:focus-visible, .hablar[aria-pressed="true"] { color: var(--accent); border-color: var(--rule); background: var(--surface); }
+.titlerow .hablar { align-self: center; flex: none; margin-left: auto; top: 0; }
+.leyendo { background: color-mix(in srgb, var(--accent) 13%, transparent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 13%, transparent); border-radius: 3px; }
+.voz { position: fixed; z-index: 50; left: 50%; transform: translateX(-50%); bottom: calc(56px + env(safe-area-inset-bottom, 0px));
+  display: flex; align-items: center; gap: 2px; width: max-content; max-width: calc(100vw - 32px); padding: 5px; background: var(--surface); color: var(--ink);
+  border: 1px solid var(--rule); border-radius: 999px; box-shadow: var(--shadow); font-family: var(--display); font-size: 13px; line-height: 1.2; }
+.voz[hidden] { display: none; }
+.voz .vbtn { flex: none; width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; padding: 0; border: 0; border-radius: 999px; background: none; color: inherit; cursor: pointer; font: inherit; font-weight: 700; font-variant-numeric: tabular-nums; }
+.voz .vbtn:hover { background: var(--code-bg); }
+.voz .vbtn svg { width: 18px; height: 18px; }
+.voz #vozPlay { background: var(--ink); color: var(--paper); }
+.voz .vvel { width: auto; padding: 0 10px; }
+.voz .vtxt { flex: 0 1 auto; min-width: 0; max-width: 240px; padding: 0 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--muted); }
+body.con-voz .toast { bottom: calc(112px + env(safe-area-inset-bottom, 0px)); }
+.lectura .lgrupo[hidden] { display: none; }
+.lectura .lsel { width: 100%; height: 38px; padding: 0 10px; border: 1px solid var(--rule); border-radius: 8px; background: var(--paper); color: var(--ink); font: inherit; font-size: 14px; }
+body.con-avance .toc { max-height: calc(100vh - env(safe-area-inset-top, 0px) - 72px - 52px); }
+body.con-avance .toast { bottom: calc(60px + env(safe-area-inset-bottom, 0px)); }
 
 /* ---------- Portada ---------- */
 .cover h1 { font-size: clamp(38px, 5.6vw, 64px); line-height: 1; letter-spacing: -.03em; max-width: 15ch; }
@@ -587,8 +617,18 @@ a.btn.primary, .btn.primary { color: var(--surface); }
       <button type="button" class="lopt" data-margenes="normales">Normales</button>
       <button type="button" class="lopt" data-margenes="amplios">Amplios</button>
     </div></div>
+  <div class="lgrupo" id="lVozG" hidden><label class="letq" for="lVoz">Voz para escuchar</label>
+    <select id="lVoz" class="lsel"></select></div>
   <div class="lpie"><span>Se guarda en este navegador.</span><button type="button" class="btn link" id="lReset">Restablecer</button></div>
 </section>
+<div class="voz" id="voz" role="region" aria-label="Lectura en voz alta" hidden>
+  <button type="button" class="vbtn" id="vozPrev" aria-label="Párrafo anterior" title="Párrafo anterior"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
+  <button type="button" class="vbtn" id="vozPlay" aria-label="Pausar" title="Pausar"></button>
+  <button type="button" class="vbtn" id="vozNext" aria-label="Párrafo siguiente" title="Párrafo siguiente"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></button>
+  <span class="vtxt" id="vozTxt"></span>
+  <button type="button" class="vbtn vvel" id="vozVel" aria-label="Velocidad" title="Velocidad">1×</button>
+  <button type="button" class="vbtn" id="vozStop" aria-label="Detener" title="Detener"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg></button>
+</div>
 <div class="veil grain" aria-hidden="true"></div>
 <div class="veil warm" aria-hidden="true"></div>
 <div class="veil dim" aria-hidden="true"></div>
@@ -1022,6 +1062,8 @@ a.btn.primary, .btn.primary { color: var(--surface); }
     h += pagerHTML(s) + "</article>";
     h += '<aside class="toc" aria-label="En esta página"><h5>En esta página</h5>' +
       t.toc.map(function (x) { return '<button type="button" data-id="' + x.id + '" class="l' + x.level + '">' + esc(x.text) + "</button>"; }).join("") + "</aside>";
+    h += '<div class="avance" id="avance" role="progressbar" aria-label="Avance de lectura del tema" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">' +
+      '<span class="arest" id="avanceRest">' + t.lectura + ' min de lectura</span><span class="apct" id="avancePct">0 %</span></div>';
     return h;
   }
 
@@ -1491,7 +1533,7 @@ a.btn.primary, .btn.primary { color: var(--surface); }
   }
 
   function route() {
-    hidePop(); closeEditor();
+    hidePop(); closeEditor(); pararVoz();
     var v = current();
     if (v === "notas") {
       main.className = "main"; main.innerHTML = viewNotas(); setupNotas(); renderNotas();
@@ -1514,14 +1556,204 @@ a.btn.primary, .btn.primary { color: var(--surface); }
         renderNav();
       });
       applyHighlights(v);
+      ponerParlantes(v);
     } else {
       main.className = "main"; main.innerHTML = viewInicio();
       $("topTitle").textContent = "Manual de AI/ML y Plataforma";
     }
     renderNav(); setupToc(); closeDrawer();
     window.scrollTo(0, 0);
+    document.body.classList.toggle("con-avance", !!T[v]);
     if (T[v]) goToNote(parseHash().nota);
+    pedirAvance();
   }
+  // ---- Escuchar: lee el tema en voz alta con las voces que trae el dispositivo (Web Speech API) ----
+  // Nada se descarga ni se genera: el sistema operativo pone la voz. Se lee por trozos cortos porque algunos
+  // navegadores cortan los textos largos; pausar cancela y retomar repite el trozo, que es lo que funciona en todos.
+  var tts = ("speechSynthesis" in window && window.SpeechSynthesisUtterance) ? window.speechSynthesis : null;
+  var VOZ_KEY = "manual-aiml-voz", VELS = [0.8, 1, 1.2, 1.5];
+  var vozCfg = (function () { try { return JSON.parse(localStorage.getItem(VOZ_KEY) || "null") || {}; } catch (e) { return {}; } })();
+  if (VELS.indexOf(vozCfg.vel) < 0) vozCfg.vel = 1;
+  var voz = { cola: [], i: 0, tok: 0, estado: "parado", btn: null, marcado: null };
+  var ICO_PARL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+  var ICO_PAUSA = '<svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
+  var ICO_PLAY = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15L19.5 12z"/></svg>';
+  function guardarVoz() { try { localStorage.setItem(VOZ_KEY, JSON.stringify(vozCfg)); } catch (e) {} }
+  function vocesEs() { return tts ? tts.getVoices().filter(function (v) { return /^es\b|^es[-_]/i.test(v.lang); }) : []; }
+  var LANG_PREF = ["es-419", "es-MX", "es-US", "es-AR", "es-CO", "es-CL", "es-ES"];
+  function puntaje(v) {
+    var l = v.lang.replace("_", "-"), r = LANG_PREF.indexOf(l);
+    return (r < 0 ? 8 : r) + (v.localService ? 0 : 20) + (/Eddy|Flo|Grand|Reed|Rocko|Sandy|Shelley/.test(v.name) ? 10 : 0);
+  }
+  function elegirVoz() {
+    var vs = vocesEs();
+    if (vozCfg.voz) { var f = vs.filter(function (v) { return v.voiceURI === vozCfg.voz; })[0]; if (f) return f; }
+    return vs.sort(function (a, b) { return puntaje(a) - puntaje(b); })[0] || null;
+  }
+  function llenarVoces() {
+    if (!tts) return;
+    $("lVozG").hidden = false;
+    var vs = vocesEs().sort(function (a, b) { return puntaje(a) - puntaje(b); }), sel = $("lVoz");
+    var h = '<option value="">' + (vs.length ? "Automática" : "La del sistema (no hay voces en castellano)") + "</option>";
+    vs.forEach(function (v) { h += '<option value="' + esc(v.voiceURI) + '">' + esc(v.name + " · " + v.lang) + (v.localService ? "" : " · en línea") + "</option>"; });
+    sel.innerHTML = h; sel.value = vozCfg.voz && vs.some(function (v) { return v.voiceURI === vozCfg.voz; }) ? vozCfg.voz : "";
+  }
+  if (tts) {
+    llenarVoces();
+    if ("onvoiceschanged" in tts) tts.addEventListener("voiceschanged", llenarVoces);
+    $("lVoz").addEventListener("change", function () { vozCfg.voz = this.value || null; guardarVoz(); if (voz.estado === "hablando") { voz.tok++; tts.cancel(); hablar(); } });
+    window.addEventListener("pagehide", function () { tts.cancel(); });
+  }
+
+  function textoDe(el) {
+    var c = el.cloneNode(true);
+    c.querySelectorAll("ul, ol, pre, table, figure, button, .hablar").forEach(function (x) { x.remove(); });
+    return c.textContent.replace(/\s+/g, " ").trim();
+  }
+  function trozos(t) {
+    var out = [], cur = "", partes = t.match(/[^.!?;:]+[.!?;:]*[\s»”")]*|[.!?;:]+/g) || [t];
+    partes.forEach(function (p) {
+      if (cur && (cur + p).length > 180) { out.push(cur.trim()); cur = ""; }
+      while (p.length > 180) { var k = p.lastIndexOf(" ", 180); if (k < 60) k = 180; out.push(p.slice(0, k).trim()); p = p.slice(k); }
+      cur += p;
+    });
+    if (cur.trim()) out.push(cur.trim());
+    return out;
+  }
+  // Recorre el tema en orden y arma la cola: un elemento por párrafo, ítem o título; código, tablas y gráficos se anuncian.
+  function recoger(node, out, ctx) {
+    [].forEach.call(node.children, function (el) {
+      var tag = el.tagName, cls = typeof el.className === "string" ? el.className : "";
+      if (/^H[1-6]$/.test(tag)) { ctx.sec = textoDe(el); out.push({ el: el, txt: ctx.sec, sec: ctx.sec }); }
+      else if (/^(P|DT|DD)$/.test(tag)) { var t = textoDe(el); if (t) out.push({ el: el, txt: t, sec: ctx.sec }); }
+      else if (tag === "LI") {
+        var tl = textoDe(el); if (tl) out.push({ el: el, txt: tl, sec: ctx.sec });
+        el.querySelectorAll(":scope > ul, :scope > ol").forEach(function (l) { recoger(l, out, ctx); });
+      }
+      else if (tag === "PRE") out.push({ el: el, txt: "Sigue un bloque de código.", sec: ctx.sec });
+      else if (tag === "TABLE") out.push({ el: el, txt: "Sigue una tabla.", sec: ctx.sec });
+      else if (tag === "FIGURE" || /\b(tree|roles-wrap|bars)\b/.test(cls)) out.push({ el: el, txt: "Sigue un gráfico.", sec: ctx.sec });
+      else if (!/^(HR|BUTTON|SCRIPT|STYLE|svg)$/i.test(tag)) recoger(el, out, ctx);
+    });
+  }
+  function colaDesde(h) {
+    var c = $("tcontent"), out = [], ctx = { sec: "" };
+    if (h.tagName === "H1") {
+      ctx.sec = textoDe(h); out.push({ el: h, txt: ctx.sec, sec: ctx.sec });
+      var lede = main.querySelector("article .lede"); if (lede) out.push({ el: lede, txt: textoDe(lede), sec: ctx.sec });
+    }
+    var todo = []; recoger(c, todo, { sec: ctx.sec });
+    var k = h.tagName === "H1" ? 0 : todo.map(function (x) { return x.el; }).indexOf(h);
+    out = out.concat(todo.slice(Math.max(0, k)));
+    var cola = [];
+    out.forEach(function (it) { trozos(it.txt).forEach(function (t) { cola.push({ el: it.el, txt: t, sec: it.sec }); }); });
+    return cola;
+  }
+  function marcar(el) {
+    if (voz.marcado === el) return;
+    if (voz.marcado) voz.marcado.classList.remove("leyendo");
+    voz.marcado = el; if (!el) return;
+    el.classList.add("leyendo");
+    var r = el.getBoundingClientRect();
+    if (r.top < 80 || r.bottom > window.innerHeight - 130) el.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  }
+  function pintarVoz() {
+    var on = voz.estado !== "parado";
+    $("voz").hidden = !on; document.body.classList.toggle("con-voz", on);
+    var habla = voz.estado === "hablando", pb = $("vozPlay");
+    pb.innerHTML = habla ? ICO_PAUSA : ICO_PLAY;
+    pb.setAttribute("aria-label", habla ? "Pausar" : "Seguir escuchando"); pb.title = pb.getAttribute("aria-label");
+    $("vozVel").textContent = String(vozCfg.vel).replace(".", ",") + "×";
+    var it = voz.cola[voz.i]; $("vozTxt").textContent = it ? (habla ? "Leyendo: " : "En pausa: ") + it.sec : "";
+    main.querySelectorAll(".hablar").forEach(function (b) { b.setAttribute("aria-pressed", b === voz.btn && habla ? "true" : "false"); });
+  }
+  function hablar() {
+    var tok = ++voz.tok;
+    if (voz.i >= voz.cola.length) { pararVoz(); toast("Terminó la lectura del tema."); return; }
+    var it = voz.cola[voz.i];
+    voz.estado = "hablando"; marcar(it.el); pintarVoz();
+    var u = new SpeechSynthesisUtterance(it.txt), v = elegirVoz();
+    if (v) { u.voice = v; u.lang = v.lang; } else u.lang = "es-ES";
+    u.rate = vozCfg.vel;
+    u.onend = function () { if (tok !== voz.tok || voz.estado !== "hablando") return; voz.i++; hablar(); };
+    u.onerror = function (e) {
+      if (tok !== voz.tok || e.error === "interrupted" || e.error === "canceled") return;
+      if (e.error === "not-allowed") { pararVoz(); toast("El navegador no dejó reproducir la voz. Toca el parlante otra vez."); return; }
+      voz.i++; hablar();
+    };
+    tts.speak(u);
+  }
+  function empezarVoz(h, btn) {
+    if (!tts) return;
+    voz.tok++; tts.cancel();
+    voz.cola = colaDesde(h); voz.i = 0; voz.btn = btn;
+    if (!voz.cola.length) return;
+    hablar();
+  }
+  function pausarVoz() { if (voz.estado !== "hablando") return; voz.tok++; voz.estado = "pausado"; tts.cancel(); pintarVoz(); }
+  function pararVoz() {
+    if (!tts) return;
+    voz.tok++; tts.cancel(); voz.estado = "parado"; voz.cola = []; voz.i = 0; voz.btn = null; marcar(null); pintarVoz();
+  }
+  function saltarVoz(d) {
+    if (!voz.cola.length) return;
+    var el = voz.cola[voz.i] && voz.cola[voz.i].el, j = voz.i;
+    if (d > 0) { while (j < voz.cola.length && voz.cola[j].el === el) j++; }
+    else {
+      while (j > 0 && voz.cola[j - 1].el === el) j--;            // inicio del bloque actual
+      if (j > 0) { var prev = voz.cola[j - 1].el; j--; while (j > 0 && voz.cola[j - 1].el === prev) j--; }
+    }
+    voz.i = Math.min(j, voz.cola.length); voz.tok++; tts.cancel(); hablar();
+  }
+  function ponerParlantes(v) {
+    if (!tts || !T[v]) return;
+    var heads = [main.querySelector("article h1")].concat([].slice.call($("tcontent").querySelectorAll("h2, h3")));
+    heads.forEach(function (h) {
+      if (!h) return;
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "hablar"; b.innerHTML = ICO_PARL;
+      b.title = h.tagName === "H1" ? "Escuchar el tema completo" : "Escuchar desde esta sección";
+      b.setAttribute("aria-label", b.title + ": " + textoDe(h)); b.setAttribute("aria-pressed", "false");
+      b._h = h;
+      if (h.tagName === "H1") h.parentNode.appendChild(b); else h.appendChild(b);
+    });
+  }
+  main.addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest(".hablar"); if (!b) return;
+    e.preventDefault();
+    if (voz.btn === b && voz.estado === "hablando") pausarVoz();
+    else if (voz.btn === b && voz.estado === "pausado") hablar();
+    else empezarVoz(b._h, b);
+  });
+  $("vozPlay").addEventListener("click", function () { voz.estado === "hablando" ? pausarVoz() : hablar(); });
+  $("vozStop").addEventListener("click", pararVoz);
+  $("vozPrev").addEventListener("click", function () { saltarVoz(-1); });
+  $("vozNext").addEventListener("click", function () { saltarVoz(1); });
+  $("vozVel").addEventListener("click", function () {
+    vozCfg.vel = VELS[(VELS.indexOf(vozCfg.vel) + 1) % VELS.length]; guardarVoz();
+    if (voz.estado === "hablando") { voz.tok++; tts.cancel(); hablar(); } else pintarVoz();
+  });
+
+  // ---- Pie de avance: 0 % arriba de todo, 100 % al llegar al final de la página ----
+  var avPend = false;
+  function updateAvance() {
+    avPend = false;
+    var bar = $("avance"); if (!bar) return;
+    var t = T[current()]; if (!t) return;
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = max > 4 ? Math.round(Math.min(1, Math.max(0, window.scrollY / max)) * 100) : 100;
+    if (bar.getAttribute("aria-valuenow") === String(pct) && bar.dataset.ok) return;
+    bar.dataset.ok = "1";
+    bar.style.setProperty("--avance", pct);
+    bar.setAttribute("aria-valuenow", pct);
+    $("avancePct").textContent = pct + " %";
+    var rest = Math.ceil(t.lectura * (100 - pct) / 100);
+    $("avanceRest").textContent = pct >= 100 ? "Fin del tema" : pct === 0 ? t.lectura + " min de lectura" : "Quedan ~" + Math.max(1, rest) + " min";
+  }
+  function pedirAvance() { if (!avPend) { avPend = true; requestAnimationFrame(updateAvance); } }
+  window.addEventListener("scroll", pedirAvance, { passive: true });
+  window.addEventListener("resize", pedirAvance);
+
   window.addEventListener("hashchange", route);
   route();
 

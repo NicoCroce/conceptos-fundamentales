@@ -99,6 +99,11 @@ Para enlazar otro tema usa `[texto](#t/<slug>)` con los slugs de la lista de aba
 **Capítulo 2 · Agentes**
 - agentes · Agentes y tool calling
 - arnes-agentes · El arnés de un agente (agent harness)
+- artefactos-agentes · Artefactos de un agente: el mapa completo
+- instrucciones-reglas · Instrucciones y reglas de proyecto para agentes
+- comandos-agentes · Comandos y prompts reutilizables
+- skills-agentes · Skills: conocimiento que el agente carga cuando lo necesita
+- hooks-agentes · Hooks: reglas que el agente no puede saltarse
 - langgraph · LangGraph y LangChain
 - mcp · MCP (Model Context Protocol)
 - contexto-memoria · Contexto y memoria de agentes
