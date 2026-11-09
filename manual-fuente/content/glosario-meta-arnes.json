@@ -1,0 +1,11 @@
+[
+  {"termino": "Meta-arnés (meta-harness)", "definicion": "Arnés cuyo trabajo son otros arneses. Se usa en dos sentidos: optimizador, que genera, evalúa y mejora código de arneses, y orquestador, que lanza, supervisa y verifica varias sesiones de agentes.", "slug": "meta-arnes"},
+  {"termino": "Bucle externo", "definicion": "Ciclo de un meta-arnés optimizador que envuelve ejecuciones completas de agentes: proponer un arnés, ejecutarlo sobre una suite, puntuarlo, guardar código y trazas, y volver a proponer.", "slug": "meta-arnes"},
+  {"termino": "Proponente", "definicion": "Agente que, dentro de un meta-arnés optimizador, lee la historia de candidatos anteriores y escribe nuevas versiones del código del arnés para evaluar.", "slug": "meta-arnes"},
+  {"termino": "Trazas crudas de ejecución", "definicion": "Registro completo y sin resumir de una ejecución: prompts enviados, llamadas a herramientas, salidas del modelo y cambios de estado. Permiten entender por qué falló un candidato, no solo cuánto.", "slug": "meta-arnes"},
+  {"termino": "Frontera de Pareto", "definicion": "Conjunto de candidatos que no son superados en todos los objetivos a la vez, por ejemplo precisión y tokens. Entre ellos se elige según la prioridad del equipo.", "slug": "meta-arnes"},
+  {"termino": "Conjunto reservado (held-out)", "definicion": "Datos, tareas o modelos que no participan de la búsqueda y se usan solo para medir el resultado final. Si el optimizador ve sus puntajes o trazas, deja de ser reservado.", "slug": "meta-arnes"},
+  {"termino": "Reward hacking", "definicion": "Cuando un sistema optimizado mejora la métrica sin mejorar la tarea, por ejemplo editando el evaluador o explotando un defecto de la suite. Se previene dejando evaluador y suite fuera de su alcance.", "slug": "meta-arnes"},
+  {"termino": "Worktree de git", "definicion": "Copia de trabajo adicional de un mismo repositorio, con su propia rama y sus propios archivos. Permite que varias sesiones de agentes trabajen en paralelo sin pisarse.", "slug": "meta-arnes"},
+  {"termino": "Cortocircuito de tanda", "definicion": "Regla de un orquestador que detiene el lanzamiento de trabajos nuevos cuando los primeros fallan por la misma causa, porque el problema probablemente está en el encargo común.", "slug": "meta-arnes"}
+]

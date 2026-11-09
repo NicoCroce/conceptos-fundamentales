@@ -83,6 +83,7 @@ Requiere Python 3 y el paquete `markdown`. Genera `dist/web/` (para publicar) y 
 
 LLMs · Agentes · Arquitectura y backend · Diseño de software y patrones · Machine Learning · Observabilidad · Cloud e infraestructura · Frontend y web · UX, UI y diseño · Seguridad · Metodologías y gestión · Análisis, decisiones y documentos · Comunicación y feedback · Lenguajes y frameworks. La lista completa de temas está en `CHAPTERS` (`build.py`) y en la guía de estilo.
 
+- Agentes incluye `arnes-agentes` (el arnés: bucle, herramientas, contexto, permisos, hooks y evaluación) y `meta-arnes` (arneses que optimizan u orquestan otros arneses, con el paper Meta-Harness de 2026).
 - Seguridad reúne autenticación, secretos, frontend, Cloudflare y agentes, y suma fundamentos y modelado de amenazas, APIs, cadena de suministro y privacidad.
 - Diseño de software y patrones: SOLID, patrones creacionales, estructurales y de comportamiento, inyección de dependencias, DDD táctico, Repository y Unit of Work, CQRS y Event Sourcing, testing y dobles de prueba. El DDD estratégico sigue en Arquitectura y backend.
 - Frontend y web suma componentización y eventos del DOM.

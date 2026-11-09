@@ -98,10 +98,12 @@ Para enlazar otro tema usa `[texto](#t/<slug>)` con los slugs de la lista de aba
 
 **Capítulo 2 · Agentes**
 - agentes · Agentes y tool calling
+- arnes-agentes · El arnés de un agente (agent harness)
 - langgraph · LangGraph y LangChain
 - mcp · MCP (Model Context Protocol)
 - contexto-memoria · Contexto y memoria de agentes
 - subagentes · Subagentes y sistemas multiagente
+- meta-arnes · Meta-arnés: arneses que diseñan y orquestan arneses
 - llms-produccion · LLMs en producción
 
 **Capítulo 3 · Arquitectura y backend**
