@@ -1008,6 +1008,16 @@ a.btn.primary, .btn.primary { color: var(--surface); }
       "<li><b>Para discutir en equipo</b><span>Preguntas abiertas para una sesión de estudio o una revisión de diseño.</span></li></ul>";
     h += '<p style="color:var(--muted);font-size:15px">Marca cada tema como leído con el botón de su encabezado. Selecciona cualquier fragmento para resaltarlo o comentarlo; lo encuentras después en <a href=\"#notas\">Mis notas</a>. El progreso y las notas se guardan solo en este navegador; nadie más los ve. Para seguir en otro dispositivo, usa <a href=\"#respaldo\">Pasar a otro dispositivo</a>.</p>';
 
+    h += "<h2>Lee a tu manera</h2>";
+    h += '<p class="perfdesc">El botón <b>Aa</b> (arriba a la derecha) abre los ajustes de lectura, como en un lector de libros electrónicos. Cambian solo el texto de los temas y se guardan en este navegador.</p>';
+    h += '<ul class="anatomy">' +
+      "<li><b>Página</b><span>Cuatro temas para todo el manual: papel, sepia, tinta y noche (el oscuro, que viene por defecto).</span></li>" +
+      "<li><b>Brillo y luz cálida</b><span>Bajan la intensidad de la pantalla y suman un tono anaranjado para leer de noche sin cansar la vista.</span></li>" +
+      "<li><b>Tipografía y tamaño</b><span>Cuatro tipos de letra (Literata, Source Serif, Atkinson Hyperlegible, pensada para baja visión, y Schibsted Grotesk) y cinco tamaños.</span></li>" +
+      "<li><b>Interlineado y márgenes</b><span>Más o menos aire entre líneas y un ancho de columna más angosto o más amplio.</span></li>" +
+      "<li><b>Escuchar</b><span>El parlante junto a cada título lee el tema en voz alta con las voces del dispositivo. La voz se elige en el mismo panel.</span></li>" +
+      "<li><b>Avance y retomar</b><span>El pie de cada tema muestra el porcentaje leído y los minutos que quedan. El manual recuerda dónde quedaste y vuelve ahí al abrirlo.</span></li></ul>";
+    h += '<p><button type="button" class="btn" data-abrir-aa>Abrir ajustes de lectura</button></p>';
     h += '<div class="rumbo"><h3>El ejemplo que recorre el manual: Rumbo</h3>' +
       "<p>Para que los ejemplos se conecten entre capítulos, usamos una empresa ficticia. <strong>Rumbo</strong> es una plataforma de logística de última milla: los comercios cargan pedidos, Rumbo asigna cada uno a un transportista, calcula el tiempo estimado de entrega (ETA), sigue la entrega en vivo y atiende consultas de soporte.</p>" +
       "<ul><li><strong>Servicio de asignación</strong> en Go: decide en tiempo real qué transportista toma cada pedido, con un presupuesto de unos 50 ms.</li>" +
@@ -1372,7 +1382,7 @@ a.btn.primary, .btn.primary { color: var(--surface); }
     h += '<p class="lede">Tus resaltados y comentarios, agrupados por tema. Para crear uno, selecciona texto en cualquier tema y elige un color.</p>';
     h += '<div id="nWarn"></div>';
     h += '<div class="ntools"><input class="gfilter" id="nf" type="search" placeholder="Buscar en mis notas" aria-label="Buscar en mis notas" autocomplete="off">' +
-      '<div class="nbtns"><a class="btn" href="#respaldo">Compartir o importar</a></div></div>';
+      '<div class="nbtns"><button type="button" class="btn primary" id="nExp">Exportar</button><a class="btn" href="#respaldo">Importar</a></div></div>';
     h += '<div id="nlist"></div>';
     h += '<p class="foot">Las notas viven solo en este navegador (IndexedDB). No se sincronizan solas: para pasarlas, junto con tu progreso, a otro dispositivo, usa <a href="#respaldo">Pasar a otro dispositivo</a>.</p>';
     return h + "</article>";
@@ -1431,27 +1441,42 @@ a.btn.primary, .btn.primary { color: var(--surface); }
   }
   function downloadBackup(msg) {
     var d = backupData();
-    var blob = new Blob([JSON.stringify(d, null, 2)], { type: "application/json" });
-    var a = document.createElement("a");
-    a.href = URL.createObjectURL(blob); a.download = backupName(".json");
-    document.body.appendChild(a); a.click();
-    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
-    toast(msg || "Archivo descargado: " + backupSummary(d) + ".");
+    try {
+      var blob = new Blob([JSON.stringify(d, null, 2)], { type: "application/json" });
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob); a.download = backupName(".json"); a.rel = "noopener";
+      document.body.appendChild(a); a.click();
+      // Safari y Firefox leen el blob después del clic: revocarlo enseguida rompe la descarga.
+      setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 60000);
+      toast(msg || "Archivo descargado: " + backupSummary(d) + ".");
+    } catch (e) {
+      toast("No se pudo descargar el archivo (" + (e && e.name || "error") + ").");
+    }
   }
+  // Exportar abre el menú de compartir del sistema (WhatsApp, correo, AirDrop, Drive…) con el archivo .json adjunto.
+  // Se comparte solo el archivo, sin texto: varias aplicaciones, al recibir texto y archivo juntos, se quedan con el texto
+  // y descartan el adjunto. Si el sistema no acepta .json se prueba el mismo contenido como .txt (el import acepta ambos).
   function shareBackup() {
     var d = backupData(), json = JSON.stringify(d, null, 2), file = null;
     if (navigator.share && navigator.canShare) {
-      // Algunos sistemas no aceptan compartir .json: se prueba primero así y después como texto.
       [["application/json", ".json"], ["text/plain", ".txt"]].some(function (k) {
         try { var f = new File([json], backupName(k[1]), { type: k[0] }); if (navigator.canShare({ files: [f] })) { file = f; return true; } } catch (e) {}
         return false;
       });
     }
-    if (!file) { downloadBackup("Este navegador no permite compartir archivos: se descargó para que lo envíes como prefieras (" + backupSummary(d) + ")."); return; }
-    navigator.share({ files: [file], title: "Mi avance del manual",
-      text: "Mi avance y mis notas del Manual de AI/ML y Plataforma. Para usarlo, abre el manual en el otro dispositivo, entra en «Pasar a otro dispositivo» y pulsa «Importar archivo»." })
-      .then(function () { toast("Compartido: " + backupSummary(d) + "."); })
-      .catch(function (e) { if (!e || e.name !== "AbortError") downloadBackup("No se pudo abrir el menú de compartir: se descargó el archivo (" + backupSummary(d) + ")."); });
+    if (!file) {
+      downloadBackup((navigator.share ? "Este navegador no permite compartir archivos" : "Este navegador no tiene menú de compartir (por ejemplo, Firefox en computadora)") +
+        ": se descargó el archivo para que lo envíes como adjunto (" + backupSummary(d) + ").");
+      return;
+    }
+    var p;
+    try { p = navigator.share({ files: [file], title: "Mi avance del manual" }); }
+    catch (e) { downloadBackup("No se pudo abrir el menú de compartir: se descargó el archivo (" + backupSummary(d) + ")."); return; }
+    p.then(function () { toast("Compartido: " + backupSummary(d) + "."); })
+      .catch(function (e) {
+        if (e && e.name === "AbortError") return;   // la persona cerró el menú
+        downloadBackup("No se pudo compartir (" + (e && e.name || "error") + "): se descargó el archivo (" + backupSummary(d) + ").");
+      });
   }
   function importBackup(file) {
     var reader = new FileReader();
@@ -1490,12 +1515,12 @@ a.btn.primary, .btn.primary { color: var(--surface); }
     h += '<p class="lede">Tu progreso y tus notas viven en este navegador. Para seguir leyendo en otro dispositivo, comparte un archivo con todo y ábrelo allá con «Importar archivo».</p>';
     h += '<div class="resumen">En este navegador: <b>' + nl + "</b> de " + TOTAL + " temas leídos · <b>" + nn + "</b> " + (nn === 1 ? "nota" : "notas") +
       " · perfil <b>" + esc(pf ? pf.nombre : "Todo") + "</b> · página " + PAGINAS[curPagina()].n + "</div>";
-    h += '<div class="acciones"><button type="button" class="btn primary" id="rShare">Compartir</button>' +
+    h += '<div class="acciones"><button type="button" class="btn primary" id="rShare">Exportar y compartir</button>' +
       '<button type="button" class="btn" id="rDown">Descargar archivo</button>' +
       '<button type="button" class="btn" id="rImp">Importar archivo</button>' +
       '<input type="file" id="rFile" accept="application/json,text/plain,.json,.txt" hidden></div>';
     h += '<h2>Cómo hacerlo</h2><ol class="plan">' +
-      "<li><strong>En este dispositivo</strong>, pulsa <em>Compartir</em>. Se abre el menú de compartir del sistema: WhatsApp, correo, AirDrop, mensajes o la aplicación que prefieras. Si el navegador no lo permite, el archivo se descarga y lo envías como cualquier adjunto.</li>" +
+      "<li><strong>En este dispositivo</strong>, pulsa <em>Exportar y compartir</em>. Se abre el menú de compartir del sistema con el archivo <code>.json</code> adjunto: elige WhatsApp, correo, AirDrop, Drive, mensajes o la aplicación que prefieras. Si el navegador no tiene ese menú (por ejemplo, Firefox en computadora), el archivo se descarga y lo envías como cualquier adjunto.</li>" +
       "<li><strong>En el otro dispositivo</strong>, guarda el archivo, abre el manual, entra en esta misma pantalla y pulsa <em>Importar archivo</em>.</li>" +
       "<li>Listo: los temas leídos, las notas, el perfil, la página y los ajustes de lectura quedan como en el original.</li></ol>";
     h += '<p class="foot">Importar suma, no borra: los temas leídos se agregan a los que ya tengas y, si una nota está en los dos dispositivos, se queda la versión editada más recientemente. El archivo contiene solo tu avance, tus notas y tus ajustes; lo recibe únicamente a quien se lo envíes. También sirve como copia de seguridad.</p>';
@@ -1508,6 +1533,7 @@ a.btn.primary, .btn.primary { color: var(--surface); }
     $("rFile").addEventListener("change", function () { if (this.files[0]) importBackup(this.files[0]); this.value = ""; });
   }
   function setupNotas() {
+    $("nExp").addEventListener("click", shareBackup);
     $("nf").addEventListener("input", renderNotas);
     $("nlist").addEventListener("click", function (e) {
       var b = e.target.closest("button[data-act]"); if (!b) return;
@@ -1718,6 +1744,9 @@ a.btn.primary, .btn.primary { color: var(--surface); }
       if (h.tagName === "H1") h.parentNode.appendChild(b); else h.appendChild(b);
     });
   }
+  main.addEventListener("click", function (e) {
+    if (e.target.closest && e.target.closest("[data-abrir-aa]")) { e.stopPropagation(); openLectura(); }
+  });
   main.addEventListener("click", function (e) {
     var b = e.target.closest && e.target.closest(".hablar"); if (!b) return;
     e.preventDefault();

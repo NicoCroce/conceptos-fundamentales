@@ -33,6 +33,7 @@ Requiere Python 3 y el paquete `markdown`. Genera `dist/web/` (para publicar) y 
 - Pie de avance (`.avance`, `#avance`): en cada tema, una barra pegada abajo del main con el porcentaje leído (0 % arriba, 100 % al final de la página, según el scroll de la ventana) y los minutos que quedan. Se calcula en `updateAvance()` con `requestAnimationFrame`; con el pie visible, el body lleva `con-avance` (sube el aviso y acorta el índice «En esta página»).
 - Escuchar: cada título del tema (h1, h2 y h3) lleva un parlante (`.hablar`, agregado por `ponerParlantes()` al abrir el tema, sin texto para no romper el anclaje de notas). Lee desde ese título hasta el final del tema con `speechSynthesis` (voces del dispositivo; nada se descarga). El reproductor `#voz` tiene anterior, pausa, siguiente, velocidad (0,8 a 1,5×) y detener; resalta el bloque leído (`.leyendo`). Lee por trozos de 180 caracteres; pausar cancela y retomar repite el trozo. Código, tablas y gráficos se anuncian. La voz se elige en el panel Aa (`#lVoz`; automática prefiere castellano latino y voces locales) y se guarda en `manual-aiml-voz`. Cambiar de vista detiene la lectura.
 - Retomar la lectura: cada 10 segundos (`setInterval`, y también al ocultar o cerrar la página) se guarda en `manual-aiml-posicion` la vista actual y el scroll (`y` en píxeles y `r` como proporción). Al abrir el manual sin ruta, o en la misma vista guardada, vuelve a esa página y a ese punto (usa la proporción, así resiste cambios de letra o de ventana) y avisa «Retomaste donde quedaste». Un enlace a otro tema o a una nota no se pisa.
+- La portada tiene la sección «Lee a tu manera», que explica el panel Aa, escuchar, el avance y retomar, con un botón `[data-abrir-aa]` que abre el panel.
 - Se guarda en localStorage (`manual-aiml-tema` para la página y `manual-aiml-lectura` para el resto). Un script en el `<head>` aplica todo antes de pintar. El respaldo (`#respaldo`) lleva `ajustes.tema` y `ajustes.lectura`.
 
 ## Publicar y caché
@@ -79,7 +80,7 @@ Requiere Python 3 y el paquete `markdown`. Genera `dist/web/` (para publicar) y 
 ## Pasar a otro dispositivo (implementado)
 
 - Vista `#respaldo`: un archivo JSON (`formato: "manual-aiml-respaldo"`, versión 2) con temas leídos, notas y ajustes (perfil y tema).
-- «Compartir» usa el menú nativo (`navigator.share` con archivo; prueba `.json` y, si el sistema no lo acepta, `.txt`). Si no hay soporte, descarga el archivo.
+- «Exportar y compartir» (en `#respaldo`, y «Exportar» en Mis notas) abre el menú nativo de compartir con el archivo adjunto (`navigator.share` solo con `files` y `title`, sin `text`, porque varias apps se quedan con el texto y descartan el archivo). Prueba `.json` y, si el sistema no lo acepta, `.txt`. Sin soporte (Firefox de escritorio) o si compartir falla, descarga el archivo; el blob se revoca a los 60 s.
 - «Importar archivo» suma sin borrar: une los temas leídos, conserva la nota editada más recientemente y aplica perfil y tema. Acepta también las exportaciones viejas que solo traían notas.
 
 ## Capítulos (14)
