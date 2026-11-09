@@ -1754,8 +1754,39 @@ a.btn.primary, .btn.primary { color: var(--surface); }
   window.addEventListener("scroll", pedirAvance, { passive: true });
   window.addEventListener("resize", pedirAvance);
 
+  // ---- Retomar la lectura: cada 10 segundos se guarda la vista y la posición del scroll ----
+  // Al abrir el manual sin una ruta (o en la misma vista guardada) se vuelve a esa página y a ese punto.
+  // La posición se guarda también como proporción, para que sirva aunque cambie el tamaño de letra o de ventana.
+  var POS_KEY = "manual-aiml-posicion", posUlt = "";
+  function leerPos() { try { var o = JSON.parse(localStorage.getItem(POS_KEY) || "null"); return o && typeof o.vista === "string" ? o : null; } catch (e) { return null; } }
+  function guardarPos() {
+    var max = document.documentElement.scrollHeight - window.innerHeight, y = Math.max(0, Math.round(window.scrollY));
+    var p = { vista: current(), y: y, r: max > 0 ? Math.min(1, +(y / max).toFixed(4)) : 0 };
+    var k = JSON.stringify(p); if (k === posUlt) return;
+    posUlt = k; p.t = Date.now();
+    try { localStorage.setItem(POS_KEY, JSON.stringify(p)); } catch (e) {}
+  }
+  function irAPos(p) {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var y = p.r > 0 && max > 0 ? Math.round(p.r * max) : (p.y || 0);
+    window.scrollTo({ top: y, behavior: "instant" });
+  }
+  var posIni = leerPos(), hIni = parseHash(), retomar = false;
+  if (posIni && !hIni.nota && (T[posIni.vista] || /^(glosario|notas|respaldo)$/.test(posIni.vista))) {
+    if (!hIni.v) { history.replaceState(null, "", "#" + posIni.vista); retomar = true; }
+    else if (hIni.v === posIni.vista) retomar = true;
+  }
+
   window.addEventListener("hashchange", route);
   route();
+  if (retomar && (posIni.y > 0 || posIni.r > 0)) {
+    irAPos(posIni);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { if (current() === posIni.vista) irAPos(posIni); });
+    if (T[posIni.vista]) toast("Retomaste donde quedaste: " + T[posIni.vista].num + " · " + T[posIni.vista].titulo + " (" + Math.round(posIni.r * 100) + " %)");
+  }
+  setInterval(guardarPos, 10000);
+  window.addEventListener("pagehide", guardarPos);
+  document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") guardarPos(); });
 
   // ---- Service worker: guarda el manual completo para leerlo sin conexión ----
   // Solo en la versión publicada (BUILD.sw). Una versión nueva se instala en segundo plano y espera a que
