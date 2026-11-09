@@ -1,0 +1,7 @@
+[
+  {"termino": "Custom element", "definicion": "Elemento HTML propio, con un nombre que lleva guion (como rumbo-asistente), definido por una clase de JavaScript registrada en el navegador. Cualquier framework, o ninguno, puede usarlo como si fuera una etiqueta nativa.", "slug": "web-components"},
+  {"termino": "Shadow DOM", "definicion": "Subárbol DOM aislado que un elemento adjunta a sí mismo, cuyos estilos y estructura interna no se mezclan con los de la página. Solo lo atraviesan las propiedades CSS heredadas, las custom properties y las partes expuestas con ::part.", "slug": "web-components"},
+  {"termino": "Slot", "definicion": "Hueco dentro del Shadow DOM de un componente donde se muestra el contenido que quien lo usa coloca entre sus etiquetas. Puede tener nombre y contenido por defecto para cuando nadie lo llena.", "slug": "web-components"},
+  {"termino": "Evento composed", "definicion": "Evento de DOM creado con la opción composed: true, que cruza la frontera del Shadow DOM y llega al documento. Afuera, su target se reemplaza por el elemento anfitrión para no exponer la estructura interna.", "slug": "web-components"},
+  {"termino": "Declarative Shadow DOM", "definicion": "Forma de declarar el Shadow DOM directamente en el HTML con un template que lleva el atributo shadowrootmode, para que el servidor envíe el componente ya armado y se vea antes de ejecutar JavaScript.", "slug": "web-components"}
+]

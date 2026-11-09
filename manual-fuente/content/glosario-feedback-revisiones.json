@@ -1,0 +1,8 @@
+[
+  {"termino": "Conventional comments", "definicion": "Convención para comentarios de revisión que antepone una etiqueta (praise, nitpick, suggestion, issue, question) y aclara si el comentario bloquea la aprobación.", "slug": "feedback-revisiones"},
+  {"termino": "Nitpick", "definicion": "Comentario de revisión sobre un detalle menor o de estilo que no bloquea la aprobación; marcarlo así le dice al autor que puede no cambiarlo.", "slug": "feedback-revisiones"},
+  {"termino": "Comentario bloqueante", "definicion": "Comentario de revisión que señala un problema que debe resolverse antes de aprobar el cambio, como un error de lógica o un riesgo de seguridad.", "slug": "feedback-revisiones"},
+  {"termino": "Latencia de revisión", "definicion": "Tiempo que espera un PR hasta recibir la primera revisión; crece con el tamaño del cambio y alarga el tiempo de entrega.", "slug": "feedback-revisiones"},
+  {"termino": "RFC (request for comments)", "definicion": "Documento de propuesta abierto a comentarios del equipo antes de implementar, cuando cambiar de enfoque todavía es barato.", "slug": "feedback-revisiones"},
+  {"termino": "Revisor automático con LLM", "definicion": "LLM que hace una primera pasada sobre un PR para señalar errores evidentes o casos sin tests; es un filtro previo, no reemplaza la aprobación humana.", "slug": "feedback-revisiones"}
+]

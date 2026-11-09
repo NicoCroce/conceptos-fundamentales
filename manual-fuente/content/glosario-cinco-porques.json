@@ -1,0 +1,6 @@
+[
+  {"termino": "5 porqués", "definicion": "Técnica que pregunta «¿por qué?» en cadena, con evidencia en cada paso, hasta llegar a una causa accionable que el equipo controla. Cinco es una guía, no una regla.", "slug": "cinco-porques"},
+  {"termino": "Causa raíz", "definicion": "Causa que, una vez corregida, evita que el problema vuelva a ocurrir, y que el equipo puede cambiar. Un problema real suele tener varias.", "slug": "cinco-porques"},
+  {"termino": "Diagrama de Ishikawa", "definicion": "Diagrama de causa y efecto, o de espina de pescado, que ordena las causas posibles en categorías (método, máquina, mano de obra, materiales, medición y medio ambiente) antes de profundizar.", "slug": "cinco-porques"},
+  {"termino": "Error humano (como síntoma)", "definicion": "Punto donde un análisis de causas suele detenerse sin llegar al fondo. La pregunta útil es qué permitió que ese error tuviera efecto en el sistema.", "slug": "cinco-porques"}
+]

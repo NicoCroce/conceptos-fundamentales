@@ -1,0 +1,8 @@
+[
+  {"termino": "Hook (React)", "definicion": "Función cuyo nombre empieza con use y que conecta un componente con capacidades de React como estado, efectos o referencias; se llama siempre en el mismo orden y en el nivel superior del componente.", "slug": "react"},
+  {"termino": "Reconciliación (React)", "definicion": "Fase en la que React compara el árbol de elementos nuevo con el anterior para calcular los cambios mínimos que luego aplica al DOM en el commit.", "slug": "react"},
+  {"termino": "Prop drilling", "definicion": "Pasar un dato por props a través de varios niveles de componentes que no lo usan solo para que llegue a uno profundo; se evita con composición o contexto.", "slug": "react"},
+  {"termino": "Hidratación", "definicion": "Proceso por el que el JavaScript de la página se conecta al HTML ya generado en el servidor, agregando eventos y estado para volverlo interactivo.", "slug": "react"},
+  {"termino": "React Server Components", "definicion": "Componentes que se ejecutan solo en el servidor, pueden leer datos directamente y cuyo código no llega al navegador; solo los componentes de cliente viajan al bundle.", "slug": "react"},
+  {"termino": "Virtualización de listas", "definicion": "Técnica que monta solo las filas visibles de una lista larga y recicla nodos al hacer scroll, para que una tabla de miles de elementos responda como una de decenas.", "slug": "react"}
+]

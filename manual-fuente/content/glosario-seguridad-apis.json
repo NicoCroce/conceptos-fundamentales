@@ -1,0 +1,9 @@
+[
+  {"termino": "BOLA (IDOR)", "definicion": "Autorización por objeto rota: la API verifica que quien llama está autenticado, pero no que el objeto pedido le pertenezca. Se evita filtrando por dueño o tenant en la consulta del servicio que tiene los datos.", "slug": "seguridad-apis"},
+  {"termino": "Autorización por función rota (BFLA)", "definicion": "Un usuario ejecuta una operación que su rol no permite, como un endpoint administrativo, porque el backend no verifica el rol. Ocultar el botón en la interfaz no es un control.", "slug": "seguridad-apis"},
+  {"termino": "Asignación masiva", "definicion": "Copiar todos los campos del cuerpo recibido sobre una entidad, incluidos los que el cliente no debería poder cambiar. Se evita con un esquema explícito de entrada por operación.", "slug": "seguridad-apis"},
+  {"termino": "DTO (data transfer object)", "definicion": "Estructura diseñada para una respuesta, con solo los campos que necesita ese caso de uso. Evita exponer datos de más, también al contexto de un agente.", "slug": "seguridad-apis"},
+  {"termino": "Consulta parametrizada", "definicion": "Consulta en la que el driver envía el SQL y los valores por separado, de modo que un valor nunca se interpreta como código. Es la defensa base contra la inyección SQL.", "slug": "seguridad-apis"},
+  {"termino": "DNS rebinding", "definicion": "Técnica en la que un dominio responde primero una IP pública, que pasa la validación, y luego una interna. Se mitiga conectando a la IP ya verificada en lugar de volver a resolver el nombre.", "slug": "seguridad-apis"},
+  {"termino": "Row-Level Security (RLS)", "definicion": "Función de bases como PostgreSQL que agrega un filtro por fila según la sesión, por ejemplo por comercio. Mantiene el aislamiento entre tenants aunque el código olvide el filtro.", "slug": "seguridad-apis"}
+]

@@ -1,0 +1,6 @@
+[
+  {"termino": "Principio de Pareto (80/20)", "definicion": "Patrón empírico según el cual una minoría de causas explica la mayor parte de un efecto. El reparto concreto varía (70/30, 90/10) y hay que medirlo en cada caso.", "slug": "pareto"},
+  {"termino": "Análisis de Pareto", "definicion": "Procedimiento que categoriza eventos, los cuenta, los ordena de mayor a menor y calcula el porcentaje acumulado para identificar las pocas causas que explican la mayor parte del total.", "slug": "pareto"},
+  {"termino": "Pareto ponderado", "definicion": "Análisis de Pareto que suma impacto (minutos, costo, pedidos afectados) en lugar de contar eventos, para no confundir lo más frecuente con lo que más duele.", "slug": "pareto"},
+  {"termino": "Cola larga", "definicion": "Conjunto de causas poco frecuentes que quedan después del corte de un análisis de Pareto. Se revisa aparte porque puede incluir eventos raros de alta severidad.", "slug": "pareto"}
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "termino": "WBS (estructura de desglose del trabajo)",
+    "definicion": "Descomposición jerárquica de un proyecto en entregables y paquetes de trabajo estimables, que debe cubrir el 100 % del trabajo, incluidas revisión, documentación y lanzamiento.",
+    "slug": "planificacion-gantt"
+  },
+  {
+    "termino": "Diagrama de Gantt",
+    "definicion": "Representación de un plan como barras sobre una línea de tiempo, con inicio, duración y dependencias de cada tarea; útil cuando hay fechas duras y dependencias externas.",
+    "slug": "planificacion-gantt"
+  },
+  {
+    "termino": "Camino crítico",
+    "definicion": "Secuencia más larga de tareas dependientes de un proyecto; su duración es la duración mínima del proyecto y cualquier atraso en ella mueve la fecha final.",
+    "slug": "planificacion-gantt"
+  },
+  {
+    "termino": "Holgura",
+    "definicion": "Cuánto puede atrasarse una tarea sin mover el final del proyecto; se calcula como inicio tardío menos inicio temprano y es cero en el camino crítico.",
+    "slug": "planificacion-gantt"
+  },
+  {
+    "termino": "Hito",
+    "definicion": "Punto del plan sin duración que marca un resultado verificable, como acceso a datos concedido o go-live, y sirve para comunicar avance con criterio claro.",
+    "slug": "planificacion-gantt"
+  },
+  {
+    "termino": "Nivelación de recursos",
+    "definicion": "Reordenar tareas para que ninguna persona quede asignada a dos cosas a la vez, usando primero la holgura; puede alargar el proyecto.",
+    "slug": "planificacion-gantt"
+  },
+  {
+    "termino": "Línea base",
+    "definicion": "Versión aprobada de un plan contra la que se compara lo real; cuando se replanifica, se registra una nueva línea base y el motivo del cambio.",
+    "slug": "planificacion-gantt"
+  }
+]

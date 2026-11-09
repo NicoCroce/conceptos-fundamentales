@@ -1,0 +1,7 @@
+[
+  {"termino": "Organic Driven Development (ODD)", "definicion": "Propuesta reciente para trabajar con agentes de código que ajusta cuánta planificación, documentación y verificación hace el agente según la complejidad, el riesgo y el grado de comprensión de cada tarea.", "slug": "odd"},
+  {"termino": "Proceso proporcional", "definicion": "Principio de aplicar a cada tarea solo el proceso que agrega valor: cambio directo para lo simple y bien entendido, seguimiento y verificación reforzada para lo sustancial o riesgoso.", "slug": "odd"},
+  {"termino": "Documento de seguimiento de tarea", "definicion": "Archivo persistente en el repositorio con alcance, decisiones, tareas, estado y evidencia de un trabajo sustancial, pensado para poder retomarlo si se pierde el contexto de la sesión.", "slug": "odd"},
+  {"termino": "Cierre Implementado / Verificado / Pendiente", "definicion": "Formato de informe final de un agente que separa lo que se escribió, lo que se comprobó con evidencia real y lo que falta, para no presentar como probado algo que solo está escrito.", "slug": "odd"},
+  {"termino": "Solo lectura por defecto", "definicion": "Configuración en la que un agente de código no puede editar el proyecto salvo que el pedido lo autorice; convierte la regla de autorización en un control que la herramienta hace cumplir.", "slug": "odd"}
+]

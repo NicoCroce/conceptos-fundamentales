@@ -1,0 +1,8 @@
+[
+  {"termino": "Arquitectura hexagonal (puertos y adaptadores)", "definicion": "Organización de un servicio con un núcleo de reglas de negocio que define interfaces (puertos) y adaptadores externos que las conectan con HTTP, colas, bases de datos o proveedores de LLM. Las dependencias apuntan hacia el núcleo.", "slug": "arquitectura-capas-hexagonal"},
+  {"termino": "Puerto de entrada y puerto de salida", "definicion": "El puerto de entrada es un caso de uso que el mundo invoca (desde HTTP, una CLI o la herramienta de un agente); el de salida es una interfaz que el núcleo necesita y que implementa un adaptador, como un repositorio o un cliente de LLM.", "slug": "arquitectura-capas-hexagonal"},
+  {"termino": "Regla de dependencia", "definicion": "Principio de la arquitectura limpia y cebolla: el código de un círculo solo depende de círculos más internos, de modo que las reglas de negocio no conocen frameworks, tablas ni SDKs.", "slug": "arquitectura-capas-hexagonal"},
+  {"termino": "Inversión de dependencias", "definicion": "Hacer que el código de alto nivel defina una interfaz y que el de bajo nivel la implemente, para que la base de datos dependa del dominio y no al revés.", "slug": "arquitectura-capas-hexagonal"},
+  {"termino": "Adaptador falso", "definicion": "Implementación en memoria de un puerto de salida, usada en tests para probar las reglas sin base de datos, red ni LLM real, de forma rápida y determinista.", "slug": "arquitectura-capas-hexagonal"},
+  {"termino": "Vertical slice", "definicion": "Organización del código por funcionalidad en lugar de por capa técnica: cada caso de uso tiene su carpeta con handler, lógica y consulta, con la complejidad que necesite.", "slug": "arquitectura-capas-hexagonal"}
+]

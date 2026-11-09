@@ -1,0 +1,9 @@
+[
+  {"termino": "AMI (imagen dorada)", "definicion": "Plantilla de disco desde la que arranca una instancia EC2, con sistema operativo, paquetes y configuración. Una imagen dorada es una AMI que el equipo construye, parchea y versiona para que todas las máquinas sean iguales y reemplazables.", "slug": "ec2"},
+  {"termino": "EBS", "definicion": "Disco de red de EC2 que sobrevive a que la instancia se detenga y se respalda con snapshots incrementales. El tipo gp3 permite aprovisionar IOPS y throughput sin agrandar el disco.", "slug": "ec2"},
+  {"termino": "Instance store", "definicion": "Disco NVMe conectado físicamente al servidor de una instancia: muy rápido, pero efímero. Sus datos se pierden si la instancia se detiene, se termina o falla el hardware.", "slug": "ec2"},
+  {"termino": "Auto Scaling Group", "definicion": "Grupo de instancias EC2 creadas desde un launch template que AWS mantiene entre un mínimo y un máximo, reemplaza si fallan los health checks y reparte entre zonas de disponibilidad.", "slug": "ec2"},
+  {"termino": "IMDSv2", "definicion": "Versión con sesión del servicio de metadatos de EC2 (169.254.169.254), que exige obtener un token con PUT antes de consultar. Bloquea la mayoría de los ataques SSRF que buscan robar las credenciales del rol de la instancia.", "slug": "ec2"},
+  {"termino": "SSRF", "definicion": "Server-side request forgery: lograr que un servidor haga peticiones a destinos que el atacante elige, como servicios internos o de metadatos. Un agente con una herramienta para descargar URLs es un caso típico de exposición.", "slug": "ec2"},
+  {"termino": "Graviton", "definicion": "Procesadores ARM diseñados por AWS para EC2 (instancias con g en el nombre, como m7g). Suelen ofrecer mejor relación precio-rendimiento que x86, a cambio de compilar el software para arm64.", "slug": "ec2"}
+]

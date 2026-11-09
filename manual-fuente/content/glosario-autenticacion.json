@@ -1,0 +1,10 @@
+[
+  {"termino": "Autenticación y autorización", "definicion": "La autenticación comprueba quién es el que llama; la autorización decide si esa identidad puede hacer una acción concreta sobre un recurso concreto.", "slug": "autenticacion"},
+  {"termino": "JWT (JSON Web Token)", "definicion": "Token firmado con tres partes en base64url (header, payload y firma) que lleva afirmaciones sobre un sujeto; se puede leer sin la clave, porque no está cifrado.", "slug": "autenticacion"},
+  {"termino": "JWKS", "definicion": "Documento publicado por el servidor de autenticación con las claves públicas vigentes, identificadas por kid, que los servicios usan para verificar firmas de tokens.", "slug": "autenticacion"},
+  {"termino": "Audiencia (aud)", "definicion": "Claim que indica para qué servicio fue emitido un token; cada servicio debe rechazar los tokens cuya audiencia no lo incluya.", "slug": "autenticacion"},
+  {"termino": "Rotación de refresh tokens", "definicion": "Práctica de entregar un refresh token nuevo en cada uso e invalidar el anterior; si un token ya usado vuelve a aparecer, se revoca toda la familia por posible robo.", "slug": "autenticacion"},
+  {"termino": "PKCE", "definicion": "Extensión del flujo de código de autorización de OAuth en la que el cliente envía el hash de un valor secreto y luego demuestra conocerlo, para que un código interceptado no se pueda canjear.", "slug": "autenticacion"},
+  {"termino": "ID token", "definicion": "JWT que entrega OpenID Connect para que la aplicación sepa quién inició sesión; está dirigido al cliente y nunca debe usarse para llamar APIs.", "slug": "autenticacion"},
+  {"termino": "Intercambio de tokens (on-behalf-of)", "definicion": "Canje del token de un usuario por uno nuevo, de audiencia y permisos más acotados y vida corta, para que un servicio o agente actúe en su nombre dejando rastro de ambos.", "slug": "autenticacion"}
+]

@@ -1,0 +1,7 @@
+[
+  {"termino": "Design doc", "definicion": "Documento de diseño técnico que se escribe antes de implementar un cambio grande; en muchos equipos es sinónimo de RFC.", "slug": "rfc"},
+  {"termino": "Período de comentarios", "definicion": "Plazo con fecha de cierre y revisores nombrados durante el cual un RFC recibe críticas por escrito antes de la reunión y la decisión.", "slug": "rfc"},
+  {"termino": "Alternativas consideradas", "definicion": "Sección de un RFC que describe al menos dos opciones reales además de la propuesta, incluida no hacer nada, con sus ventajas, desventajas y motivo de descarte.", "slug": "rfc"},
+  {"termino": "Teatro del RFC", "definicion": "Proceso de RFC que tiene la forma de una discusión pero no su función: documentos demasiado largos, decisiones tomadas de antemano o sin fecha límite.", "slug": "rfc"},
+  {"termino": "Nivel de autonomía de un agente", "definicion": "Grado en que un agente actúa por su cuenta: solo sugiere, actúa con aprobación humana o actúa solo dentro de límites; cambiarlo es una decisión de riesgo que merece un RFC.", "slug": "rfc"}
+]

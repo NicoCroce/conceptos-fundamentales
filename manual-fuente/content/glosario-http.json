@@ -1,0 +1,9 @@
+[
+  {"termino": "Head-of-line blocking", "definicion": "Bloqueo en el que un dato demorado o perdido frena a todos los que vienen detrás en la misma fila. En HTTP/2 ocurre a nivel de TCP ante la pérdida de un paquete; HTTP/3 sobre QUIC lo limita al stream afectado.", "slug": "http"},
+  {"termino": "QUIC", "definicion": "Protocolo de transporte sobre UDP que integra TLS 1.3 y multiplexa streams independientes. Es la base de HTTP/3: reduce el handshake a una ida y vuelta y permite que la conexión sobreviva a un cambio de red.", "slug": "http"},
+  {"termino": "ETag", "definicion": "Identificador de la versión de un recurso que envía el servidor. El cliente lo devuelve en If-None-Match y, si el recurso no cambió, recibe un 304 sin cuerpo en lugar de descargarlo de nuevo.", "slug": "http"},
+  {"termino": "CORS", "definicion": "Mecanismo por el cual un servidor declara, con cabeceras Access-Control-*, qué orígenes ajenos pueden leer sus respuestas desde el navegador. Lo aplica el navegador, no protege al servidor de clientes como curl.", "slug": "http"},
+  {"termino": "Solicitud preflight", "definicion": "Solicitud OPTIONS que el navegador envía antes de una solicitud entre orígenes que no es simple, por ejemplo un POST con JSON o con Authorization, para preguntar si el servidor la permite.", "slug": "http"},
+  {"termino": "Server-Sent Events (SSE)", "definicion": "Formato de respuesta HTTP text/event-stream en el que el servidor envía eventos de texto en un solo sentido sobre una conexión abierta. Se usa para transmitir respuestas de LLMs token a token.", "slug": "http"},
+  {"termino": "WebSocket", "definicion": "Canal bidireccional y persistente que se abre a partir de un handshake HTTP. Sirve para intercambios continuos en ambos sentidos, como voz en tiempo real, a costa de conexiones de larga vida atadas a un servidor.", "slug": "http"}
+]

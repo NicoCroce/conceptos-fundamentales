@@ -1,0 +1,37 @@
+[
+  {
+    "termino": "Story points",
+    "definicion": "Unidad relativa y sin dimensión que combina tamaño, complejidad e incertidumbre de una tarea; se estima con escalas tipo Fibonacci y solo tiene sentido dentro de un mismo equipo.",
+    "slug": "estimacion"
+  },
+  {
+    "termino": "Planning poker",
+    "definicion": "Técnica de estimación en la que cada integrante elige su valor en privado y todos lo muestran a la vez, para evitar el anclaje y hacer visibles los supuestos distintos.",
+    "slug": "estimacion"
+  },
+  {
+    "termino": "PERT (estimación de tres puntos)",
+    "definicion": "Combina una estimación optimista, una más probable y una pesimista en un esperado (O + 4M + P) / 6 y una desviación estándar (P − O) / 6, para comunicar rangos.",
+    "slug": "estimacion"
+  },
+  {
+    "termino": "Cono de incertidumbre",
+    "definicion": "Idea de que el error posible de una estimación es muy grande al inicio (de 0,25x a 4x) y se reduce a medida que se toman decisiones sobre alcance y diseño.",
+    "slug": "estimacion"
+  },
+  {
+    "termino": "Pronóstico Monte Carlo",
+    "definicion": "Simulación que sortea miles de veces el throughput histórico del equipo para estimar con qué probabilidad se termina un conjunto de ítems en cierta cantidad de semanas.",
+    "slug": "estimacion"
+  },
+  {
+    "termino": "Spike con tiempo fijo",
+    "definicion": "Investigación acotada en el tiempo para reducir una incertidumbre, por ejemplo si un LLM alcanza la calidad necesaria, que termina en una decisión explícita con datos.",
+    "slug": "estimacion"
+  },
+  {
+    "termino": "Falacia de planificación",
+    "definicion": "Sesgo de estimar pensando en el caso en que todo sale bien, ignorando cuánto tardaron proyectos parecidos.",
+    "slug": "estimacion"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "termino": "Premortem",
+    "definicion": "Ejercicio en el que el equipo imagina que el proyecto ya fracasó y escribe las causas, para identificar riesgos que nadie menciona en una discusión normal.",
+    "slug": "riesgos"
+  },
+  {
+    "termino": "Exposición al riesgo",
+    "definicion": "Puntuación de un riesgo como probabilidad por impacto, ambas en escalas de 1 a 5; sirve para ordenar y priorizar, no como medida precisa.",
+    "slug": "riesgos"
+  },
+  {
+    "termino": "Mapa de calor de riesgos",
+    "definicion": "Grilla de probabilidad por impacto donde se ubican los riesgos; hace visibles los de baja probabilidad e impacto extremo.",
+    "slug": "riesgos"
+  },
+  {
+    "termino": "Registro de riesgos",
+    "definicion": "Tabla viva con cada riesgo, su puntuación, responsable, disparador, respuesta y fecha de revisión, que se actualiza con una cadencia fija.",
+    "slug": "riesgos"
+  },
+  {
+    "termino": "Pérdida esperada",
+    "definicion": "Probabilidad de un riesgo por su costo si ocurre, en horas o dinero; permite comparar el riesgo con el costo de mitigarlo.",
+    "slug": "riesgos"
+  },
+  {
+    "termino": "ROAM",
+    "definicion": "Clasificación de riesgos en una revisión: resueltos, con responsable, aceptados o mitigados (Resolved, Owned, Accepted, Mitigated).",
+    "slug": "riesgos"
+  },
+  {
+    "termino": "Apetito de riesgo",
+    "definicion": "Cuánto riesgo acepta la organización para lograr sus objetivos, expresado como reglas explícitas, por ejemplo tolerancia cero a exponer datos personales.",
+    "slug": "riesgos"
+  }
+]

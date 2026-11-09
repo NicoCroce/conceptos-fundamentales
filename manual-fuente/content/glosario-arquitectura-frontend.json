@@ -1,0 +1,8 @@
+[
+  {"termino": "Screaming architecture", "definicion": "Organización del código en la que las carpetas de primer nivel nombran áreas del negocio (envíos, transportistas, asistente) en lugar de tipos técnicos, de modo que la estructura muestre de qué trata el sistema.", "slug": "arquitectura-frontend"},
+  {"termino": "Feature-Sliced Design (FSD)", "definicion": "Metodología para estructurar frontends en capas ordenadas (app, pages, widgets, features, entities, shared) divididas en slices, con la regla de que cada capa solo importa de las inferiores.", "slug": "arquitectura-frontend"},
+  {"termino": "API pública de un slice", "definicion": "Archivo índice que declara qué exporta un slice; el resto de la aplicación solo importa desde ahí, y todo lo no exportado se puede cambiar sin afectar a nadie.", "slug": "arquitectura-frontend"},
+  {"termino": "Estado del servidor", "definicion": "Datos cuya fuente de verdad está en el backend y de los que el navegador solo tiene una copia que puede quedar vieja; se manejan con caché por clave, revalidación e invalidación tras mutaciones.", "slug": "arquitectura-frontend"},
+  {"termino": "Microfrontend", "definicion": "Parte de una aplicación web que un equipo construye y despliega por separado y que se compone con las demás en el navegador; gana independencia organizativa a costa de complejidad, peso y consistencia.", "slug": "arquitectura-frontend"},
+  {"termino": "Module Federation", "definicion": "Técnica de algunos bundlers para cargar en tiempo de ejecución módulos publicados por otra aplicación y compartir dependencias entre ellas; es una de las formas de implementar microfrontends.", "slug": "arquitectura-frontend"}
+]

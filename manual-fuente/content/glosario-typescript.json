@@ -1,0 +1,8 @@
+[
+  {"termino": "Borrado de tipos", "definicion": "Los tipos de TypeScript solo existen al compilar: el código que se ejecuta es JavaScript sin tipos, por lo que los datos externos deben validarse en tiempo de ejecución.", "slug": "typescript"},
+  {"termino": "Tipado estructural", "definicion": "Sistema en el que un valor es compatible con un tipo si tiene su forma (los campos y tipos requeridos), sin importar cómo se declaró o creó.", "slug": "typescript"},
+  {"termino": "Narrowing", "definicion": "Estrechamiento del tipo de una variable que hace el compilador después de una verificación, por ejemplo, tras comprobar que un valor no es null.", "slug": "typescript"},
+  {"termino": "Unión discriminada", "definicion": "Tipo formado por variantes que comparten un campo literal, como estado: \"pendiente\" | \"fallida\". Permite modelar estados sin combinaciones imposibles y verificar que se manejen todos los casos.", "slug": "typescript"},
+  {"termino": "unknown frente a any", "definicion": "any desactiva la verificación de tipos; unknown representa un valor desconocido que hay que verificar antes de usar. unknown es el tipo adecuado para datos externos y salidas de LLMs.", "slug": "typescript"},
+  {"termino": "Esquema de validación", "definicion": "Declaración en tiempo de ejecución de la forma de un dato (por ejemplo, con Zod) que valida entradas y de la que se infiere el tipo estático, evitando que ambos diverjan.", "slug": "typescript"}
+]

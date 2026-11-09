@@ -1,0 +1,5 @@
+[
+  {"termino": "Token delegado", "definicion": "Credencial de vida corta emitida para que un agente actúe en nombre de un usuario, con alcance acotado (por ejemplo, solo lectura de los pedidos de un comercio durante 5 minutos). Las herramientas la validan en su backend.", "slug": "recorrido-punta-a-punta"},
+  {"termino": "Presupuesto de latencia", "definicion": "Reparto del tiempo total aceptable de una operación entre cada salto que atraviesa (red, borde, gateway, agente, modelo, herramientas). Muestra dónde se va el tiempo y qué optimizar primero.", "slug": "recorrido-punta-a-punta"},
+  {"termino": "Propagación de cancelación", "definicion": "Práctica de que, cuando un cliente se desconecta o pulsa detener, cada servicio cancele el trabajo que encargó aguas abajo. En agentes evita seguir generando tokens y llamando herramientas que nadie va a leer.", "slug": "recorrido-punta-a-punta"}
+]

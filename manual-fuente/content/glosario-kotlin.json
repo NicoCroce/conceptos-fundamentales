@@ -1,0 +1,8 @@
+[
+  {"termino": "Null safety", "definicion": "Característica de Kotlin por la que un tipo no admite null salvo que se declare nulable con ?, y el compilador obliga a manejar ese caso antes de usar el valor.", "slug": "kotlin"},
+  {"termino": "Sealed class", "definicion": "Clase o interfaz con un conjunto cerrado de variantes conocidas por el compilador; con when, se verifica que todas las variantes estén contempladas.", "slug": "kotlin"},
+  {"termino": "Corrutina", "definicion": "Tarea que puede suspenderse mientras espera E/S sin bloquear un hilo; miles de corrutinas comparten pocos hilos. En Kotlin se escriben con funciones suspend.", "slug": "kotlin"},
+  {"termino": "Concurrencia estructurada", "definicion": "Modelo en el que cada tarea concurrente vive dentro de un scope: si una falla o el scope se cancela, se cancelan las demás y no quedan tareas huérfanas.", "slug": "kotlin"},
+  {"termino": "Flow", "definicion": "Flujo asíncrono y frío de valores en Kotlin: no produce nada hasta que alguien lo consume, y si el consumidor se cancela, el productor también. Se usa para reenviar tokens de un LLM.", "slug": "kotlin"},
+  {"termino": "Calentamiento del JIT", "definicion": "Período inicial en que la JVM todavía no compiló a código nativo las partes más usadas del programa, por lo que las primeras peticiones son más lentas que en régimen.", "slug": "kotlin"}
+]

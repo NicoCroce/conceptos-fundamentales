@@ -1,0 +1,6 @@
+manual-fuente/dist/
+__pycache__/
+.DS_Store
+
+# Archivo único generado por build.py
+Manual AI-ML y Plataforma.html

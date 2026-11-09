@@ -1,0 +1,14 @@
+{
+  "name": "Manual de AI/ML y Plataforma",
+  "short_name": "Manual AI/ML",
+  "description": "Manual de estudio del equipo: LLMs y agentes, arquitectura, ML, observabilidad e infraestructura.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0F1313",
+  "theme_color": "#0F1313",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

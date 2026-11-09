@@ -1,0 +1,8 @@
+[
+  {"termino": "Subagente", "definicion": "Agente que otro agente invoca para resolver una parte de la tarea, con instrucciones, herramientas y contexto propios, y que devuelve solo un resultado condensado.", "slug": "subagentes"},
+  {"termino": "Orquestador–trabajadores", "definicion": "Patrón multiagente en el que un agente coordinador divide la tarea en el momento, delega cada parte en subagentes y combina sus resultados.", "slug": "subagentes"},
+  {"termino": "Encargo de delegación", "definicion": "Texto que recibe un subagente al ser invocado; es su único contexto, por lo que debe incluir objetivo, alcance, lo ya descartado y el formato de salida esperado.", "slug": "subagentes"},
+  {"termino": "Evaluador–optimizador", "definicion": "Patrón en el que un agente genera una respuesta y otro la critica con criterios explícitos, repitiendo la corrección hasta aprobarla o llegar a un tope de rondas.", "slug": "subagentes"},
+  {"termino": "Verificador adversarial", "definicion": "Subagente con contexto limpio cuyo único encargo es buscar por qué una conclusión podría ser incorrecta antes de que se actúe sobre ella.", "slug": "subagentes"},
+  {"termino": "Patrón de cuarentena", "definicion": "Diseño en el que un agente sin herramientas peligrosas lee contenido no confiable y devuelve datos estructurados, y otro agente con privilegios actúa solo sobre esos datos validados, nunca sobre el texto original.", "slug": "subagentes"}
+]

@@ -1,0 +1,10 @@
+[
+  {"termino": "Domain-Driven Design (DDD)", "definicion": "Enfoque de diseño que modela el software a partir del lenguaje y los límites del negocio, con una parte estratégica (contextos y subdominios) y una táctica (entidades, agregados, eventos).", "slug": "ddd"},
+  {"termino": "Lenguaje ubicuo", "definicion": "Vocabulario que negocio e ingeniería comparten dentro de un contexto y que aparece igual en conversaciones, código, eventos, APIs y descripciones de herramientas de agentes.", "slug": "ddd"},
+  {"termino": "Subdominio core", "definicion": "Área del negocio donde la empresa se diferencia y que merece desarrollo propio y el modelo más cuidado; se contrapone a los subdominios de soporte y genéricos.", "slug": "ddd"},
+  {"termino": "Contexto acotado (bounded context)", "definicion": "Límite explícito dentro del cual un modelo y su lenguaje son consistentes; fuera de él la misma palabra puede significar otra cosa. Suele coincidir con un servicio o un equipo.", "slug": "ddd"},
+  {"termino": "Capa anticorrupción", "definicion": "Adaptador que traduce el modelo de un sistema externo (un proveedor, un legado o la salida de un LLM) al modelo propio, para que conceptos ajenos o datos inválidos no entren al dominio.", "slug": "ddd"},
+  {"termino": "Objeto de valor", "definicion": "Objeto sin identidad, inmutable y comparado por sus atributos, que se valida al construirse, como una ventana horaria o un código de zona.", "slug": "ddd"},
+  {"termino": "Agregado", "definicion": "Grupo de entidades y objetos de valor que se modifica como una unidad a través de una raíz, para proteger invariantes; una transacción cambia un solo agregado.", "slug": "ddd"},
+  {"termino": "Event storming", "definicion": "Taller en el que negocio e ingeniería ordenan en una línea de tiempo los eventos de dominio de un proceso, para descubrir comandos, políticas, puntos de conflicto y contextos acotados.", "slug": "ddd"}
+]

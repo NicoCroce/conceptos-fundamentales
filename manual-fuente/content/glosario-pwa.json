@@ -1,0 +1,8 @@
+[
+  {"termino": "Service worker", "definicion": "Script que el navegador instala por sitio y que corre en un hilo aparte, entre la página y la red; intercepta pedidos y puede responder desde caché, lo que permite el modo sin conexión.", "slug": "pwa"},
+  {"termino": "skipWaiting", "definicion": "Llamada que hace que una versión nueva de un service worker se active sin esperar a que se cierren las pestañas de la anterior; usada sin aviso puede romper páginas abiertas.", "slug": "pwa"},
+  {"termino": "Stale-while-revalidate", "definicion": "Estrategia de caché que responde de inmediato con la copia guardada y en paralelo pide a la red una versión nueva para la próxima vez.", "slug": "pwa"},
+  {"termino": "Precaching", "definicion": "Guardado en caché, durante la instalación del service worker, de una lista fija de archivos conocida en el build, para que la aplicación abra sin red.", "slug": "pwa"},
+  {"termino": "Web app manifest", "definicion": "Archivo JSON que describe una aplicación web instalable: nombre, íconos, URL de inicio, modo de visualización y alcance.", "slug": "pwa"},
+  {"termino": "Background Sync", "definicion": "API que permite al service worker ejecutar una tarea cuando vuelve la conexión, por ejemplo enviar acciones encoladas sin red; su soporte no es universal.", "slug": "pwa"}
+]

@@ -1,0 +1,9 @@
+[
+  {"termino": "Visibility timeout", "definicion": "Tiempo durante el cual un mensaje de SQS recibido por un consumidor queda invisible para los demás. Si no se borra antes de que venza, vuelve a la cola y otro consumidor puede procesarlo de nuevo.", "slug": "colas-serverless"},
+  {"termino": "Dead-letter queue (DLQ)", "definicion": "Cola a la que se mueven los mensajes que superaron una cantidad máxima de recibos sin procesarse bien. Permite apartarlos, alertar y reprocesarlos (redrive) una vez corregido el problema.", "slug": "colas-serverless"},
+  {"termino": "Grupo de mensajes (FIFO)", "definicion": "En una cola SQS FIFO, conjunto de mensajes con el mismo MessageGroupId que se entregan en orden estricto y de a uno; grupos distintos se procesan en paralelo.", "slug": "colas-serverless"},
+  {"termino": "Fan-out", "definicion": "Patrón en el que un mensaje publicado una vez se entrega a varios consumidores independientes, típicamente un tópico SNS con varias colas SQS suscriptas.", "slug": "colas-serverless"},
+  {"termino": "Cold start", "definicion": "Demora adicional de la primera invocación de una función Lambda en un entorno de ejecución nuevo, por descargar el código e inicializar el runtime y los clientes.", "slug": "colas-serverless"},
+  {"termino": "Concurrencia reservada", "definicion": "Cantidad de ejecuciones simultáneas de Lambda asignada a una función: le garantiza ese mínimo y a la vez actúa como tope, útil para proteger dependencias con límites, como un proveedor de LLM.", "slug": "colas-serverless"},
+  {"termino": "Task token", "definicion": "Identificador que Step Functions entrega a un paso que espera un callback; la ejecución queda pausada hasta que alguien lo devuelve con éxito o falla, por ejemplo al aprobar una acción propuesta por un agente.", "slug": "colas-serverless"}
+]

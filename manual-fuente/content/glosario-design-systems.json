@@ -1,0 +1,8 @@
+[
+  {"termino": "Design system", "definicion": "Conjunto compartido de tokens, componentes, patrones, documentación y reglas de gobierno que unifica cómo se construyen las interfaces de una organización. Es más amplio que una biblioteca de componentes o una guía de estilo.", "slug": "design-systems"},
+  {"termino": "Design token", "definicion": "Decisión de diseño guardada como dato con nombre (un color, un espaciado, una duración) que se transforma en variables para cada plataforma. Los primitivos describen valores; los semánticos describen su propósito.", "slug": "design-systems"},
+  {"termino": "Token semántico", "definicion": "Token que nombra un propósito, como color.superficie o color.estado.error, y apunta a un token primitivo distinto según el tema. Los componentes usan solo estos tokens, lo que permite cambiar de tema sin tocarlos.", "slug": "design-systems"},
+  {"termino": "Codemod", "definicion": "Script que reescribe automáticamente el código de los proyectos consumidores para adaptarlo a un cambio de API, por ejemplo renombrar una propiedad de un componente. Reduce el costo de adoptar versiones mayores.", "slug": "design-systems"},
+  {"termino": "Componente controlado", "definicion": "Componente cuyo valor lo maneja quien lo usa: lo recibe desde afuera y avisa cuando debería cambiar. Se opone al no controlado, que guarda su propio estado interno.", "slug": "design-systems"},
+  {"termino": "Región aria-live", "definicion": "Zona de la página marcada para que los lectores de pantalla anuncien sus cambios. Con polite el anuncio espera una pausa; con assertive interrumpe, lo que en texto en streaming resulta abrumador.", "slug": "design-systems"}
+]

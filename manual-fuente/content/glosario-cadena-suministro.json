@@ -1,0 +1,9 @@
+[
+  {"termino": "Typosquatting", "definicion": "Publicar un paquete con un nombre casi igual al de uno popular para que alguien lo instale por un error de tipeo. El paquete falso suele incluir código malicioso en la instalación.", "slug": "cadena-suministro"},
+  {"termino": "Confusión de dependencias", "definicion": "Ataque en el que se publica en un registro público un paquete con el mismo nombre que uno interno y una versión más alta, para que el gestor de paquetes lo elija en lugar del interno.", "slug": "cadena-suministro"},
+  {"termino": "Slopsquatting", "definicion": "Registrar en un registro público nombres de paquetes que los asistentes y agentes de código suelen inventar, para que quien acepte la sugerencia instale código malicioso.", "slug": "cadena-suministro"},
+  {"termino": "Lockfile", "definicion": "Archivo generado que fija la versión exacta y el hash de cada dependencia, incluidas las transitivas, para que dos builds del mismo commit instalen exactamente lo mismo.", "slug": "cadena-suministro"},
+  {"termino": "CVSS", "definicion": "Puntaje de 0 a 10 que describe la severidad técnica de una vulnerabilidad según cómo se explota y qué impacto tiene. Describe el peor caso genérico, no el riesgo en un sistema concreto.", "slug": "cadena-suministro"},
+  {"termino": "EPSS", "definicion": "Estimación de la probabilidad de que una vulnerabilidad sea explotada en los próximos 30 días. Complementa al CVSS para priorizar qué parchear primero.", "slug": "cadena-suministro"},
+  {"termino": "Procedencia (provenance)", "definicion": "Documento firmado que indica qué repositorio, commit, workflow y entorno de build produjeron un artefacto. El marco SLSA ordena en niveles cuán confiable es esa procedencia.", "slug": "cadena-suministro"}
+]

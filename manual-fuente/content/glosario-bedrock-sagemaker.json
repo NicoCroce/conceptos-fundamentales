@@ -1,0 +1,9 @@
+[
+  {"termino": "Amazon Bedrock", "definicion": "Servicio gestionado de AWS que ofrece modelos de varios proveedores detrás de una API común, con permisos de IAM, acceso privado desde la VPC y auditoría en CloudTrail.", "slug": "bedrock-sagemaker"},
+  {"termino": "Throughput aprovisionado", "definicion": "Capacidad de inferencia dedicada que se reserva por hora, con un plazo mínimo, y se factura se use o no. Da rendimiento predecible y solo conviene con utilización alta y estable.", "slug": "bedrock-sagemaker"},
+  {"termino": "Tokens por minuto (TPM)", "definicion": "Cuota que limita cuántos tokens puede procesar una cuenta o clave por minuto en un modelo. Al superarla, el servicio rechaza las llamadas con throttling, y hay que planificarla como cualquier otra capacidad.", "slug": "bedrock-sagemaker"},
+  {"termino": "Knowledge Base gestionada", "definicion": "RAG como servicio: la plataforma indexa documentos de una fuente como S3 y expone la recuperación por API, a cambio de menos control sobre chunking, búsqueda y reranking.", "slug": "bedrock-sagemaker"},
+  {"termino": "Registro de invocaciones", "definicion": "Opción que guarda en S3 o en un servicio de logs la entrada y la salida completas de cada llamada a un modelo. Útil para depurar, pero contiene la PII que haya en los prompts y necesita cifrado, acceso restringido y retención corta.", "slug": "bedrock-sagemaker"},
+  {"termino": "Inferencia asíncrona", "definicion": "Modalidad de serving en la que la petición se encola y el resultado se escribe en almacenamiento al terminar. Sirve para cargas grandes o procesos de minutos y permite escalar a cero cuando no hay trabajo.", "slug": "bedrock-sagemaker"},
+  {"termino": "Endpoint multimodelo", "definicion": "Endpoint donde muchos modelos del mismo tipo comparten instancias y se cargan en memoria bajo demanda. Abarata servir cientos de modelos chicos con poco tráfico, a costa de una primera llamada lenta.", "slug": "bedrock-sagemaker"}
+]

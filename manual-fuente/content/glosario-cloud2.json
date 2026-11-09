@@ -1,0 +1,17 @@
+[
+  {"termino": "Bucket", "definicion": "Contenedor de nivel superior de S3, con nombre único global y ubicado en una región, donde se guardan objetos identificados por una clave.", "slug": "s3"},
+  {"termino": "Block Public Access", "definicion": "Configuración de S3 que impide que los buckets se vuelvan públicos aunque una política lo intente; se activa a nivel de cuenta como protección general.", "slug": "s3"},
+  {"termino": "Object Lock", "definicion": "Función de S3 que impide borrar o sobrescribir versiones de objetos durante un período de retención; en modo compliance nadie puede saltarse el bloqueo.", "slug": "s3"},
+  {"termino": "Regla de ciclo de vida", "definicion": "Regla de S3 que mueve objetos entre clases de almacenamiento o los borra automáticamente según su antigüedad, prefijo o etiquetas.", "slug": "s3"},
+  {"termino": "Apache Iceberg", "definicion": "Formato de tabla sobre archivos Parquet que agrega transacciones, evolución de esquema, borrado de filas y consultas sobre versiones anteriores de la tabla.", "slug": "s3"},
+  {"termino": "KMS", "definicion": "Servicio de AWS que gestiona claves criptográficas maestras que nunca salen del servicio; cifra y descifra a pedido y registra cada uso.", "slug": "secretos"},
+  {"termino": "Cifrado de sobre", "definicion": "Técnica en la que los datos se cifran localmente con una clave de datos y esa clave se guarda cifrada con una clave maestra de KMS junto al dato.", "slug": "secretos"},
+  {"termino": "Rotación de secretos", "definicion": "Reemplazo periódico de una credencial por otra nueva; para no cortar el servicio se mantienen dos versiones válidas durante una ventana de transición.", "slug": "secretos"},
+  {"termino": "mTLS", "definicion": "TLS mutuo: ambos extremos de la conexión presentan certificados, de modo que cliente y servidor se autentican entre sí.", "slug": "secretos"},
+  {"termino": "HSM", "definicion": "Módulo de seguridad de hardware que guarda claves y opera con ellas sin exponerlas, con protección física contra manipulación.", "slug": "secretos"},
+  {"termino": "Air-gapped", "definicion": "Instalación sin ninguna conexión a internet, donde el software, los modelos y las actualizaciones entran mediante paquetes transferidos y verificados manualmente.", "slug": "hibrido-on-prem"},
+  {"termino": "Helm", "definicion": "Gestor de paquetes de Kubernetes que agrupa los manifiestos de un servicio en un chart parametrizable con valores distintos por entorno o cliente.", "slug": "hibrido-on-prem"},
+  {"termino": "Costo unitario", "definicion": "Gasto cloud dividido por una métrica de negocio, como pedidos o miles de inferencias; muestra si la eficiencia mejora aunque el total crezca.", "slug": "finops"},
+  {"termino": "Savings Plans", "definicion": "Compromiso de gasto por hora en AWS durante uno o tres años a cambio de un descuento; conviene dimensionarlo sobre el uso estable, no sobre el pico.", "slug": "finops"},
+  {"termino": "Instancias Spot", "definicion": "Capacidad sobrante de AWS con gran descuento que puede ser reclamada con dos minutos de aviso; útil para entrenamientos y batch con checkpoints.", "slug": "finops"}
+]

@@ -1,0 +1,8 @@
+[
+  {"termino": "ROI (retorno de la inversión)", "definicion": "Relación entre lo que se gana y lo que se invierte: (beneficio − costo) / costo, medidos en la misma unidad y el mismo período.", "slug": "roi"},
+  {"termino": "Período de recuperación (payback)", "definicion": "Tiempo que tarda el beneficio neto acumulado en igualar la inversión inicial de un proyecto.", "slug": "roi"},
+  {"termino": "Costo total de propiedad (TCO)", "definicion": "Suma de todo lo que cuesta un sistema durante su vida útil: construir, operar, mantener y el tiempo de las personas que lo sostienen.", "slug": "roi"},
+  {"termino": "Valor actual neto (VAN)", "definicion": "Suma de los beneficios y costos futuros descontados con una tasa anual, para reflejar que un beneficio lejano vale menos que uno inmediato.", "slug": "roi"},
+  {"termino": "Análisis de sensibilidad", "definicion": "Recalcular un resultado cambiando los supuestos que más pesan, por ejemplo en escenarios pesimista, esperado y optimista.", "slug": "roi"},
+  {"termino": "Costo hundido", "definicion": "Gasto ya realizado que no se recupera, se decida lo que se decida; no debería influir en la decisión de continuar un proyecto.", "slug": "roi"}
+]

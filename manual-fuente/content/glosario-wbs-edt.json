@@ -1,0 +1,8 @@
+[
+  {"termino": "Regla del 100 %", "definicion": "Principio de la EDT según el cual los elementos hijos suman exactamente el trabajo del padre: todo el alcance está en algún paquete y nada fuera del alcance aparece en el árbol.", "slug": "wbs-edt"},
+  {"termino": "Paquete de trabajo", "definicion": "Hoja de la EDT: la unidad mínima de trabajo que se estima, se asigna a un responsable y se acepta con un criterio verificable.", "slug": "wbs-edt"},
+  {"termino": "Heurística 8/80", "definicion": "Pauta para decidir cuándo dejar de descomponer una EDT: cada paquete de trabajo debería llevar entre 8 y 80 horas de esfuerzo.", "slug": "wbs-edt"},
+  {"termino": "Diccionario de la EDT", "definicion": "Documento o tabla que describe cada paquete de trabajo: qué incluye y qué no, responsable, estimación, dependencias y criterio de aceptación.", "slug": "wbs-edt"},
+  {"termino": "Elementos mutuamente excluyentes", "definicion": "Condición de una EDT bien armada en la que ningún trabajo aparece en dos ramas, para no estimarlo dos veces ni diluir quién es responsable.", "slug": "wbs-edt"},
+  {"termino": "Trabajo invisible", "definicion": "Trabajo que no describe un documento de producto pero que el proyecto necesita, como evaluación, revisión de seguridad, acceso a datos, operación y documentación.", "slug": "wbs-edt"}
+]

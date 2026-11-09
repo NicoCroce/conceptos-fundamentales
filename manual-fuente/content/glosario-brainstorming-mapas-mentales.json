@@ -1,0 +1,7 @@
+[
+  {"termino": "Brainwriting", "definicion": "Variante del brainstorming en la que cada persona escribe sus ideas en silencio antes de compartirlas; en el formato 6-3-5, seis personas escriben tres ideas cada cinco minutos y se pasan las hojas.", "slug": "brainstorming-mapas-mentales"},
+  {"termino": "Bloqueo de producción", "definicion": "Pérdida de ideas en el brainstorming en voz alta porque solo una persona puede hablar a la vez; mientras esperan su turno, las demás olvidan o descartan sus ideas.", "slug": "brainstorming-mapas-mentales"},
+  {"termino": "Diagrama de afinidad", "definicion": "Agrupamiento de notas o ideas por similitud, hecho primero en silencio y nombrando cada grupo al final, para converger después de una sesión de ideas.", "slug": "brainstorming-mapas-mentales"},
+  {"termino": "Votación por puntos (dot voting)", "definicion": "Técnica de convergencia en la que cada persona reparte un número fijo de votos entre ideas o grupos; ordena qué evaluar en serio, no decide qué construir.", "slug": "brainstorming-mapas-mentales"},
+  {"termino": "Mapa mental", "definicion": "Diagrama con una idea central y ramas que se abren por asociación, con palabras clave y un color por rama; sirve para explorar un problema, no para planificar su ejecución.", "slug": "brainstorming-mapas-mentales"}
+]

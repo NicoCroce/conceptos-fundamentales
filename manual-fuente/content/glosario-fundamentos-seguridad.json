@@ -1,0 +1,9 @@
+[
+  {"termino": "Tríada CIA", "definicion": "Las tres propiedades base de seguridad: confidencialidad (solo quien corresponde lee), integridad (nadie modifica sin autorización) y disponibilidad (el sistema responde cuando se lo necesita). Sirve para nombrar qué se rompe en un incidente.", "slug": "fundamentos-seguridad"},
+  {"termino": "Límite de confianza", "definicion": "Punto donde los datos pasan entre dominios con distinto nivel de confianza, como del navegador a la API o de una página externa al contexto de un agente. Ahí se concentran las amenazas y se ubican los controles.", "slug": "fundamentos-seguridad"},
+  {"termino": "Diagrama de flujo de datos (DFD)", "definicion": "Dibujo de componentes, almacenes, flujos de datos y límites de confianza de un sistema. Es la base de una sesión de modelado de amenazas.", "slug": "fundamentos-seguridad"},
+  {"termino": "Modelado de amenazas", "definicion": "Análisis sistemático de qué puede salir mal en un diseño, por dónde y con qué mitigaciones. Su salida es una lista de amenazas priorizadas, cada una con mitigación y responsable.", "slug": "fundamentos-seguridad"},
+  {"termino": "STRIDE", "definicion": "Mnemotécnico de seis categorías de amenaza: suplantación, manipulación, repudio, divulgación de información, denegación de servicio y elevación de privilegios. Se aplica a cada componente y flujo del diagrama.", "slug": "fundamentos-seguridad"},
+  {"termino": "Fallar cerrado", "definicion": "Principio por el que un control que no puede decidir, por error o timeout, deniega en lugar de permitir. Evita que la caída de un servicio de autorización se convierta en acceso libre.", "slug": "fundamentos-seguridad"},
+  {"termino": "Mínimo privilegio", "definicion": "Cada usuario, servicio o agente tiene solo los permisos que su tarea necesita y durante el tiempo que los necesita. Limita el daño cuando una credencial o un agente queda comprometido.", "slug": "fundamentos-seguridad"}
+]

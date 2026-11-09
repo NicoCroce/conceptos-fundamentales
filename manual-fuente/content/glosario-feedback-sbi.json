@@ -1,0 +1,7 @@
+[
+  {"termino": "Modelo SBI", "definicion": "Estructura para dar feedback que nombra la situación (cuándo y dónde), el comportamiento observable y su impacto, sin juicios sobre la persona.", "slug": "feedback-sbi"},
+  {"termino": "SBI-I", "definicion": "Variante del modelo SBI que agrega una pregunta sobre la intención de la persona antes de concluir, y cierra con un acuerdo concreto.", "slug": "feedback-sbi"},
+  {"termino": "Sándwich de feedback", "definicion": "Práctica de envolver una crítica entre dos elogios; suele diluir el mensaje importante y quitar valor a los elogios.", "slug": "feedback-sbi"},
+  {"termino": "Feedforward", "definicion": "Feedback orientado al próximo intento: en lugar de analizar lo que salió mal, se sugiere qué probar la próxima vez.", "slug": "feedback-sbi"},
+  {"termino": "Seguridad psicológica", "definicion": "Creencia compartida en un equipo de que se puede preguntar, admitir errores o disentir sin ser castigado ni ridiculizado.", "slug": "feedback-sbi"}
+]

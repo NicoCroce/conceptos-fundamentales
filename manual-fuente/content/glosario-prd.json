@@ -1,0 +1,7 @@
+[
+  {"termino": "PRD (product requirements document)", "definicion": "Documento de requisitos de producto: describe qué problema se resuelve, para quién, con qué metas, métricas y requisitos priorizados, antes de decidir cómo construirlo.", "slug": "prd"},
+  {"termino": "Enunciado del problema", "definicion": "Sección de un PRD que dice quién tiene el problema, qué le pasa y con qué evidencia, sin nombrar todavía la solución.", "slug": "prd"},
+  {"termino": "Métrica de protección", "definicion": "Métrica que no puede empeorar mientras se persigue la métrica principal; evita ganar el objetivo degradando la calidad, por ejemplo con más respuestas incorrectas.", "slug": "prd"},
+  {"termino": "Fuera de alcance", "definicion": "Lista explícita de funcionalidades que no se construyen en esta versión, aunque se hayan pedido o imaginado; evita que una persona o un agente las agregue de paso.", "slug": "prd"},
+  {"termino": "Presupuesto por interacción", "definicion": "Techo de costo por conversación o tarea de una funcionalidad con LLM, fijado en el PRD; condiciona el modelo, el contexto y la cantidad de llamadas a herramientas.", "slug": "prd"}
+]

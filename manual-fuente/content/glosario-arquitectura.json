@@ -1,0 +1,77 @@
+[
+  {
+    "termino": "ADR (Architecture Decision Record)",
+    "definicion": "Documento corto y versionado que registra una decisión técnica con su contexto y consecuencias. Una vez aceptado no se edita: si la decisión cambia, se escribe uno nuevo que lo reemplaza.",
+    "slug": "revision-arquitectura"
+  },
+  {
+    "termino": "Decisión irreversible",
+    "definicion": "Decisión cuyo costo de deshacer es muy alto, como un contrato público, un esquema de eventos compartido o una clave de partición. Merece más revisión que las reversibles, y a veces puede volverse reversible con flags o interfaces.",
+    "slug": "revision-arquitectura"
+  },
+  {
+    "termino": "PACELC",
+    "definicion": "Extensión de CAP: ante una partición de red se elige entre disponibilidad y consistencia; en operación normal, entre latencia y consistencia.",
+    "slug": "sistemas-distribuidos"
+  },
+  {
+    "termino": "Replication lag",
+    "definicion": "Retraso entre una escritura confirmada en el líder y su aparición en una réplica. Hace que una lectura desde la réplica pueda devolver datos viejos.",
+    "slug": "sistemas-distribuidos"
+  },
+  {
+    "termino": "Patrón outbox",
+    "definicion": "Técnica que escribe el evento a publicar en una tabla de la misma base y dentro de la misma transacción que el cambio de negocio, para que un proceso aparte lo publique. Evita perder eventos o publicar eventos de transacciones fallidas.",
+    "slug": "sistemas-distribuidos"
+  },
+  {
+    "termino": "Saga",
+    "definicion": "Secuencia de transacciones locales en varios servicios donde cada paso tiene una acción de compensación que deshace su efecto si un paso posterior falla.",
+    "slug": "sistemas-distribuidos"
+  },
+  {
+    "termino": "Presupuesto de error",
+    "definicion": "Margen de fallas permitido por un SLO en una ventana de tiempo; con 99,9% mensual son unos 43 minutos. Sirve para decidir con datos cuándo priorizar velocidad y cuándo confiabilidad.",
+    "slug": "latencia-disponibilidad"
+  },
+  {
+    "termino": "Percentil p99",
+    "definicion": "Valor de latencia por debajo del cual queda el 99% de las solicitudes. Describe la cola lenta que el promedio esconde y que se amplifica cuando una operación hace muchas llamadas.",
+    "slug": "latencia-disponibilidad"
+  },
+  {
+    "termino": "Load shedding",
+    "definicion": "Rechazo deliberado y rápido de parte de las solicitudes cuando un servicio está saturado, para que las aceptadas se atiendan dentro de su presupuesto de latencia.",
+    "slug": "latencia-disponibilidad"
+  },
+  {
+    "termino": "Clave de idempotencia",
+    "definicion": "Identificador único que el cliente genera por operación y reenvía en cada reintento, para que el servidor detecte duplicados y devuelva el resultado original en lugar de repetir el efecto.",
+    "slug": "resiliencia"
+  },
+  {
+    "termino": "Circuit breaker",
+    "definicion": "Mecanismo que deja de llamar a una dependencia cuando su tasa de errores supera un umbral, pasando por los estados cerrado, abierto y semiabierto. Libera recursos y da tiempo a la dependencia para recuperarse.",
+    "slug": "resiliencia"
+  },
+  {
+    "termino": "Jitter",
+    "definicion": "Aleatoriedad agregada a la espera entre reintentos para que muchos clientes no reintenten al mismo tiempo y generen oleadas sincronizadas de carga.",
+    "slug": "resiliencia"
+  },
+  {
+    "termino": "Deadline propagado",
+    "definicion": "Instante límite fijado por el cliente original que viaja con la llamada a través de todos los servicios de la cadena, para que ninguno siga trabajando cuando el cliente ya abandonó.",
+    "slug": "grpc-rest"
+  },
+  {
+    "termino": "Consumer group",
+    "definicion": "Conjunto de instancias que se reparten las particiones de un tópico, de modo que cada partición la lee una sola instancia. Su paralelismo máximo es la cantidad de particiones.",
+    "slug": "event-streaming"
+  },
+  {
+    "termino": "Expandir y contraer",
+    "definicion": "Técnica de migración sin downtime que divide un cambio incompatible de esquema en pasos compatibles: agregar lo nuevo, escribir en ambos, copiar datos, cambiar lecturas y recién al final eliminar lo viejo.",
+    "slug": "bases-de-datos"
+  }
+]

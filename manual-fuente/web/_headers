@@ -1,0 +1,14 @@
+# Cabeceras de caché (formato de Cloudflare Pages y Netlify; en otro hosting, configurar lo mismo).
+# El service worker guarda el manual completo; estas cabeceras solo evitan que el navegador
+# se quede con un sw.js o un index.html viejos y no vea las versiones nuevas.
+/sw.js
+  Cache-Control: no-cache
+/
+  Cache-Control: no-cache
+/index.html
+  Cache-Control: no-cache
+/manifest.webmanifest
+  Cache-Control: no-cache
+# Los nombres de las fuentes no cambian: si se reemplaza una, cambiarle el nombre.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable

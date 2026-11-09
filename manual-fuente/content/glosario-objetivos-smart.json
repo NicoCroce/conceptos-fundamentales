@@ -1,0 +1,7 @@
+[
+  {"termino": "Objetivo SMART", "definicion": "Objetivo específico, medible, alcanzable, relevante y con fecha, de modo que dos personas con los mismos datos coincidan en si se cumplió.", "slug": "objetivos-smart"},
+  {"termino": "Indicador adelantado y rezagado", "definicion": "El adelantado (leading) se mueve antes y predice el resultado, y se puede influir directamente; el rezagado (lagging) mide el resultado final, pero llega tarde para corregir.", "slug": "objetivos-smart"},
+  {"termino": "OKR (objetivos y resultados clave)", "definicion": "Formato con un objetivo cualitativo y entre dos y cinco resultados clave medibles. Suele usarse con metas ambiciosas, donde lograr cerca del 70% se considera bueno.", "slug": "objetivos-smart"},
+  {"termino": "Métrica de control", "definicion": "Métrica que no debe empeorar mientras se mejora la principal, como el costo o la latencia al subir la precisión de un asistente.", "slug": "objetivos-smart"},
+  {"termino": "Output y outcome", "definicion": "El output es lo que se entrega (lanzar una funcionalidad); el outcome es el cambio que produce (consultas resueltas sin intervención humana). Los objetivos útiles apuntan al outcome.", "slug": "objetivos-smart"}
+]

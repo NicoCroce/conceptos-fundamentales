@@ -1,0 +1,9 @@
+[
+  {"termino": "Desarrollo guiado por especificaciones (SDD)", "definicion": "Práctica en la que una especificación versionada en el repositorio es el artefacto principal y de ella se derivan el plan técnico, las tareas y el código que implementa un agente o una persona.", "slug": "sdd"},
+  {"termino": "Vibe coding", "definicion": "Pedirle cambios a un agente de código sobre la marcha y aceptar lo que parece funcionar, sin una intención escrita. Sirve para prototipos, pero produce código que se aleja del objetivo y es difícil de revisar.", "slug": "sdd"},
+  {"termino": "Criterio de aceptación", "definicion": "Afirmación comprobable sobre el comportamiento esperado de una funcionalidad, por ejemplo con el formato Dado/Cuando/Entonces. Cada criterio debería tener al menos un test que lo verifique.", "slug": "sdd"},
+  {"termino": "No-objetivo", "definicion": "Algo que una especificación o un diseño deja explícitamente afuera. Evita que personas o agentes agreguen alcance de paso y facilita rechazar cambios en revisión.", "slug": "sdd"},
+  {"termino": "Archivo de instrucciones del repositorio", "definicion": "Documento en el repositorio que un agente de código lee al empezar cada sesión, con convenciones, comandos, acciones prohibidas y definición de terminado. Algunos equipos lo llaman constitución.", "slug": "sdd"},
+  {"termino": "Deriva de especificación (spec drift)", "definicion": "Situación en la que el código cambió y la especificación no, de modo que el documento describe un comportamiento que ya no existe y deja de ser confiable para personas y agentes.", "slug": "sdd"},
+  {"termino": "Definición de terminado", "definicion": "Condiciones que una tarea debe cumplir para marcarse como hecha, por ejemplo tests en verde, linter limpio y evidencia de cómo se verificó. Evita que un agente declare éxito sin comprobarlo.", "slug": "sdd"}
+]

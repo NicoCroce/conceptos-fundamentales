@@ -1,0 +1,9 @@
+[
+  {"termino": "PII (datos personales)", "definicion": "Información que permite identificar a una persona, directamente (nombre, teléfono, dirección) o combinada con otros datos (ubicación y hora repetidas, fotos, notas libres).", "slug": "privacidad-datos"},
+  {"termino": "Minimización de datos", "definicion": "Principio de recolectar, guardar y enviar solo los datos personales necesarios para un fin concreto, por ejemplo la zona en lugar de la dirección exacta.", "slug": "privacidad-datos"},
+  {"termino": "Seudonimización", "definicion": "Reemplazar un identificador por otro que no lo revela pero que puede volver a vincularse con información adicional, como una clave. El resultado sigue siendo dato personal.", "slug": "privacidad-datos"},
+  {"termino": "Anonimización", "definicion": "Transformar datos de modo que nadie pueda ser identificado, ni siquiera cruzándolos con otras fuentes. Es difícil de lograr: quitar el nombre o hashear el teléfono no alcanza.", "slug": "privacidad-datos"},
+  {"termino": "Reidentificación", "definicion": "Volver a identificar a una persona en un dataset supuestamente anónimo, combinando atributos como ubicación, hora o hashes reversibles.", "slug": "privacidad-datos"},
+  {"termino": "Tokenización de identificadores", "definicion": "Reemplazar un dato personal por un valor aleatorio y guardar la correspondencia en una bóveda aislada, de modo que el resto de los sistemas nunca ve el dato real.", "slug": "privacidad-datos"},
+  {"termino": "Redacción en origen", "definicion": "Quitar o enmascarar datos personales en el mismo proceso que los maneja, antes de escribir logs, trazas, eventos de analítica o prompts.", "slug": "privacidad-datos"}
+]

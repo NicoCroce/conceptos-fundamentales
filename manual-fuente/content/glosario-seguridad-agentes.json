@@ -1,0 +1,9 @@
+[
+  {"termino": "Trifecta letal", "definicion": "Combinación de tres capacidades en un agente: leer contenido no confiable, acceder a datos privados y actuar o comunicarse hacia afuera. Con las tres juntas, una inyección puede sacar datos; quitar una corta el ataque más grave.", "slug": "seguridad-agentes"},
+  {"termino": "Inyección indirecta de prompt", "definicion": "Instrucciones maliciosas escondidas en contenido que el agente procesa en nombre de otra persona, como una página web, un correo, un PDF o el resultado de una herramienta.", "slug": "seguridad-agentes"},
+  {"termino": "Exfiltración de datos", "definicion": "Sacar datos hacia alguien que no debería verlos. En agentes suele ocurrir por URLs de imágenes en markdown, enlaces, herramientas de envío o llamadas a URLs externas.", "slug": "seguridad-agentes"},
+  {"termino": "Lista permitida de egreso", "definicion": "Configuración de red que solo deja salir conexiones hacia dominios aprobados. Bloquea la exfiltración por URLs aunque el modelo haya sido engañado para llamarlas.", "slug": "seguridad-agentes"},
+  {"termino": "Agencia excesiva", "definicion": "Dar a un agente más herramientas, permisos o autonomía de los que la tarea necesita, de modo que un error o una inyección se convierte en una acción dañina.", "slug": "seguridad-agentes"},
+  {"termino": "Red teaming", "definicion": "Atacar a propósito el propio sistema para encontrar fallas antes que un atacante. En agentes, los ataques se guardan como dataset de seguridad y corren en CI como regresión.", "slug": "seguridad-agentes"},
+  {"termino": "Kill switch", "definicion": "Mecanismo, normalmente una feature flag, que desactiva un agente o lo pasa a modo solo lectura en segundos y sin desplegar, ante la sospecha de abuso.", "slug": "seguridad-agentes"}
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "termino": "Matriz de Eisenhower",
+    "definicion": "Clasifica tareas según dos ejes, urgente e importante, y asigna una acción a cada cuadrante: hacer ya, planificar, delegar o descartar.",
+    "slug": "priorizacion"
+  },
+  {
+    "termino": "MoSCoW",
+    "definicion": "Técnica para recortar el alcance de una entrega en Must, Should, Could y Won't; el grupo Won't deja escrito lo que no se hace en esa versión.",
+    "slug": "priorizacion"
+  },
+  {
+    "termino": "Matriz de impacto y esfuerzo",
+    "definicion": "Ubica cada ítem según impacto y esfuerzo para separar quick wins, grandes apuestas, rellenos y pozos sin fondo.",
+    "slug": "priorizacion"
+  },
+  {
+    "termino": "RICE",
+    "definicion": "Puntaje de priorización que multiplica alcance, impacto y confianza y lo divide por el esfuerzo; el factor de confianza castiga las ideas sin evidencia.",
+    "slug": "priorizacion"
+  },
+  {
+    "termino": "Costo de demora",
+    "definicion": "Cuánto valor se pierde por cada período que un ítem no está listo; dividido por la duración, indica qué conviene hacer antes.",
+    "slug": "priorizacion"
+  },
+  {
+    "termino": "WSJF (weighted shortest job first)",
+    "definicion": "Ordena el trabajo por costo de demora dividido por tamaño, con el costo armado a partir de valor, criticidad temporal y reducción de riesgo.",
+    "slug": "priorizacion"
+  },
+  {
+    "termino": "Modelo de Kano",
+    "definicion": "Clasifica funcionalidades según la reacción del usuario: básicas, de desempeño, de entusiasmo o indiferentes.",
+    "slug": "priorizacion"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {"termino": "Data drift", "definicion": "Cambio en la distribución de las entradas que recibe un modelo respecto de las que vio al entrenar. No prueba que el modelo empeoró, pero indica que opera en una región donde sabe menos.", "slug": "monitoreo-modelos"},
+  {"termino": "Concept drift", "definicion": "Cambio en la relación entre las entradas y la respuesta correcta: los mismos datos de entrada ahora producen otro resultado. Solo se detecta con certeza al comparar contra etiquetas reales.", "slug": "monitoreo-modelos"},
+  {"termino": "PSI (Population Stability Index)", "definicion": "Índice que mide cuánto cambió la distribución de una variable entre un período de referencia y uno actual. Por regla práctica, un valor mayor a 0,2 justifica investigar.", "slug": "monitoreo-modelos"},
+  {"termino": "Etiqueta tardía", "definicion": "Respuesta correcta que se conoce mucho después de la predicción, como una entrega fallida confirmada días más tarde. Obliga a usar indicadores aproximados mientras tanto.", "slug": "monitoreo-modelos"},
+  {"termino": "Feature", "definicion": "Cada señal numérica o categórica que recibe un modelo para predecir, como la distancia del pedido o la tasa de entregas a tiempo de un transportista.", "slug": "feature-stores"},
+  {"termino": "Join point-in-time", "definicion": "Unión que, para cada fila de entrenamiento, toma el valor de la feature vigente en el momento de esa fila y no uno posterior. Evita que el modelo aprenda con información del futuro.", "slug": "feature-stores"},
+  {"termino": "Training-serving skew", "definicion": "Diferencia entre cómo se calcula una feature al entrenar y cómo se calcula en producción. Degrada las predicciones en silencio.", "slug": "feature-stores"},
+  {"termino": "Feature store", "definicion": "Sistema que centraliza la definición, el cálculo y el acceso a las features, con un almacén offline para entrenar y uno online de baja latencia para servir.", "slug": "feature-stores"},
+  {"termino": "Frescura (TTL de una feature)", "definicion": "Tiempo máximo aceptable desde la última actualización de un valor. Pasado ese tiempo, el valor se considera vencido y se trata como faltante.", "slug": "feature-stores"},
+  {"termino": "Registro de modelos", "definicion": "Catálogo de modelos con versiones inmutables y linaje hacia la corrida que los produjo. Indica qué versión está aprobada para producción.", "slug": "mlflow"},
+  {"termino": "Alias de modelo", "definicion": "Etiqueta móvil, como champion, que apunta a una versión del registro. Moverla permite promover o revertir un modelo sin redesplegar el servicio.", "slug": "mlflow"},
+  {"termino": "Hiperparámetro", "definicion": "Decisión que se fija antes de entrenar y que el modelo no aprende solo, como la profundidad de los árboles o la tasa de aprendizaje.", "slug": "mlflow"},
+  {"termino": "Tensor", "definicion": "Arreglo de números con cualquier cantidad de dimensiones. Es la unidad de datos con la que trabajan PyTorch y TensorFlow.", "slug": "pytorch-tensorflow"},
+  {"termino": "Backpropagation", "definicion": "Cálculo automático de cuánto contribuye cada peso de una red al error, recorriendo la red hacia atrás. El optimizador usa ese resultado para ajustar los pesos.", "slug": "pytorch-tensorflow"},
+  {"termino": "Fine-tuning", "definicion": "Seguir entrenando un modelo ya preentrenado con datos propios y una tasa de aprendizaje baja para especializarlo en una tarea concreta.", "slug": "pytorch-tensorflow"}
+]

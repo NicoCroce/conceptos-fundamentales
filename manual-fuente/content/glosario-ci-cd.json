@@ -1,0 +1,9 @@
+[
+  {"termino": "Integración continua (CI)", "definicion": "Práctica de integrar cambios a la rama principal varias veces al día, con una verificación automática (compilación, linters, tests) en cada integración para detectar errores en minutos.", "slug": "ci-cd"},
+  {"termino": "Entrega continua y despliegue continuo", "definicion": "En la entrega continua, todo cambio verificado queda listo para producción y un humano decide promoverlo; en el despliegue continuo, llega a producción automáticamente si pasa todos los controles.", "slug": "ci-cd"},
+  {"termino": "Digest de imagen", "definicion": "Hash del contenido de una imagen de contenedor (sha256:...). A diferencia de un tag, no se puede mover a otra imagen, por eso se usa para promover el mismo artefacto entre entornos.", "slug": "ci-cd"},
+  {"termino": "Federación OIDC", "definicion": "Mecanismo por el cual un pipeline obtiene credenciales temporales de AWS presentando un token firmado por el sistema de CI, sin guardar claves de larga duración. Una política de confianza limita qué repositorio, rama o entorno puede asumir cada rol.", "slug": "ci-cd"},
+  {"termino": "SBOM", "definicion": "Software Bill of Materials: inventario de todos los componentes y versiones incluidos en un artefacto. Permite saber en minutos qué imágenes contienen una biblioteca vulnerable.", "slug": "ci-cd"},
+  {"termino": "GitOps", "definicion": "Modelo de despliegue en el que el estado deseado de cada entorno vive en un repositorio de git y un agente dentro del clúster (Argo CD, Flux) lo sincroniza de forma continua. El rollback es revertir un commit.", "slug": "ci-cd"},
+  {"termino": "Feature flag", "definicion": "Interruptor de configuración que activa o desactiva una funcionalidad sin desplegar de nuevo. Separa el despliegue del código de su lanzamiento a los usuarios.", "slug": "ci-cd"}
+]

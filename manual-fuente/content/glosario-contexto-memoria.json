@@ -1,0 +1,32 @@
+[
+  {
+    "termino": "Ingeniería de contexto",
+    "definicion": "Trabajo de decidir qué información entra en cada llamada al modelo, en qué forma y en qué orden: instrucciones, herramientas, historial, resultados y memorias. En agentes es la palanca principal de calidad, costo y latencia.",
+    "slug": "contexto-memoria"
+  },
+  {
+    "termino": "Compactación",
+    "definicion": "Reemplazar los pasos viejos del historial de un agente por un resumen breve cuando el contexto supera un umbral, conservando textuales solo los últimos pasos. Ahorra tokens, pero puede perder detalles y rompe la caché de prompt.",
+    "slug": "contexto-memoria"
+  },
+  {
+    "termino": "Perdido en el medio (lost in the middle)",
+    "definicion": "Tendencia de los modelos a aprovechar peor la información ubicada en el centro de un contexto largo que la que está al principio o al final. Es una razón por la que un contexto que entra en la ventana no garantiza buenas respuestas.",
+    "slug": "contexto-memoria"
+  },
+  {
+    "termino": "Memoria de largo plazo",
+    "definicion": "Información que persiste fuera del modelo entre tareas o conversaciones (preferencias, hechos, episodios) y se recupera cuando es relevante. Necesita fuente, vencimiento, corrección y aislamiento por cliente.",
+    "slug": "contexto-memoria"
+  },
+  {
+    "termino": "Envenenamiento de memoria",
+    "definicion": "Ataque en el que contenido externo logra que un agente guarde una memoria falsa o una instrucción maliciosa, que luego afecta tareas futuras. Se mitiga guardando solo desde fuentes confiables y sin tratar memorias como reglas.",
+    "slug": "contexto-memoria"
+  },
+  {
+    "termino": "Tasa de aciertos de caché",
+    "definicion": "Proporción de tokens de entrada que se leyeron de la caché de prompt sobre el total enviado. Una caída brusca suele indicar que algo variable se coló en el prefijo.",
+    "slug": "contexto-memoria"
+  }
+]

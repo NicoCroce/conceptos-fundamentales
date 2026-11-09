@@ -1,0 +1,77 @@
+[
+  {
+    "termino": "Agente",
+    "definicion": "Un LLM que, en un bucle, decide qué herramienta usar a continuación según lo que observó, hasta que considera que puede responder. A diferencia de un workflow, el camino lo elige el modelo y no el código.",
+    "slug": "agentes"
+  },
+  {
+    "termino": "Tool calling",
+    "definicion": "Mecanismo por el que el modelo, en vez de texto, devuelve una petición estructurada para usar una herramienta definida con un esquema. El modelo no ejecuta nada: nuestro código valida, ejecuta y le devuelve el resultado.",
+    "slug": "agentes"
+  },
+  {
+    "termino": "ReAct",
+    "definicion": "Patrón de agente que alterna un razonamiento breve con una acción (llamar a una herramienta) y observa el resultado antes del siguiente paso. Es la base de la mayoría de los agentes.",
+    "slug": "agentes"
+  },
+  {
+    "termino": "Idempotencia",
+    "definicion": "Propiedad de una operación que produce el mismo efecto si se ejecuta una o varias veces. En agentes se logra con claves de idempotencia para que los reintentos no dupliquen acciones.",
+    "slug": "agentes"
+  },
+  {
+    "termino": "MCP (Model Context Protocol)",
+    "definicion": "Protocolo abierto para exponer herramientas, recursos y plantillas a aplicaciones con LLM de forma estándar mediante servidores y clientes. Facilita reutilizar integraciones, pero no reemplaza los controles de seguridad.",
+    "slug": "agentes"
+  },
+  {
+    "termino": "LangGraph",
+    "definicion": "Framework para orquestar workflows y agentes como un grafo de estados, con nodos, aristas condicionales, ciclos, checkpoints persistentes e interrupciones para aprobación humana.",
+    "slug": "langgraph"
+  },
+  {
+    "termino": "Checkpointer",
+    "definicion": "Componente que guarda el estado de un flujo después de cada paso en un almacenamiento persistente. Permite reanudar tras una caída, pausar a la espera de una persona y reproducir ejecuciones.",
+    "slug": "langgraph"
+  },
+  {
+    "termino": "Arista condicional",
+    "definicion": "En un grafo de estados, una función que mira el estado y decide a qué nodo pasar. Es donde el flujo se ramifica, por ejemplo hacia revisión humana si el impacto es alto.",
+    "slug": "langgraph"
+  },
+  {
+    "termino": "Golden set",
+    "definicion": "Conjunto de 50 a 500 casos reales de referencia, frecuentes y difíciles, con su respuesta correcta o criterios acordados. Se usa para comparar versiones y crece con cada error de producción.",
+    "slug": "evaluacion-llms"
+  },
+  {
+    "termino": "LLM-as-judge",
+    "definicion": "Uso de un LLM para puntuar respuestas según una rúbrica explícita cuando la calidad no se puede verificar con código. Debe calibrarse contra etiquetas humanas porque tiene sesgos como preferir respuestas largas.",
+    "slug": "evaluacion-llms"
+  },
+  {
+    "termino": "Modo sombra",
+    "definicion": "Forma de evaluación en la que una versión nueva procesa tráfico real en paralelo sin que sus respuestas se muestren al usuario. Permite comparar calidad, latencia y costo sin riesgo.",
+    "slug": "evaluacion-llms"
+  },
+  {
+    "termino": "Guardrails",
+    "definicion": "Controles automáticos antes y después del modelo: en la entrada enmascaran datos personales, detectan inyección y limitan tamaño; en la salida validan esquema, reglas de negocio y que lo citado exista.",
+    "slug": "llms-produccion"
+  },
+  {
+    "termino": "Inyección de prompt",
+    "definicion": "Texto dentro de la entrada o de un documento recuperado que intenta cambiar las instrucciones del modelo. Se mitiga separando instrucciones de datos, limitando herramientas y validando la salida.",
+    "slug": "llms-produccion"
+  },
+  {
+    "termino": "Gateway de LLM",
+    "definicion": "Servicio interno por el que pasan todas las llamadas a proveedores de modelos. Centraliza credenciales, enmascarado de datos personales, ruteo, reintentos, fallbacks, caché, cuotas y métricas.",
+    "slug": "llms-produccion"
+  },
+  {
+    "termino": "Degradación elegante",
+    "definicion": "Comportamiento previsto cuando ningún modelo está disponible: la funcionalidad se apaga de forma ordenada, por ejemplo derivando el asistente a personas, sin afectar sistemas críticos.",
+    "slug": "llms-produccion"
+  }
+]

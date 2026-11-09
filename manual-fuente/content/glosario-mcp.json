@@ -1,0 +1,9 @@
+[
+  {"termino": "Servidor MCP", "definicion": "Programa que expone herramientas, recursos y plantillas de prompt sobre un sistema concreto mediante el protocolo MCP, para que cualquier aplicación compatible los descubra y use. Puede correr como proceso local o como servicio remoto.", "slug": "mcp"},
+  {"termino": "Sampling (MCP)", "definicion": "Capacidad que permite a un servidor MCP pedirle al host que haga una llamada al LLM en su nombre. El host conserva el control y puede revisar, modificar o rechazar el pedido.", "slug": "mcp"},
+  {"termino": "Streamable HTTP", "definicion": "Transporte de MCP para servidores remotos, en el que los mensajes viajan por HTTP y el servidor puede responder en streaming. A diferencia de stdio, exige autenticación, límites de tasa y operación como cualquier servicio web.", "slug": "mcp"},
+  {"termino": "Tool poisoning", "definicion": "Ataque en el que la descripción de una herramienta contiene instrucciones maliciosas que el modelo lee y puede obedecer, por ejemplo para enviar datos a otro lugar.", "slug": "mcp"},
+  {"termino": "Rug pull (servidor MCP)", "definicion": "Cambio malicioso o no revisado en las herramientas o descripciones de un servidor después de haber sido aprobado. Se mitiga fijando versiones y comparando las descripciones contra las aprobadas.", "slug": "mcp"},
+  {"termino": "Confused deputy", "definicion": "Situación en la que un componente con permisos amplios los usa a pedido de alguien que no debería tenerlos, como un servidor que consulta con una cuenta de servicio sin verificar qué puede ver el usuario.", "slug": "mcp"},
+  {"termino": "A2A (Agent-to-Agent)", "definicion": "Protocolo para que un agente descubra las habilidades de otro y le delegue tareas completas. Complementa a MCP, que conecta una aplicación con herramientas y datos.", "slug": "mcp"}
+]

@@ -1,0 +1,7 @@
+[
+  {"termino": "Triángulo de hierro", "definicion": "Modelo que relaciona alcance, tiempo y costo de un proyecto, con la calidad en el centro: no se puede mover un lado sin afectar a los otros, y si se fijan los tres se ajusta la calidad.", "slug": "triangulo-hierro"},
+  {"termino": "Triángulo invertido (agile)", "definicion": "Enfoque ágil que fija el tiempo y el costo (sprints y un equipo estable) y deja el alcance como variable, entregando primero lo más valioso.", "slug": "triangulo-hierro"},
+  {"termino": "Ley de Brooks", "definicion": "Sumar personas a un proyecto atrasado lo atrasa más, por el costo de incorporación y porque los canales de comunicación crecen como n(n−1)/2.", "slug": "triangulo-hierro"},
+  {"termino": "Deuda técnica", "definicion": "Trabajo de calidad que se posterga para ganar tiempo hoy y que se paga después con intereses. Es aceptable si se registra con su costo y la fecha en que se va a saldar.", "slug": "triangulo-hierro"},
+  {"termino": "Semana-persona", "definicion": "Unidad de esfuerzo equivalente al trabajo efectivo de una persona durante una semana. Permite comparar el alcance estimado con la capacidad de un equipo.", "slug": "triangulo-hierro"}
+]

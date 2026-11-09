@@ -1,0 +1,9 @@
+[
+  {"termino": "Modelo multimodal", "definicion": "Modelo que procesa más de un tipo de dato, como texto, imágenes o audio, en la misma llamada. Internamente convierte cada modalidad en tokens que procesa junto con el texto.", "slug": "multimodal"},
+  {"termino": "VLM (modelo de visión y lenguaje)", "definicion": "Modelo que recibe imágenes y texto y responde con texto. Se usa para describir fotos, leer documentos o extraer campos estructurados de una imagen.", "slug": "multimodal"},
+  {"termino": "Parche de imagen (patch)", "definicion": "Cuadrado de píxeles en que se divide una imagen para convertirla en tokens. Como la cantidad de parches crece con el área, la resolución determina buena parte del costo y la latencia.", "slug": "multimodal"},
+  {"termino": "OCR", "definicion": "Reconocimiento óptico de caracteres: convierte el texto de una imagen o un escaneo en texto digital. Es barato y auditable, pero tiende a perder la disposición de la página y a fallar con manuscritos.", "slug": "multimodal"},
+  {"termino": "WER (word error rate)", "definicion": "Métrica de reconocimiento de voz: sustituciones, eliminaciones e inserciones dividido por la cantidad de palabras de la transcripción de referencia. Conviene complementarla con el acierto en entidades críticas como números de pedido.", "slug": "multimodal"},
+  {"termino": "Arquitectura de voz en cascada", "definicion": "Asistente de voz armado con tres etapas: reconocimiento de voz (STT), un LLM de texto y síntesis de voz (TTS). Es más controlable y auditable que un modelo speech-to-speech, pero suma latencia por etapa.", "slug": "multimodal"},
+  {"termino": "Barge-in", "definicion": "Interrupción del usuario mientras el asistente de voz está hablando. El sistema debe detectarla, cortar el audio y registrar qué parte de la respuesta llegó a escucharse.", "slug": "multimodal"}
+]

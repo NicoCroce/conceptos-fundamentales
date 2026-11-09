@@ -1,0 +1,9 @@
+[
+  {"termino": "Ruteo de modelos", "definicion": "Decidir qué modelo atiende cada pedido o cada paso de un agente, según la tarea, reglas, un clasificador o una cascada. Busca usar el modelo más barato que resuelve bien cada caso.", "slug": "multimodelo"},
+  {"termino": "Cascada de modelos", "definicion": "Estrategia en la que todos los pedidos van primero a un modelo pequeño y solo se escalan a uno grande si el resultado tiene baja confianza o falla una validación. El costo esperado es el del pequeño más la fracción escalada por el del grande.", "slug": "multimodelo"},
+  {"termino": "Modelo de razonamiento", "definicion": "Modelo que genera pasos intermedios internos antes de responder. Mejora problemas de varios pasos a cambio de más tokens y más latencia.", "slug": "multimodelo"},
+  {"termino": "Presupuesto de razonamiento", "definicion": "Límite a la cantidad de tokens que un modelo de razonamiento puede usar para pensar antes de responder, expresado en tokens o en niveles de esfuerzo según el proveedor.", "slug": "multimodelo"},
+  {"termino": "Costo por tarea", "definicion": "Costo total de resolver una tarea con un modelo, incluyendo tokens de entrada y salida, reintentos y validaciones fallidas. Es la medida correcta para comparar modelos, en lugar del precio por token.", "slug": "multimodelo"},
+  {"termino": "Versión fija de modelo", "definicion": "Identificador de un modelo que no cambia de comportamiento, a diferencia de un alias genérico que el proveedor puede mover a una versión nueva. Se usa en producción para evitar regresiones silenciosas.", "slug": "multimodelo"},
+  {"termino": "Calendario de deprecación", "definicion": "Registro de las fechas en que los proveedores retiran versiones de modelos, con la funcionalidad afectada y el plan de migración y evaluación del reemplazo.", "slug": "multimodelo"}
+]

@@ -1,0 +1,7 @@
+[
+  {"termino": "Matriz RACI", "definicion": "Tabla que asigna a cada actividad quién la ejecuta (Responsible), quién rinde cuentas por el resultado (Accountable), a quién se consulta (Consulted) y a quién se informa (Informed).", "slug": "raci-rasi"},
+  {"termino": "Matriz RASI", "definicion": "Variante de RACI con Responsable, Aprobador, Soporte e Informado. El rol de Soporte aporta trabajo concreto, a diferencia del Consultado de RACI, que solo da su opinión.", "slug": "raci-rasi"},
+  {"termino": "Accountable (quien rinde cuentas)", "definicion": "La única persona que responde por el resultado de una actividad y la aprueba como terminada. Puede delegar el trabajo, pero no la responsabilidad; nunca puede ser un agente.", "slug": "raci-rasi"},
+  {"termino": "DACI", "definicion": "Matriz para llevar una decisión puntual hasta cerrarla: el Driver la impulsa, el Approver decide, los Contributors aportan conocimiento y los Informed se enteran del resultado.", "slug": "raci-rasi"},
+  {"termino": "Regla de una sola A", "definicion": "Cada fila de una matriz de responsabilidad tiene exactamente un aprobador. Dos aprobadores equivalen a ninguno: cada uno espera al otro o deciden cosas distintas.", "slug": "raci-rasi"}
+]

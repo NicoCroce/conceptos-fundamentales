@@ -1,0 +1,37 @@
+[
+  {
+    "termino": "Métricas DORA",
+    "definicion": "Cuatro métricas de entrega de software: frecuencia de despliegue, lead time de cambios, tasa de fallos de cambios y tiempo de recuperación. Las dos primeras miden velocidad y las dos últimas, estabilidad.",
+    "slug": "metricas-entrega"
+  },
+  {
+    "termino": "Lead time de cambios",
+    "definicion": "Tiempo que tarda un cambio desde el commit hasta estar funcionando en producción; se informa con mediana y percentiles.",
+    "slug": "metricas-entrega"
+  },
+  {
+    "termino": "Tasa de fallos de cambios",
+    "definicion": "Porcentaje de despliegues que provocan una degradación que obliga a revertir, aplicar un hotfix o abrir un incidente.",
+    "slug": "metricas-entrega"
+  },
+  {
+    "termino": "Tasa de retrabajo",
+    "definicion": "Proporción de cambios o despliegues no planificados que corrigen errores introducidos por cambios recientes.",
+    "slug": "metricas-entrega"
+  },
+  {
+    "termino": "Eficiencia de flujo",
+    "definicion": "Porcentaje del cycle time en que alguien trabajó activamente en un ítem, frente al tiempo que pasó esperando.",
+    "slug": "metricas-entrega"
+  },
+  {
+    "termino": "Ley de Goodhart",
+    "definicion": "Cuando una medida se convierte en objetivo, deja de ser una buena medida, porque la gente optimiza el número y no lo que representaba.",
+    "slug": "metricas-entrega"
+  },
+  {
+    "termino": "Marco SPACE",
+    "definicion": "Mira la productividad en cinco dimensiones: satisfacción, desempeño, actividad, comunicación y eficiencia; recomienda combinar al menos tres.",
+    "slug": "metricas-entrega"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "termino": "Casi incidente (near miss)",
+    "definicion": "Evento que pudo causar daño y no lo hizo por suerte o por una barrera tardía; se analiza con un postmortem liviano porque enseña lo mismo que el incidente sin su costo.",
+    "slug": "postmortem-premortem"
+  },
+  {
+    "termino": "Factores contribuyentes",
+    "definicion": "Conjunto de condiciones que tuvieron que darse a la vez para que ocurriera un incidente; reemplazan la búsqueda de una única causa raíz en un postmortem.",
+    "slug": "postmortem-premortem"
+  },
+  {
+    "termino": "Sesgo retrospectivo",
+    "definicion": "Tendencia a ver como obvio lo que solo se supo después de conocer el resultado; el postmortem sin culpas lo contrarresta preguntando qué información había en el momento.",
+    "slug": "postmortem-premortem"
+  },
+  {
+    "termino": "Tasa de cierre de acciones",
+    "definicion": "Porcentaje de acciones de postmortem cerradas en la fecha comprometida; es el indicador más directo de si el equipo aprende de sus incidentes.",
+    "slug": "postmortem-premortem"
+  },
+  {
+    "termino": "Retrospectiva",
+    "definicion": "Reunión periódica al final de cada iteración para acordar uno o dos cambios en la forma de trabajar; se diferencia del postmortem en que no la dispara un incidente.",
+    "slug": "agile-scrum"
+  }
+]

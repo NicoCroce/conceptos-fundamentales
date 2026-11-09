@@ -1,0 +1,37 @@
+[
+  {
+    "termino": "Sprint",
+    "definicion": "Iteración de duración fija, típicamente de una o dos semanas, al final de la cual un equipo Scrum entrega un incremento terminado y usable.",
+    "slug": "agile-scrum"
+  },
+  {
+    "termino": "Product owner",
+    "definicion": "Responsable de decidir qué se construye y en qué orden; mantiene el product backlog y es la única voz que lo prioriza.",
+    "slug": "agile-scrum"
+  },
+  {
+    "termino": "Definición de listo",
+    "definicion": "Condiciones que un ítem cumple antes de entrar a un sprint, como tener criterios de aceptación y no depender de otro equipo sin acuerdo. Es una práctica común, no parte de la guía oficial de Scrum.",
+    "slug": "agile-scrum"
+  },
+  {
+    "termino": "Historia de usuario",
+    "definicion": "Descripción breve de una necesidad desde el punto de vista de quien la tiene («Como rol, quiero algo, para beneficio»), que se vuelve verificable con criterios de aceptación.",
+    "slug": "agile-scrum"
+  },
+  {
+    "termino": "INVEST",
+    "definicion": "Guía para escribir buenas historias de usuario: independiente, negociable, valiosa, estimable, pequeña y testeable.",
+    "slug": "agile-scrum"
+  },
+  {
+    "termino": "Límite de WIP",
+    "definicion": "Máximo de ítems que puede haber a la vez en una columna del tablero Kanban; si se alcanza, se termina o se ayuda antes de empezar algo nuevo.",
+    "slug": "agile-scrum"
+  },
+  {
+    "termino": "Ley de Little",
+    "definicion": "Relación entre trabajo en curso, throughput y tiempo: el tiempo promedio de un ítem en el sistema es el WIP promedio dividido por el throughput.",
+    "slug": "agile-scrum"
+  }
+]

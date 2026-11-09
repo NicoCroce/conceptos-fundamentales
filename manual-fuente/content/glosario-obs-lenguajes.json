@@ -1,0 +1,17 @@
+[
+  {"termino": "Runbook", "definicion": "Procedimiento escrito asociado a una alerta que explica qué significa, cómo diagnosticarla en los primeros minutos, cómo mitigar y a quién escalar.", "slug": "on-call"},
+  {"termino": "Postmortem sin culpas", "definicion": "Análisis posterior a un incidente que busca fallas en el sistema y en los procesos en lugar de señalar personas, para que el equipo comparta información y aprenda.", "slug": "on-call"},
+  {"termino": "MTTR", "definicion": "Tiempo medio de recuperación: cuánto se tarda en promedio en restablecer el servicio desde que empieza un incidente. Conviene acordar desde qué momento se mide.", "slug": "on-call"},
+  {"termino": "Incident commander", "definicion": "Rol que coordina la respuesta a un incidente: asigna tareas, decide prioridades y escaladas, y no ejecuta cambios técnicos por su cuenta.", "slug": "on-call"},
+  {"termino": "Span", "definicion": "Unidad de una traza distribuida que representa una operación con nombre, duración, estado y atributos; los spans forman un árbol que reconstruye el recorrido de una petición.", "slug": "opentelemetry"},
+  {"termino": "W3C Trace Context", "definicion": "Estándar que define el header traceparent, con el que el identificador de traza y el span padre viajan entre servicios por HTTP, gRPC o headers de Kafka.", "slug": "opentelemetry"},
+  {"termino": "Tail sampling", "definicion": "Muestreo de trazas que decide qué conservar después de que la traza terminó, lo que permite guardar todos los errores y peticiones lentas y descartar parte del resto.", "slug": "opentelemetry"},
+  {"termino": "OpenTelemetry Collector", "definicion": "Proceso que recibe telemetría de los servicios, la filtra, redacta, muestrea y enriquece, y la reenvía a uno o varios backends.", "slug": "opentelemetry"},
+  {"termino": "Cardinalidad", "definicion": "Cantidad de series temporales distintas que genera una métrica según las combinaciones de valores de sus labels; si crece sin control, satura Prometheus.", "slug": "prometheus-grafana"},
+  {"termino": "Burn rate", "definicion": "Velocidad a la que se consume el presupuesto de errores de un SLO; un burn rate de 1 lo agota justo al final de la ventana y uno de 10 lo agota diez veces antes.", "slug": "prometheus-grafana"},
+  {"termino": "Método RED", "definicion": "Receta para medir servicios que atienden peticiones mediante tres métricas: tasa de peticiones, fracción de errores y distribución de la duración.", "slug": "prometheus-grafana"},
+  {"termino": "Exemplar", "definicion": "Referencia a una traza concreta guardada junto a un punto de una métrica, que permite saltar de un pico de latencia a una petición real que lo produjo.", "slug": "prometheus-grafana"},
+  {"termino": "Logging estructurado", "definicion": "Práctica de escribir cada línea de log como un objeto, normalmente JSON, con campos fijos y con nombre, para poder consultarlos como datos en lugar de buscar texto.", "slug": "logging"},
+  {"termino": "context.Context", "definicion": "Tipo de Go que transporta deadline, señal de cancelación y valores de la petición a lo largo de la cadena de llamadas, para que todo se detenga cuando vence el plazo.", "slug": "go"},
+  {"termino": "GIL", "definicion": "Candado del intérprete estándar de Python que permite ejecutar código Python en un solo hilo a la vez; se sortea con procesos, librerías en C o concurrencia de E/S.", "slug": "python"}
+]

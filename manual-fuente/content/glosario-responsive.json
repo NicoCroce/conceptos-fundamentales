@@ -1,0 +1,7 @@
+[
+  {"termino": "Mobile first", "definicion": "Estrategia que escribe primero los estilos para la pantalla más angosta y agrega reglas con min-width a medida que hay más espacio. Obliga a priorizar el contenido esencial.", "slug": "responsive"},
+  {"termino": "Breakpoint", "definicion": "Ancho a partir del cual cambia el layout de una interfaz. Conviene elegirlo donde el contenido se rompe, expresado en rem, y no según modelos de dispositivos.", "slug": "responsive"},
+  {"termino": "Container query", "definicion": "Regla CSS que adapta un componente según el tamaño de su contenedor y no el de la ventana. Permite reutilizar el mismo componente en una lista ancha o en un panel lateral angosto.", "slug": "responsive"},
+  {"termino": "srcset y sizes", "definicion": "Atributos de img que ofrecen varias resoluciones de una imagen e indican qué ancho ocupará, para que el navegador descargue la versión más chica que se vea bien.", "slug": "responsive"},
+  {"termino": "Layout shift", "definicion": "Salto del contenido cuando un elemento, como una imagen sin dimensiones, termina de cargar y empuja lo demás. Se evita reservando el espacio con width y height o aspect-ratio.", "slug": "responsive"}
+]
