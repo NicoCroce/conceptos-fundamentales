@@ -408,6 +408,7 @@ a.btn.primary, .btn.primary { color: var(--surface); }
   .app { grid-template-columns: minmax(0, 1fr); gap: 0; }
   .side {
     position: fixed; z-index: 30; top: 0; bottom: 0; left: 0; width: min(330px, 88vw); height: auto;
+    align-self: stretch; max-height: 100dvh; overscroll-behavior: contain; -webkit-overflow-scrolling: touch;
     background: var(--paper); border-right: 1px solid var(--rule);
     padding: calc(env(safe-area-inset-top, 0px) + 20px) 20px calc(env(safe-area-inset-bottom, 0px) + 32px) max(20px, env(safe-area-inset-left, 0px));
     transform: translateX(-105%); transition: transform .22s ease; visibility: hidden;
