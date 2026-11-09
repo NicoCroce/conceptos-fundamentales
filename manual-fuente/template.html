@@ -1433,7 +1433,7 @@ a.btn.primary, .btn.primary { color: var(--surface); }
   // ---- Pasar a otro dispositivo: un archivo con el progreso, las notas y los ajustes ----
   function backupData() {
     return { formato: "manual-aiml-respaldo", version: 2, exportado: new Date().toISOString(), manual: BUILD.version || "",
-      leidos: Object.keys(read), notas: noteList(), ajustes: { perfil: perfil, tema: curPagina(), lectura: lect } };
+      leidos: Object.keys(read), notas: noteList(), ajustes: { perfil: perfil, tema: curPagina(), lectura: lect }, posiciones: poss };
   }
   function backupName(ext) { return "manual-aiml-avance-" + new Date().toISOString().slice(0, 10) + ext; }
   function backupSummary(d) {
@@ -1458,8 +1458,13 @@ a.btn.primary, .btn.primary { color: var(--surface); }
   // y descartan el adjunto. Si el sistema no acepta .json se prueba el mismo contenido como .txt (el import acepta ambos).
   function shareBackup() {
     var d = backupData(), json = JSON.stringify(d, null, 2), file = null;
+    // Chrome (Android, Windows, Mac) solo comparte una lista fija de tipos de archivo y .json no está: canShare dice
+    // que sí, pero share() falla con NotAllowedError. Ahí se comparte el mismo JSON como .txt, que Importar acepta.
+    // Safari (iPhone, iPad, Mac) sí acepta .json.
+    var ua = navigator.userAgent, apple = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && !/Chrome|Chromium|Edg|Firefox/.test(ua));
+    var tipos = apple ? [["application/json", ".json"], ["text/plain", ".txt"]] : [["text/plain", ".txt"]];
     if (navigator.share && navigator.canShare) {
-      [["application/json", ".json"], ["text/plain", ".txt"]].some(function (k) {
+      tipos.some(function (k) {
         try { var f = new File([json], backupName(k[1]), { type: k[0] }); if (navigator.canShare({ files: [f] })) { file = f; return true; } } catch (e) {}
         return false;
       });
@@ -1503,6 +1508,11 @@ a.btn.primary, .btn.primary { color: var(--surface); }
         if (typeof aj.tema === "string" && normPagina(aj.tema)) setTheme(aj.tema);
         if (aj.lectura && typeof aj.lectura === "object") setLectura(aj.lectura);
       }
+      if (d && d.posiciones && typeof d.posiciones === "object") {
+        var np = cleanPoss(d.posiciones);
+        Object.keys(np).forEach(function (k) { if (!poss[k] || np[k].t > poss[k].t) poss[k] = np[k]; });
+        guardarPoss();
+      }
       route();
       toast("Importado: " + nuevos + (nuevos === 1 ? " tema leído nuevo, " : " temas leídos nuevos, ") + add + (add === 1 ? " nota nueva" : " notas nuevas") + (upd ? " y " + upd + " actualizadas" : "") + ".");
     };
@@ -1520,7 +1530,7 @@ a.btn.primary, .btn.primary { color: var(--surface); }
       '<button type="button" class="btn" id="rImp">Importar archivo</button>' +
       '<input type="file" id="rFile" accept="application/json,text/plain,.json,.txt" hidden></div>';
     h += '<h2>Cómo hacerlo</h2><ol class="plan">' +
-      "<li><strong>En este dispositivo</strong>, pulsa <em>Exportar y compartir</em>. Se abre el menú de compartir del sistema con el archivo <code>.json</code> adjunto: elige WhatsApp, correo, AirDrop, Drive, mensajes o la aplicación que prefieras. Si el navegador no tiene ese menú (por ejemplo, Firefox en computadora), el archivo se descarga y lo envías como cualquier adjunto.</li>" +
+      "<li><strong>En este dispositivo</strong>, pulsa <em>Exportar y compartir</em>. Se abre el menú de compartir del sistema con el archivo adjunto (en iPhone y Mac es un <code>.json</code>; en Android y Chrome, el mismo contenido en un <code>.txt</code>, porque esos sistemas no dejan compartir .json): elige WhatsApp, correo, AirDrop, Drive, mensajes o la aplicación que prefieras. Si el navegador no tiene ese menú (por ejemplo, Firefox en computadora), el archivo se descarga y lo envías como cualquier adjunto.</li>" +
       "<li><strong>En el otro dispositivo</strong>, guarda el archivo, abre el manual, entra en esta misma pantalla y pulsa <em>Importar archivo</em>.</li>" +
       "<li>Listo: los temas leídos, las notas, el perfil, la página y los ajustes de lectura quedan como en el original.</li></ol>";
     h += '<p class="foot">Importar suma, no borra: los temas leídos se agregan a los que ya tengas y, si una nota está en los dos dispositivos, se queda la versión editada más recientemente. El archivo contiene solo tu avance, tus notas y tus ajustes; lo recibe únicamente a quien se lo envíes. También sirve como copia de seguridad.</p>';
@@ -1559,6 +1569,7 @@ a.btn.primary, .btn.primary { color: var(--surface); }
   }
 
   function route() {
+    antesDeRuta();
     hidePop(); closeEditor(); pararVoz();
     var v = current();
     if (v === "notas") {
@@ -1588,9 +1599,10 @@ a.btn.primary, .btn.primary { color: var(--surface); }
       $("topTitle").textContent = "Manual de AI/ML y Plataforma";
     }
     renderNav(); setupToc(); closeDrawer();
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: "instant" });   // instantáneo: el html tiene scroll suave y dejaría la vista a mitad de camino
     document.body.classList.toggle("con-avance", !!T[v]);
     if (T[v]) goToNote(parseHash().nota);
+    despuesDeRuta(v, true);
     pedirAvance();
   }
   // ---- Escuchar: lee el tema en voz alta con las voces que trae el dispositivo (Web Speech API) ----
@@ -1681,7 +1693,7 @@ a.btn.primary, .btn.primary { color: var(--surface); }
     voz.marcado = el; if (!el) return;
     el.classList.add("leyendo");
     var r = el.getBoundingClientRect();
-    if (r.top < 80 || r.bottom > window.innerHeight - 130) el.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    if (document.visibilityState === "visible" && (r.top < 80 || r.bottom > window.innerHeight - 130)) el.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
   }
   function pintarVoz() {
     var on = voz.estado !== "parado";
@@ -1697,7 +1709,7 @@ a.btn.primary, .btn.primary { color: var(--surface); }
     var tok = ++voz.tok;
     if (voz.i >= voz.cola.length) { pararVoz(); toast("Terminó la lectura del tema."); return; }
     var it = voz.cola[voz.i];
-    voz.estado = "hablando"; marcar(it.el); pintarVoz();
+    voz.estado = "hablando"; marcar(it.el); pintarVoz(); segundoPlano(true);
     var u = new SpeechSynthesisUtterance(it.txt), v = elegirVoz();
     if (v) { u.voice = v; u.lang = v.lang; } else u.lang = "es-ES";
     u.rate = vozCfg.vel;
@@ -1709,6 +1721,50 @@ a.btn.primary, .btn.primary { color: var(--surface); }
     };
     tts.speak(u);
   }
+  // Segundo plano: el navegador suele cortar la voz al bloquear la pantalla. Mientras se escucha:
+  // 1) se pide que la pantalla no se apague sola (Wake Lock), 2) suena un audio silencioso en bucle, que hace que el
+  // sistema trate la página como reproductor (sigue viva y muestra controles en la pantalla de bloqueo, Media Session),
+  // y 3) al volver a la página, si la voz quedó cortada, retoma el trozo en curso.
+  var bloqueo = null, silencio = null;
+  function audioSilencio() {
+    if (silencio) return silencio;
+    var n = 8000 * 6, b = new Uint8Array(44 + n), dv = new DataView(b.buffer);
+    function str(o, t) { for (var i = 0; i < t.length; i++) b[o + i] = t.charCodeAt(i); }
+    str(0, "RIFF"); dv.setUint32(4, 36 + n, true); str(8, "WAVEfmt "); dv.setUint32(16, 16, true); dv.setUint16(20, 1, true);
+    dv.setUint16(22, 1, true); dv.setUint32(24, 8000, true); dv.setUint32(28, 8000, true); dv.setUint16(32, 1, true); dv.setUint16(34, 8, true);
+    str(36, "data"); dv.setUint32(40, n, true); b.fill(128, 44);
+    silencio = new Audio(URL.createObjectURL(new Blob([b], { type: "audio/wav" })));
+    silencio.loop = true; silencio.setAttribute("playsinline", "");
+    return silencio;
+  }
+  function segundoPlano(on) {
+    try {
+      var a = audioSilencio();
+      if (on) { var pr = a.play(); if (pr && pr.catch) pr.catch(function () {}); } else a.pause();
+    } catch (e) {}
+    if (on && !bloqueo && navigator.wakeLock && document.visibilityState === "visible") {
+      navigator.wakeLock.request("screen").then(function (l) { bloqueo = l; l.addEventListener("release", function () { bloqueo = null; }); }).catch(function () {});
+    }
+    if (!on && bloqueo) { bloqueo.release().catch(function () {}); bloqueo = null; }
+    if ("mediaSession" in navigator) {
+      try {
+        navigator.mediaSession.playbackState = on ? "playing" : (voz.estado === "pausado" ? "paused" : "none");
+        var it = voz.cola[voz.i], t = T[current()];
+        if (on && it && window.MediaMetadata) navigator.mediaSession.metadata = new MediaMetadata({ title: it.sec || (t && t.titulo) || "", artist: t ? t.num + " · " + t.titulo : "", album: "Manual de AI/ML y Plataforma" });
+      } catch (e) {}
+    }
+  }
+  if (tts && "mediaSession" in navigator) {
+    [["play", function () { if (voz.cola.length) hablar(); }], ["pause", function () { pausarVoz(); }], ["stop", function () { pararVoz(); }],
+     ["nexttrack", function () { saltarVoz(1); }], ["previoustrack", function () { saltarVoz(-1); }]].forEach(function (x) {
+      try { navigator.mediaSession.setActionHandler(x[0], x[1]); } catch (e) {}
+    });
+  }
+  document.addEventListener("visibilitychange", function () {
+    if (!tts || document.visibilityState !== "visible" || voz.estado !== "hablando") return;
+    segundoPlano(true);
+    if (!tts.speaking && !tts.pending) hablar();
+  });
   function empezarVoz(h, btn) {
     if (!tts) return;
     voz.tok++; tts.cancel();
@@ -1716,10 +1772,12 @@ a.btn.primary, .btn.primary { color: var(--surface); }
     if (!voz.cola.length) return;
     hablar();
   }
-  function pausarVoz() { if (voz.estado !== "hablando") return; voz.tok++; voz.estado = "pausado"; tts.cancel(); pintarVoz(); }
+  function pausarVoz() { if (voz.estado !== "hablando") return; voz.tok++; voz.estado = "pausado"; tts.cancel(); pintarVoz(); segundoPlano(false); }
   function pararVoz() {
     if (!tts) return;
+    var habia = voz.estado !== "parado";
     voz.tok++; tts.cancel(); voz.estado = "parado"; voz.cola = []; voz.i = 0; voz.btn = null; marcar(null); pintarVoz();
+    if (habia) segundoPlano(false);
   }
   function saltarVoz(d) {
     if (!voz.cola.length) return;
@@ -1784,35 +1842,60 @@ a.btn.primary, .btn.primary { color: var(--surface); }
   window.addEventListener("resize", pedirAvance);
 
   // ---- Retomar la lectura: cada 10 segundos se guarda la vista y la posición del scroll ----
-  // Al abrir el manual sin una ruta (o en la misma vista guardada) se vuelve a esa página y a ese punto.
-  // La posición se guarda también como proporción, para que sirva aunque cambie el tamaño de letra o de ventana.
-  var POS_KEY = "manual-aiml-posicion", posUlt = "";
+  // Hay dos registros: la última vista (para abrir el manual donde quedaste) y la posición de cada tema, para que al
+  // saltar entre temas cada uno se abra en su punto. La posición se guarda también como proporción, para que sirva
+  // aunque cambie el tamaño de letra o de ventana. También se guarda al salir de un tema, al ocultar y al cerrar.
+  var POS_KEY = "manual-aiml-posicion", POSS_KEY = "manual-aiml-posiciones", posUlt = "", vistaRuta = null, restY = null;
   function leerPos() { try { var o = JSON.parse(localStorage.getItem(POS_KEY) || "null"); return o && typeof o.vista === "string" ? o : null; } catch (e) { return null; } }
+  var poss = (function () { try { var o = JSON.parse(localStorage.getItem(POSS_KEY) || "null"); return o && typeof o === "object" && !Array.isArray(o) ? o : {}; } catch (e) { return {}; } })();
+  function cleanPoss(o) {
+    var r = {};
+    Object.keys(o || {}).forEach(function (k) { var p = o[k]; if (T[k] && p && isFinite(p.r) && p.r >= 0 && p.r <= 1) r[k] = { y: Math.max(0, +p.y || 0), r: +p.r, t: +p.t || 0 }; });
+    return r;
+  }
+  poss = cleanPoss(poss);
+  function guardarPoss() {
+    var ks = Object.keys(poss);
+    if (ks.length > 300) ks.sort(function (a, b) { return poss[a].t - poss[b].t; }).slice(0, ks.length - 300).forEach(function (k) { delete poss[k]; });
+    try { localStorage.setItem(POSS_KEY, JSON.stringify(poss)); } catch (e) {}
+  }
   function guardarPos() {
+    var v = vistaRuta; if (!v) return;
     var max = document.documentElement.scrollHeight - window.innerHeight, y = Math.max(0, Math.round(window.scrollY));
-    var p = { vista: current(), y: y, r: max > 0 ? Math.min(1, +(y / max).toFixed(4)) : 0 };
+    var p = { vista: v, y: y, r: max > 0 ? Math.min(1, +(y / max).toFixed(4)) : 0 };
     var k = JSON.stringify(p); if (k === posUlt) return;
     posUlt = k; p.t = Date.now();
     try { localStorage.setItem(POS_KEY, JSON.stringify(p)); } catch (e) {}
+    if (T[v]) { poss[v] = { y: p.y, r: p.r, t: p.t }; guardarPoss(); }
   }
   function irAPos(p) {
     var max = document.documentElement.scrollHeight - window.innerHeight;
     var y = p.r > 0 && max > 0 ? Math.round(p.r * max) : (p.y || 0);
     window.scrollTo({ top: y, behavior: "instant" });
+    restY = window.scrollY;
   }
-  var posIni = leerPos(), hIni = parseHash(), retomar = false;
-  if (posIni && !hIni.nota && (T[posIni.vista] || /^(glosario|notas|respaldo)$/.test(posIni.vista))) {
-    if (!hIni.v) { history.replaceState(null, "", "#" + posIni.vista); retomar = true; }
-    else if (hIni.v === posIni.vista) retomar = true;
+  // Se llama desde route(): antes de pintar la vista nueva guarda la anterior; después, lleva el tema a su posición.
+  function antesDeRuta() { if (vistaRuta) guardarPos(); }
+  function despuesDeRuta(v, aviso) {
+    vistaRuta = v; restY = null;
+    if (parseHash().nota) return;
+    var p = T[v] ? poss[v] : null;
+    if (p && p.r > 0.01 && p.r < 0.99) {
+      irAPos(p);
+      if (aviso) toast("Retomaste donde quedaste en " + T[v].num + " · " + T[v].titulo + " (" + Math.round(p.r * 100) + " %).");
+    }
   }
+  var posIni = leerPos(), hIni = parseHash();
+  if (posIni && !hIni.v && T[posIni.vista]) history.replaceState(null, "", "#" + posIni.vista);
+  else if (posIni && !hIni.v && /^(glosario|notas|respaldo)$/.test(posIni.vista)) history.replaceState(null, "", "#" + posIni.vista);
 
   window.addEventListener("hashchange", route);
   route();
-  if (retomar && (posIni.y > 0 || posIni.r > 0)) {
-    irAPos(posIni);
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { if (current() === posIni.vista) irAPos(posIni); });
-    if (T[posIni.vista]) toast("Retomaste donde quedaste: " + T[posIni.vista].num + " · " + T[posIni.vista].titulo + " (" + Math.round(posIni.r * 100) + " %)");
-  }
+  if (posIni && !T[current()] && current() === posIni.vista && posIni.y > 0) irAPos(posIni);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () {
+    var v = current(), p = T[v] ? poss[v] : posIni;
+    if (restY !== null && Math.abs(window.scrollY - restY) < 4 && p) irAPos(p);
+  });
   setInterval(guardarPos, 10000);
   window.addEventListener("pagehide", guardarPos);
   document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") guardarPos(); });
