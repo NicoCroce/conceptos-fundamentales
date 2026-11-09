@@ -17,6 +17,9 @@ FONTS = [
     ("schibsted-grotesk.woff2", "Schibsted Grotesk", "normal", "400 900"),
     ("literata-italic.woff2", "Literata", "italic", "200 900"),
     ("jetbrains-mono.woff2", "JetBrains Mono", "normal", "100 800"),
+    ("source-serif-4.woff2", "Source Serif 4", "normal", "200 900"),
+    ("atkinson-hyperlegible.woff2", "Atkinson Hyperlegible", "normal", "400"),
+    ("atkinson-hyperlegible-bold.woff2", "Atkinson Hyperlegible", "normal", "700"),
 ]
 
 

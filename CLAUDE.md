@@ -10,7 +10,7 @@ Manual de estudio para un equipo de ingeniería, publicado en una URL como sitio
 - `manual-fuente/content/glosario-*.json`: términos del glosario, `{termino, definicion, slug}`.
 - `manual-fuente/template.html`: diseño, estilos y JavaScript del sitio. El contenido se inyecta en `__DATA__`.
 - `manual-fuente/web/`: `sw.js` (plantilla del service worker), `manifest.webmanifest`, `icon.svg` y `_headers` (cabeceras de caché).
-- `manual-fuente/fonts/`: las cuatro fuentes variables en woff2 (subconjunto latin de Google Fonts, licencia SIL OFL). Ya no se cargan desde Google.
+- `manual-fuente/fonts/`: las fuentes en woff2 (Literata, Schibsted Grotesk, JetBrains Mono, Source Serif 4 y Atkinson Hyperlegible) (subconjunto latin de Google Fonts, licencia SIL OFL). Ya no se cargan desde Google.
 - `manual-fuente/build.py`: arma el sitio y el archivo único. La lista `CHAPTERS` define capítulos, orden y numeración de los temas.
 - `manual-fuente/GUIA_DE_ESTILO.md`: reglas de redacción. Léela antes de escribir o editar un tema.
 
@@ -24,10 +24,13 @@ cp dist/manual.html "../Manual AI-ML y Plataforma.html"
 
 Requiere Python 3 y el paquete `markdown`. Genera `dist/web/` (para publicar) y `dist/manual.html` (archivo único, con fuentes e icono incrustados y sin service worker). El script informa temas faltantes, enlaces internos rotos (`#t/<slug>`) y palabras prohibidas. La salida debe terminar sin líneas que empiecen con `!`.
 
-## Tema claro y oscuro
+## Modo lector: página y ajustes de lectura
 
-- Oscuro por defecto. Un solo botón de sol o luna alterna entre oscuro y claro: en móvil está en la barra superior; en escritorio, fijo arriba a la derecha (`.themefab`).
-- La elección se guarda en localStorage (`manual-aiml-tema`), por lector. Un script en el `<head>` fija `data-theme` antes de pintar. Los colores de ambos temas son tokens en `:root` del template.
+- Botón **Aa** (en móvil, en la barra superior; en escritorio, fijo arriba a la derecha, `.themefab`) abre el panel `#lectura`: un panel flotante en escritorio y tablet, y una hoja inferior a 560 px o menos.
+- **Página**: papel, sepia, tinta y noche (`data-theme`); noche por defecto. Los colores son tokens en `:root` y en `:root[data-theme="…"]`. Los valores viejos `light` y `dark` se leen como papel y noche.
+- **Ajustes**: brillo (40–100), luz cálida (0–100), tamaño (5 pasos, `--fs` en em), tipografía (`data-letra`: Literata, Source Serif 4, Atkinson Hyperlegible, Schibsted Grotesk), interlineado (`data-interlineado`, `--lh`) y márgenes (`data-margenes`, `--measure`). Solo cambian el texto de los temas (`article`).
+- Brillo, luz cálida y grano del papel son capas fijas (`.veil`) que no reciben clics; el grano no se muestra en noche.
+- Se guarda en localStorage (`manual-aiml-tema` para la página y `manual-aiml-lectura` para el resto). Un script en el `<head>` aplica todo antes de pintar. El respaldo (`#respaldo`) lleva `ajustes.tema` y `ajustes.lectura`.
 
 ## Publicar y caché
 
@@ -52,7 +55,7 @@ Requiere Python 3 y el paquete `markdown`. Genera `dist/web/` (para publicar) y 
 
 1. `python3 build.py` sin advertencias.
 2. Abrir el sitio (`dist/web/` servido en local) a ancho de escritorio y de teléfono (unos 400 px), en tema claro y oscuro: sin scroll horizontal ni errores en la consola.
-3. Si cambió el JavaScript, probar a mano la función tocada (buscador, glosario, marcar como leído, notas y resaltados, selector de tema, perfiles, compartir e importar).
+3. Si cambió el JavaScript, probar a mano la función tocada (buscador, glosario, marcar como leído, notas y resaltados, panel Aa de lectura, perfiles, compartir e importar).
 4. Si cambió `web/` o la carga de recursos: en Chrome, confirmar que el service worker queda activo, que el manual carga con el servidor apagado y que una versión nueva muestra «Actualizar».
 
 ## Notas y resaltados (implementado)
