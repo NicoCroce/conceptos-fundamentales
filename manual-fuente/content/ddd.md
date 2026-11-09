@@ -82,7 +82,7 @@ Un **mapa de contexto** dibuja cómo se relacionan los contextos acotados y qui�
 
 ### Entidades y objetos de valor
 
-Entramos en el diseño táctico. Una **entidad** es un objeto con identidad que persiste en el tiempo aunque cambien sus atributos: un `Envio` sigue siendo el mismo envío aunque cambien su fecha, su transportista y su estado. Dos envíos con los mismos datos pero distinto ID son envíos distintos.
+Entramos en el diseño táctico; aquí va lo esencial y el detalle, con código, está en [DDD táctico](#t/ddd-tactico), [Repository](#t/patron-repository) y [CQRS y Event Sourcing](#t/cqrs-event-sourcing). Una **entidad** es un objeto con identidad que persiste en el tiempo aunque cambien sus atributos: un `Envio` sigue siendo el mismo envío aunque cambien su fecha, su transportista y su estado. Dos envíos con los mismos datos pero distinto ID son envíos distintos.
 
 Un **objeto de valor** (*value object*) no tiene identidad: se define por sus atributos, es inmutable y se compara por valor. Una `Direccion`, una `VentanaHoraria`, una `Distancia` o un `CodigoZona` son objetos de valor. Su gran utilidad es que **se validan al construirse**: si un `CodigoZona` existe, es válido.
 

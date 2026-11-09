@@ -115,7 +115,18 @@ Para enlazar otro tema usa `[texto](#t/<slug>)` con los slugs de la lista de aba
 - event-streaming · Event streaming
 - bases-de-datos · Bases de datos
 
-**Capítulo 4 · Machine Learning**
+**Capítulo 4 · Diseño de software y patrones**
+- principios-solid · SOLID y principios de diseño
+- patrones-creacionales · Patrones creacionales: Factory, Builder y Singleton
+- patrones-estructurales · Patrones estructurales: Adapter, Decorator, Facade y Proxy
+- patrones-comportamiento · Patrones de comportamiento: Strategy, Observer, Command y State
+- inyeccion-dependencias · Inyección de dependencias
+- ddd-tactico · DDD táctico: entidades, objetos de valor y agregados
+- patron-repository · Patrón Repository y Unit of Work
+- cqrs-event-sourcing · CQRS y Event Sourcing
+- testing-dobles · Testing y dobles de prueba
+
+**Capítulo 5 · Machine Learning**
 - fundamentos-ml · Fundamentos de ML
 - xgboost · XGBoost y scikit-learn
 - ciclo-vida-modelos · Ciclo de vida de modelos
@@ -125,13 +136,13 @@ Para enlazar otro tema usa `[texto](#t/<slug>)` con los slugs de la lista de aba
 - mlflow · MLflow y Weights & Biases
 - pytorch-tensorflow · PyTorch y TensorFlow
 
-**Capítulo 5 · Observabilidad**
+**Capítulo 6 · Observabilidad**
 - on-call · On-call, runbooks e incidentes
 - opentelemetry · OpenTelemetry y tracing
 - prometheus-grafana · Prometheus y Grafana
 - logging · Logging estructurado
 
-**Capítulo 6 · Cloud e infraestructura**
+**Capítulo 7 · Cloud e infraestructura**
 - aws · Fundamentos de AWS
 - ec2 · EC2 y cómputo en AWS
 - contenedores · Contenedores, ECS y EKS
@@ -144,16 +155,26 @@ Para enlazar otro tema usa `[texto](#t/<slug>)` con los slugs de la lista de aba
 - hibrido-on-prem · Despliegue híbrido y on-prem
 - finops · Costos cloud (FinOps)
 
-**Capítulo 7 · Frontend y web**
+**Capítulo 8 · Frontend y web**
 - http · HTTP de punta a punta
 - arquitectura-frontend · Arquitectura de frontend
+- componentizacion · Componentización
+- eventos-dom · Eventos y event listeners
 - web-components · Web components
 - design-systems · Design systems para interfaces con agentes
 - responsive · Diseño responsive
 - pwa · Service workers y PWA
 - recorrido-punta-a-punta · Recorrido de punta a punta: una consulta al asistente
 
-**Capítulo 8 · Seguridad**
+**Capítulo 9 · UX, UI y diseño**
+- ux-ui-fundamentos · UX y UI: fundamentos
+- investigacion-usabilidad · Investigación de usuarios y pruebas de usabilidad
+- heuristicas-nielsen · Las 10 heurísticas de Nielsen
+- leyes-ux-diseno-visual · Leyes de UX y diseño visual
+- accesibilidad · Accesibilidad web
+- ux-agentes · UX de interfaces con agentes
+
+**Capítulo 10 · Seguridad**
 - fundamentos-seguridad · Fundamentos de seguridad y modelado de amenazas
 - autenticacion · Autenticación, JWT y OAuth
 - secretos · Secretos y cifrado
@@ -164,7 +185,7 @@ Para enlazar otro tema usa `[texto](#t/<slug>)` con los slugs de la lista de aba
 - cadena-suministro · Cadena de suministro y vulnerabilidades
 - privacidad-datos · Privacidad y datos personales
 
-**Capítulo 9 · Metodologías y gestión**
+**Capítulo 11 · Metodologías y gestión**
 - agile-scrum · Agile, Scrum y Kanban
 - priorizacion · Herramientas de priorización
 - estimacion · Estimación de esfuerzo
@@ -177,7 +198,7 @@ Para enlazar otro tema usa `[texto](#t/<slug>)` con los slugs de la lista de aba
 - sdd · Desarrollo guiado por especificaciones (SDD) con agentes de código
 - odd · Organic Driven Development (ODD): proceso proporcional con agentes
 
-**Capítulo 10 · Análisis, decisiones y documentos**
+**Capítulo 12 · Análisis, decisiones y documentos**
 - objetivos-smart · Objetivos SMART
 - roi · ROI: retorno de la inversión
 - pareto · Principio de Pareto (80/20)
@@ -187,19 +208,19 @@ Para enlazar otro tema usa `[texto](#t/<slug>)` con los slugs de la lista de aba
 - prd · PRD: documento de requisitos de producto
 - rfc · RFC: propuestas técnicas por escrito
 
-**Capítulo 11 · Comunicación y feedback**
+**Capítulo 13 · Comunicación y feedback**
 - comunicacion-asertiva · Comunicación asertiva
 - feedback-sbi · Cómo dar feedback: el modelo SBI
 - feedback-revisiones · Feedback en revisiones de código y diseño
 
-**Capítulo 12 · Lenguajes y frameworks**
+**Capítulo 14 · Lenguajes y frameworks**
 - go · Go
 - python · Python
 - typescript · TypeScript
 - react · React
 - kotlin · Kotlin en el backend
 
-Los perfiles (IA, Backend, Frontend, Plataforma, Gestión) se definen en `PERFILES` de `build.py`. Al sumar un tema, agrégalo también a los perfiles que correspondan.
+Los perfiles (IA, Backend, Frontend, Plataforma, Diseño, Gestión) se definen en `PERFILES` de `build.py`. Al sumar un tema, agrégalo también a los perfiles que correspondan.
 
 ## Gráficos
 

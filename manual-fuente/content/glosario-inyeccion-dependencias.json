@@ -1,0 +1,9 @@
+[
+  {"termino": "Inyección de dependencias (DI)", "definicion": "Técnica en la que un componente recibe desde afuera, ya construidas, las piezas que necesita, en lugar de crearlas; facilita cambiar implementaciones y probar con dobles.", "slug": "inyeccion-dependencias"},
+  {"termino": "Inversión de control (IoC)", "definicion": "Principio por el que otro código, como un framework, controla el flujo y decide cuándo llamar al código propio y qué entregarle; la inyección de dependencias es una de sus formas.", "slug": "inyeccion-dependencias"},
+  {"termino": "Raíz de composición", "definicion": "Único lugar, cerca del arranque de la aplicación, donde se leen la configuración, se construyen las implementaciones concretas y se conectan entre sí.", "slug": "inyeccion-dependencias"},
+  {"termino": "Contenedor de inyección", "definicion": "Librería que sabe construir cada tipo y resuelve automáticamente el grafo de dependencias a partir de anotaciones o registros, como Spring, Koin o NestJS.", "slug": "inyeccion-dependencias"},
+  {"termino": "Alcance de una dependencia (scope)", "definicion": "Cuánto vive una instancia inyectada: singleton para toda la aplicación, una por petición o una nueva cada vez; una dependencia no puede vivir menos que quien la tiene.", "slug": "inyeccion-dependencias"},
+  {"termino": "Service locator", "definicion": "Registro global al que los componentes piden sus dependencias desde adentro; se considera un antipatrón porque esconde las dependencias y acopla los tests entre sí.", "slug": "inyeccion-dependencias"},
+  {"termino": "Inyección por constructor", "definicion": "Forma de inyección en la que las dependencias se pasan al crear el objeto, de modo que nunca existe incompleto y lo que necesita queda visible en su firma.", "slug": "inyeccion-dependencias"}
+]

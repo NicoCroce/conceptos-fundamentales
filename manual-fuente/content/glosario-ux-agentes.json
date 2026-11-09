@@ -1,0 +1,10 @@
+[
+  {"termino": "Latencia percibida", "definicion": "Cuánto parece tardar un sistema según la persona; depende más del primer feedback visible (estado o primer texto) que del tiempo total de la respuesta.", "slug": "ux-agentes"},
+  {"termino": "Ficha de aprobación", "definicion": "Componente en el que una persona aprueba una acción propuesta por un agente; muestra los parámetros reales, las consecuencias y un botón que nombra la acción.", "slug": "ux-agentes"},
+  {"termino": "Confirmación por nivel de riesgo", "definicion": "Escala que gradúa la fricción según el impacto de la acción: sin confirmación para lecturas, deshacer para lo reversible, aprobación para efectos externos y un paso extra para lo irreversible o masivo.", "slug": "ux-agentes"},
+  {"termino": "UI generativa", "definicion": "Patrón en el que el agente responde eligiendo componentes de un catálogo cerrado, que el frontend dibuja con datos reales del sistema, en lugar de devolver solo texto.", "slug": "ux-agentes"},
+  {"termino": "Reparación de la conversación", "definicion": "Mecanismos para corregir un malentendido sin empezar de cero: editar un mensaje, regenerar, correcciones dirigidas y mostrar lo que el agente entendió.", "slug": "ux-agentes"},
+  {"termino": "Deflexión", "definicion": "Proporción de conversaciones que no llegaron a un operador humano. No equivale a resolución: incluye abandonos y recontactos por otro canal.", "slug": "ux-agentes"},
+  {"termino": "Tasa de resolución", "definicion": "Proporción de conversaciones que resolvieron el problema, medida por ejemplo como ausencia de recontacto o reclamo en las 48 horas siguientes.", "slug": "ux-agentes"},
+  {"termino": "Patrón oscuro (dark pattern)", "definicion": "Diseño que lleva a la persona a hacer algo que no haría si entendiera bien; en agentes, por ejemplo, escritura falsa, exagerar capacidades o esconder la salida a una persona.", "slug": "ux-agentes"}
+]

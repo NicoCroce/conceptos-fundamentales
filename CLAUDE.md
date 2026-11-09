@@ -66,7 +66,7 @@ Requiere Python 3 y el paquete `markdown`. Genera `dist/web/` (para publicar) y 
 
 ## Perfiles (implementado)
 
-- `PERFILES` en `build.py` define los recorridos IA, Backend, Frontend, Plataforma y Gestión; «Todo» es la ausencia de filtro. El build avisa si un perfil nombra un tema inexistente.
+- `PERFILES` en `build.py` define los recorridos IA, Backend, Frontend, Plataforma, Diseño (UX/UI) y Gestión; «Todo» es la ausencia de filtro. El build avisa si un perfil nombra un tema inexistente.
 - El perfil filtra el índice lateral, la portada (cifras y capítulos) y el orden de «Anterior / Siguiente». El buscador siempre busca en todo el manual. Se guarda en localStorage (`manual-aiml-perfil`).
 - Al sumar un tema, decidir a qué perfiles pertenece.
 
@@ -76,15 +76,18 @@ Requiere Python 3 y el paquete `markdown`. Genera `dist/web/` (para publicar) y 
 - «Compartir» usa el menú nativo (`navigator.share` con archivo; prueba `.json` y, si el sistema no lo acepta, `.txt`). Si no hay soporte, descarga el archivo.
 - «Importar archivo» suma sin borrar: une los temas leídos, conserva la nota editada más recientemente y aplica perfil y tema. Acepta también las exportaciones viejas que solo traían notas.
 
-## Capítulos (12)
+## Capítulos (14)
 
-LLMs · Agentes · Arquitectura y backend · Machine Learning · Observabilidad · Cloud e infraestructura · Frontend y web · Seguridad · Metodologías y gestión · Análisis, decisiones y documentos · Comunicación y feedback · Lenguajes y frameworks. La lista completa de temas está en `CHAPTERS` (`build.py`) y en la guía de estilo.
+LLMs · Agentes · Arquitectura y backend · Diseño de software y patrones · Machine Learning · Observabilidad · Cloud e infraestructura · Frontend y web · UX, UI y diseño · Seguridad · Metodologías y gestión · Análisis, decisiones y documentos · Comunicación y feedback · Lenguajes y frameworks. La lista completa de temas está en `CHAPTERS` (`build.py`) y en la guía de estilo.
 
 - Seguridad reúne autenticación, secretos, frontend, Cloudflare y agentes, y suma fundamentos y modelado de amenazas, APIs, cadena de suministro y privacidad.
+- Diseño de software y patrones: SOLID, patrones creacionales, estructurales y de comportamiento, inyección de dependencias, DDD táctico, Repository y Unit of Work, CQRS y Event Sourcing, testing y dobles de prueba. El DDD estratégico sigue en Arquitectura y backend.
+- Frontend y web suma componentización y eventos del DOM.
+- UX, UI y diseño: fundamentos de UX y UI, investigación y usabilidad, heurísticas de Nielsen, leyes de UX y diseño visual, accesibilidad (WCAG 2.2) y UX de interfaces con agentes. Como «tarjeta» es palabra prohibida, las cards de UI se llaman «fichas».
 - Metodologías y gestión: Agile/Scrum/Kanban, priorización (Eisenhower, RICE, WSJF), estimación, triángulo de hierro, EDT/WBS, planificación con Gantt, RACI/RASI, riesgos, métricas DORA, SDD y ODD.
 - Análisis, decisiones y documentos: objetivos SMART, ROI, Pareto, 5 porqués, brainstorming y mapas mentales, postmortem y premortem, PRD y RFC.
 - Comunicación y feedback: comunicación asertiva, feedback con SBI y feedback en revisiones de código y diseño.
-- `recorrido-punta-a-punta` (capítulo 7) sigue una consulta al asistente de Rumbo de punta a punta y enlaza los temas de cada tramo.
+- `recorrido-punta-a-punta` (capítulo 8) sigue una consulta al asistente de Rumbo de punta a punta y enlaza los temas de cada tramo.
 
 ## Gráficos
 

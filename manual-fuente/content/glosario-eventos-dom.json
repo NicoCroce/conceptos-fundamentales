@@ -1,0 +1,11 @@
+[
+  {"termino": "Event listener", "definicion": "Función registrada con addEventListener para ejecutarse cuando ocurre un tipo de evento en un elemento. Retiene todo lo que usa mientras siga registrada.", "slug": "eventos-dom"},
+  {"termino": "Burbujeo de eventos", "definicion": "Fase en la que un evento, después de llegar a su elemento de origen, sube por todos sus ancestros hasta window, ejecutando los listeners normales de cada uno.", "slug": "eventos-dom"},
+  {"termino": "Fase de captura", "definicion": "Primera fase del recorrido de un evento, de window hacia el elemento de origen. Solo ejecuta los listeners registrados con capture: true.", "slug": "eventos-dom"},
+  {"termino": "Delegación de eventos", "definicion": "Técnica de registrar un solo listener en un contenedor y averiguar con target.closest sobre qué hijo ocurrió el evento. Escala con los tipos de acción, no con la cantidad de elementos.", "slug": "eventos-dom"},
+  {"termino": "Listener pasivo", "definicion": "Listener registrado con passive: true, que promete no llamar a preventDefault. Permite que el navegador haga scroll sin esperar a que termine.", "slug": "eventos-dom"},
+  {"termino": "preventDefault y stopPropagation", "definicion": "preventDefault cancela la acción por defecto del navegador y deja que el evento siga viajando; stopPropagation frena el viaje y deja la acción por defecto.", "slug": "eventos-dom"},
+  {"termino": "Evento sintético (React)", "definicion": "Envoltorio que React entrega a sus manejadores, con la misma interfaz en todos los navegadores. React lo genera a partir de listeners delegados en la raíz de la aplicación.", "slug": "eventos-dom"},
+  {"termino": "Debounce y throttle", "definicion": "Técnicas para limitar trabajo ante ráfagas de eventos: debounce espera a que la ráfaga termine; throttle ejecuta como máximo una vez cada cierto intervalo.", "slug": "eventos-dom"},
+  {"termino": "Bus de eventos", "definicion": "Objeto central donde partes de la aplicación publican eventos con nombre y otras se suscriben. Útil para avisos globales; usado como canal de datos vuelve imposible seguir causa y efecto.", "slug": "eventos-dom"}
+]

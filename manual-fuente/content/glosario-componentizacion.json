@@ -1,0 +1,10 @@
+[
+  {"termino": "Componente presentacional", "definicion": "Componente que recibe todo por props y solo devuelve interfaz, sin obtener datos ni manejar efectos. Se prueba con datos y se reutiliza en cualquier contexto.", "slug": "componentizacion"},
+  {"termino": "Componente contenedor", "definicion": "Componente que obtiene datos, maneja estado y efectos, y le pasa el resultado a componentes presentacionales. Con hooks suele reducirse a unas pocas líneas.", "slug": "componentizacion"},
+  {"termino": "Compound components", "definicion": "Patrón en el que un componente padre y sus partes (Ficha, Ficha.Encabezado, Ficha.Acciones) comparten estado por contexto, y quien los usa elige qué partes incluir y en qué orden.", "slug": "componentizacion"},
+  {"termino": "Render prop", "definicion": "Prop que recibe una función encargada de dibujar parte del componente, por ejemplo cada fila de una lista. Permite personalizar el dibujo sin agregar opciones.", "slug": "componentizacion"},
+  {"termino": "Explosión de props", "definicion": "Crecimiento de un componente a fuerza de opciones booleanas: con n booleanos hay 2 elevado a n combinaciones posibles, la mayoría sin probar. Se resuelve con composición.", "slug": "componentizacion"},
+  {"termino": "Elevar el estado (lifting state up)", "definicion": "Mover un estado al ancestro común más cercano de los componentes que lo necesitan, que lo pasa hacia abajo por props junto con la función para cambiarlo.", "slug": "componentizacion"},
+  {"termino": "Colocación del estado", "definicion": "Regla de mantener cada estado lo más cerca posible de donde se usa, y subirlo solo cuando hace falta compartirlo. Evita renders de más y acoplamientos ocultos.", "slug": "componentizacion"},
+  {"termino": "Atomic design", "definicion": "Metodología que clasifica componentes en átomos, moléculas, organismos, plantillas y páginas. Útil como vocabulario de un design system, poco útil como estructura de carpetas de una aplicación.", "slug": "componentizacion"}
+]

@@ -1,0 +1,11 @@
+[
+  {"termino": "SOLID", "definicion": "Grupo de cinco principios de diseño orientado a objetos: responsabilidad única, abierto/cerrado, sustitución de Liskov, segregación de interfaces e inversión de dependencias.", "slug": "principios-solid"},
+  {"termino": "Cohesión y acoplamiento", "definicion": "Cohesión es cuánto tienen que ver entre sí las partes de un módulo; acoplamiento, cuánto necesita saber un módulo de otro. Se busca alta cohesión y bajo acoplamiento.", "slug": "principios-solid"},
+  {"termino": "Principio de responsabilidad única (SRP)", "definicion": "Un módulo debe tener un solo motivo para cambiar, es decir, responder a una sola área o actor que pida cambios sobre él.", "slug": "principios-solid"},
+  {"termino": "Principio abierto/cerrado (OCP)", "definicion": "Un módulo debe permitir agregar comportamiento nuevo mediante extensión, sin modificar el código existente que ya funciona y está probado.", "slug": "principios-solid"},
+  {"termino": "Sustitución de Liskov (LSP)", "definicion": "Un subtipo debe poder usarse en lugar de su tipo base sin romper a quien lo usa: no puede exigir más, garantizar menos ni lanzar errores que el contrato no declara.", "slug": "principios-solid"},
+  {"termino": "Segregación de interfaces (ISP)", "definicion": "Ningún cliente debe depender de métodos que no usa; se prefieren interfaces chicas y específicas, que en agentes funcionan también como mínimo privilegio.", "slug": "principios-solid"},
+  {"termino": "Composición sobre herencia", "definicion": "Preferencia por construir comportamiento combinando objetos que se delegan trabajo, en lugar de jerarquías de clases, porque acopla menos y permite combinar en tiempo de ejecución.", "slug": "principios-solid"},
+  {"termino": "DRY, KISS y YAGNI", "definicion": "No repetir conocimiento, preferir la solución más simple y no construir lo que todavía no se necesita; a menudo chocan, y la regla de tres ayuda a decidir cuándo abstraer.", "slug": "principios-solid"},
+  {"termino": "Ley de Demeter", "definicion": "Un método solo debería hablar con sus vecinos inmediatos (parámetros, atributos y objetos que crea), evitando cadenas que recorren la estructura interna de otros objetos.", "slug": "principios-solid"}
+]

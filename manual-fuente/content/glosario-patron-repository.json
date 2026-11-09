@@ -1,0 +1,10 @@
+[
+  {"termino": "Repositorio", "definicion": "Abstracción con forma de colección que guarda y recupera agregados completos; hay uno por agregado, su interfaz vive en el dominio y su implementación en infraestructura.", "slug": "patron-repository"},
+  {"termino": "Unit of Work", "definicion": "Unidad de trabajo que agrupa los cambios de una operación y los confirma juntos en una transacción, incluidos los eventos que van a la outbox.", "slug": "patron-repository"},
+  {"termino": "DAO (Data Access Object)", "definicion": "Objeto de acceso a datos orientado a una tabla, con operaciones en el vocabulario de la base; a diferencia del repositorio, no garantiza agregados completos.", "slug": "patron-repository"},
+  {"termino": "Repositorio genérico", "definicion": "Interfaz común para todos los agregados con operaciones como update, delete y findAll; se considera un antipatrón porque expone operaciones que el dominio no admite.", "slug": "patron-repository"},
+  {"termino": "Patrón Specification", "definicion": "Objeto que representa un criterio del dominio, combinable con y, o y no, que sirve tanto para buscar agregados en el repositorio como para validar en memoria.", "slug": "patron-repository"},
+  {"termino": "Conflicto de versión", "definicion": "Error que se produce al guardar un agregado cuya versión cambió desde que se cargó; evita que un cambio concurrente se pierda en silencio.", "slug": "patron-repository"},
+  {"termino": "Problema N+1", "definicion": "Patrón de acceso en el que cargar N elementos dispara una consulta inicial y N consultas adicionales, una por elemento, multiplicando la latencia.", "slug": "patron-repository"},
+  {"termino": "Reconstitución", "definicion": "Rearmar un agregado a partir de datos ya guardados, sin emitir eventos ni reaplicar las reglas de creación; es distinta de la fábrica que crea agregados nuevos.", "slug": "patron-repository"}
+]

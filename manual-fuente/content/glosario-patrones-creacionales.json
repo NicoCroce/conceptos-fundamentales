@@ -1,0 +1,10 @@
+[
+  {"termino": "Patrón creacional", "definicion": "Patrón de diseño que separa el uso de un objeto de la decisión de cómo construirlo, para que esa decisión viva en un solo lugar.", "slug": "patrones-creacionales"},
+  {"termino": "Función fábrica", "definicion": "Función que recibe configuración y devuelve un objeto listo para usar, tipado como interfaz, como crearClienteLLM según proveedor y modelo.", "slug": "patrones-creacionales"},
+  {"termino": "Factory Method", "definicion": "Patrón en el que una clase base define un algoritmo y delega en sus subclases un método que crea la pieza que varía.", "slug": "patrones-creacionales"},
+  {"termino": "Abstract Factory", "definicion": "Interfaz que crea familias de objetos relacionados que deben ser compatibles entre sí, como todos los clientes de IA de una instalación on-prem.", "slug": "patrones-creacionales"},
+  {"termino": "Builder", "definicion": "Patrón que construye un objeto complejo paso a paso y lo valida al final, evitando constructores con muchos argumentos posicionales.", "slug": "patrones-creacionales"},
+  {"termino": "Opciones funcionales", "definicion": "Idioma de Go para parámetros opcionales: el constructor recibe funciones que configuran el objeto, como ConTimeout o ConReintentos.", "slug": "patrones-creacionales"},
+  {"termino": "Singleton", "definicion": "Patrón que garantiza una única instancia con acceso global; suele considerarse un antipatrón porque oculta dependencias y vuelve frágiles los tests.", "slug": "patrones-creacionales"},
+  {"termino": "Object pool", "definicion": "Conjunto de objetos caros de crear, como conexiones a la base, que se mantienen inicializados y se prestan y devuelven en lugar de crearse cada vez.", "slug": "patrones-creacionales"}
+]

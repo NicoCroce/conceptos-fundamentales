@@ -1,0 +1,9 @@
+[
+  {"termino": "Patrón estructural", "definicion": "Patrón de diseño que combina objetos existentes, normalmente envolviendo uno con otro, para traducir, enriquecer, simplificar o controlar el acceso.", "slug": "patrones-estructurales"},
+  {"termino": "Patrón Adapter", "definicion": "Envoltorio que convierte la interfaz de un sistema ajeno (un SDK, la API de un transportista, un proveedor de LLM) en la interfaz que espera el dominio, traduciendo datos y errores.", "slug": "patrones-estructurales"},
+  {"termino": "Decorator", "definicion": "Envoltorio con la misma interfaz que el objeto original que agrega comportamiento antes o después de delegar, como reintentos, caché o métricas; se puede apilar.", "slug": "patrones-estructurales"},
+  {"termino": "Facade", "definicion": "Interfaz simple que coordina varios componentes de un subsistema para resolver un caso frecuente con una sola llamada, como el estado de un pedido para el agente.", "slug": "patrones-estructurales"},
+  {"termino": "Proxy", "definicion": "Objeto con la misma interfaz que el real que controla el acceso a él: carga diferida, permisos, cuotas o representación de un objeto remoto.", "slug": "patrones-estructurales"},
+  {"termino": "Composite", "definicion": "Patrón que permite tratar igual a un elemento y a un grupo de elementos, armando árboles como lotes que contienen rutas que contienen paradas.", "slug": "patrones-estructurales"},
+  {"termino": "Test de contrato", "definicion": "Conjunto de pruebas que se corre contra todas las implementaciones de una interfaz, por ejemplo todos los adaptadores de transportistas, para verificar que cumplen el mismo comportamiento.", "slug": "patrones-estructurales"}
+]

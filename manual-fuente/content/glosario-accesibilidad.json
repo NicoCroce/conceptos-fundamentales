@@ -1,0 +1,11 @@
+[
+  {"termino": "WCAG", "definicion": "Web Content Accessibility Guidelines: pautas del W3C con criterios de conformidad comprobables en niveles A, AA y AAA. La versión vigente es la 2.2 y AA es el objetivo habitual de leyes y contratos.", "slug": "accesibilidad"},
+  {"termino": "POUR", "definicion": "Los cuatro principios de WCAG: perceptible, operable, comprensible y robusto. Cada pauta y criterio de conformidad cuelga de uno de ellos.", "slug": "accesibilidad"},
+  {"termino": "Relación de contraste", "definicion": "Cociente (L1 + 0,05) / (L2 + 0,05) entre las luminancias relativas de dos colores. WCAG AA pide 4,5:1 para texto normal y 3:1 para texto grande y componentes de interfaz.", "slug": "accesibilidad"},
+  {"termino": "Luminancia relativa", "definicion": "Valor entre 0 (negro) y 1 (blanco) que aproxima cuán claro percibe el ojo un color; se calcula linealizando cada canal y ponderándolos con 0,2126 R + 0,7152 G + 0,0722 B.", "slug": "accesibilidad"},
+  {"termino": "Árbol de accesibilidad", "definicion": "Representación que el navegador construye a partir del HTML con el rol, el nombre y el estado de cada elemento. Lo leen los lectores de pantalla y los agentes que operan navegadores.", "slug": "accesibilidad"},
+  {"termino": "Primera regla de ARIA", "definicion": "Si existe un elemento HTML nativo con la semántica y el comportamiento necesarios, se usa ese en lugar de agregar ARIA, porque ARIA cambia lo que se anuncia pero no el comportamiento.", "slug": "accesibilidad"},
+  {"termino": "Trampa de foco", "definicion": "Situación en la que el foco del teclado queda encerrado en un componente sin salida. Está prohibida salvo en diálogos modales, donde se encierra a propósito y Escape la libera.", "slug": "accesibilidad"},
+  {"termino": "Reflow", "definicion": "Criterio WCAG 1.4.10: a 320 px CSS de ancho el contenido se reacomoda en una columna sin scroll horizontal, lo que equivale a usar un monitor de 1280 px con zoom al 400 %.", "slug": "accesibilidad"},
+  {"termino": "Lector de pantalla", "definicion": "Tecnología de asistencia que lee el árbol de accesibilidad en voz alta o en braille y permite navegar por encabezados, regiones y controles; por ejemplo VoiceOver, NVDA, JAWS y TalkBack.", "slug": "accesibilidad"}
+]

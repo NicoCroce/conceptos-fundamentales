@@ -1,0 +1,11 @@
+[
+  {"termino": "Entidad", "definicion": "Objeto del dominio que se distingue por su identidad y no por sus atributos: un envío sigue siendo el mismo aunque cambien su estado, su ventana y su transportista.", "slug": "ddd-tactico"},
+  {"termino": "Raíz del agregado", "definicion": "Única entidad de un agregado visible desde afuera; expone comandos con nombre del negocio y es el único camino para modificar los objetos internos.", "slug": "ddd-tactico"},
+  {"termino": "Invariante", "definicion": "Regla del negocio que debe cumplirse después de cada operación sobre un agregado, como que un envío no supere 30 kg o no tenga más de dos reprogramaciones.", "slug": "ddd-tactico"},
+  {"termino": "Límite de consistencia", "definicion": "Frontera del agregado: lo que está adentro es consistente al terminar cada transacción; lo que está afuera se actualiza después mediante eventos.", "slug": "ddd-tactico"},
+  {"termino": "Servicio de dominio", "definicion": "Objeto sin estado que aplica una regla del negocio que involucra varios objetos y no pertenece a ninguno, como elegir el mejor transportista para un envío.", "slug": "ddd-tactico"},
+  {"termino": "Servicio de aplicación", "definicion": "Caso de uso que orquesta una operación: abre la transacción, carga el agregado, invoca sus comandos, lo guarda y despacha eventos, sin contener reglas del negocio.", "slug": "ddd-tactico"},
+  {"termino": "Evento de dominio", "definicion": "Registro de algo relevante que le pasó a un agregado, nombrado en pasado; el agregado lo anota y la capa de aplicación lo despacha después de guardar, por ejemplo vía outbox.", "slug": "ddd-tactico"},
+  {"termino": "Modelo anémico", "definicion": "Modelo con entidades que solo tienen datos, getters y setters, y reglas dispersas en servicios; permite estados inválidos desde cualquier punto del código.", "slug": "ddd-tactico"},
+  {"termino": "Obsesión por los primitivos", "definicion": "Modelar conceptos del dominio con tipos básicos como String o Double en lugar de objetos de valor, perdiendo validación, unidades y significado.", "slug": "ddd-tactico"}
+]

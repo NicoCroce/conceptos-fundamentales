@@ -1,0 +1,11 @@
+[
+  {"termino": "Pirámide de pruebas", "definicion": "Reparto de pruebas con muchas unitarias, menos de integración y pocas de punta a punta, porque las de abajo son más rápidas y estables; el trofeo de pruebas pone más peso en la integración.", "slug": "testing-dobles"},
+  {"termino": "Doble de prueba", "definicion": "Objeto que reemplaza a una dependencia real durante un test; hay cinco tipos: dummy, stub, fake, spy y mock.", "slug": "testing-dobles"},
+  {"termino": "Stub", "definicion": "Doble de prueba que devuelve respuestas fijas para controlar lo que recibe el código bajo prueba, como una ETA fija o un error de timeout.", "slug": "testing-dobles"},
+  {"termino": "Fake", "definicion": "Implementación que funciona de verdad pero simplificada, como un repositorio en memoria; conviene respaldarla con pruebas de integración del adaptador real.", "slug": "testing-dobles"},
+  {"termino": "Mock", "definicion": "Doble con expectativas preprogramadas que falla si no lo llaman exactamente como se esperaba; usado de más, ata los tests a la implementación interna.", "slug": "testing-dobles"},
+  {"termino": "Prueba de contrato guiada por el consumidor", "definicion": "Prueba en la que cada consumidor de una API registra sus expectativas como contrato y el proveedor las ejecuta en su CI, para detectar cambios incompatibles antes del deploy.", "slug": "testing-dobles"},
+  {"termino": "Testcontainers", "definicion": "Librería que levanta desde el test contenedores reales y descartables, como Postgres o Kafka, para pruebas de integración con la misma tecnología que producción.", "slug": "testing-dobles"},
+  {"termino": "Test flaky", "definicion": "Test que a veces pasa y a veces falla sin cambios en el código, por tiempos, orden, concurrencia o servicios externos; erosiona la confianza en toda la suite.", "slug": "testing-dobles"},
+  {"termino": "Prueba de mutación", "definicion": "Técnica que introduce cambios pequeños en el código, como invertir una condición, y verifica que algún test falle; los mutantes que sobreviven muestran reglas sin proteger.", "slug": "testing-dobles"}
+]

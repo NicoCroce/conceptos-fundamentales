@@ -1,0 +1,11 @@
+[
+  {"termino": "CQRS", "definicion": "Command Query Responsibility Segregation: separar el modelo que procesa comandos y protege reglas de los modelos que responden consultas, cada uno diseñado para su uso.", "slug": "cqrs-event-sourcing"},
+  {"termino": "Modelo de lectura", "definicion": "Representación de los datos con la forma exacta que necesita una pantalla, API o herramienta de agente, mantenida a partir de eventos y separada del modelo de escritura.", "slug": "cqrs-event-sourcing"},
+  {"termino": "Proyección", "definicion": "Proceso idempotente que consume eventos y mantiene un modelo de lectura; si tiene un error, se reconstruye leyendo el historial desde el principio.", "slug": "cqrs-event-sourcing"},
+  {"termino": "Event Sourcing", "definicion": "Técnica que guarda la secuencia de eventos de cada agregado como fuente de verdad y calcula el estado actual aplicándolos en orden.", "slug": "cqrs-event-sourcing"},
+  {"termino": "Event store", "definicion": "Almacén de eventos ordenados por agregado y secuencia, que solo admite agregar al final y verifica la secuencia esperada para controlar la concurrencia.", "slug": "cqrs-event-sourcing"},
+  {"termino": "Snapshot (Event Sourcing)", "definicion": "Estado de un agregado calculado hasta cierta secuencia, guardado para no reaplicar todo el historial al cargarlo; es descartable y se regenera desde los eventos.", "slug": "cqrs-event-sourcing"},
+  {"termino": "Upcasting", "definicion": "Transformar al leer un evento guardado con un esquema viejo a la forma actual, sin modificar el almacén de eventos.", "slug": "cqrs-event-sourcing"},
+  {"termino": "Borrado criptográfico (crypto-shredding)", "definicion": "Cifrar los datos personales de los eventos con una clave por persona y borrar esa clave ante una solicitud de borrado, lo que vuelve ilegibles los datos sin editar el historial.", "slug": "cqrs-event-sourcing"},
+  {"termino": "Metadatos de origen", "definicion": "Datos que acompañan a cada evento para saber quién lo provocó y cómo: actor, vía (por ejemplo un agente), sesión, herramienta y versión del prompt.", "slug": "cqrs-event-sourcing"}
+]

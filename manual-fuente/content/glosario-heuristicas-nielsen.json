@@ -1,0 +1,8 @@
+[
+  {"termino": "Heurísticas de Nielsen", "definicion": "Diez principios generales de usabilidad formulados por Jakob Nielsen, como visibilidad del estado del sistema o prevención de errores. Sirven para inspeccionar interfaces y como idioma común en revisiones.", "slug": "heuristicas-nielsen"},
+  {"termino": "Evaluación heurística", "definicion": "Inspección en la que de 3 a 5 evaluadores revisan por separado una interfaz contra las heurísticas, registran problemas y luego los consolidan con una severidad.", "slug": "heuristicas-nielsen"},
+  {"termino": "Escala de severidad de Nielsen", "definicion": "Escala de 0 a 4 para priorizar problemas de usabilidad: 0 no es problema, 1 cosmético, 2 menor, 3 mayor, 4 catástrofe. Combina frecuencia, impacto y persistencia.", "slug": "heuristicas-nielsen"},
+  {"termino": "Desliz y equivocación", "definicion": "Dos tipos de error humano. En el desliz la persona quiere lo correcto pero lo ejecuta mal; en la equivocación tiene una idea errónea de lo que va a pasar. Se previenen con técnicas distintas.", "slug": "heuristicas-nielsen"},
+  {"termino": "Acelerador", "definicion": "Mecanismo que agiliza el trabajo de usuarios expertos sin estorbar a los nuevos, como atajos de teclado, acciones en bloque o filtros guardados.", "slug": "heuristicas-nielsen"},
+  {"termino": "Reconocer antes que recordar", "definicion": "Principio que pide mantener visibles las opciones y datos necesarios para que la persona no dependa de su memoria. Un chat vacío viola este principio si no sugiere qué puede hacer el agente.", "slug": "heuristicas-nielsen"}
+]
